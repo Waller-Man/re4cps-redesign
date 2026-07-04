@@ -105,4 +105,32 @@ export default {
       },
     },
   },
+  publications: {
+    title: 'Publications',
+    subtitle: 'Recent Publications',
+    description:
+      'This page presents recent representative publications, including conference papers, journal articles and books. PDF, DOI, BibTeX, code and tool links can be added later.',
+    paperCount: '{count} entries',
+    groups: {
+      '2026': '2026',
+      '2025': '2025',
+      '2024': '2024',
+      book: 'Book',
+    },
+    types: {
+      conference: 'Conference',
+      journal: 'Journal',
+      workshop: 'Workshop',
+      chineseJournal: 'Chinese Journal',
+      book: 'Book',
+      accepted: 'Accepted',
+    },
+    links: {
+      pdf: 'PDF',
+      doi: 'DOI',
+      bibtex: 'BibTeX',
+      code: 'Code',
+      tool: 'Tool',
+    },
+  },
 }
