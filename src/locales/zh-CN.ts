@@ -53,4 +53,54 @@ export default {
       },
     },
   },
+  tools: {
+    title: '近期工具',
+    description:
+      '本页面优先展示近期与大模型、智能体、需求建模和文档生成相关的工具。当前 GitHub 按钮暂时跳转到对应仓库，后续可替换为站内工具详情页或在线 Demo 页面。',
+    cardsLabel: '近期需求工程工具',
+    actions: {
+      github: '在线使用',
+      demo: '在线 Demo',
+      details: '查看详情',
+    },
+    tags: {
+      llm: 'LLM',
+      multiAgent: 'Multi-Agent',
+      requirementsDevelopment: 'Requirements Development',
+      srs: 'SRS',
+      reSkills: 'RE Skills',
+      knowledgeReuse: 'Knowledge Reuse',
+      methodology: 'Methodology',
+      openClaw: 'OpenClaw',
+      requirementsModeling: 'Requirements Modeling',
+      erModel: 'ER Model',
+      curd: 'CURD',
+      documentGeneration: 'Document Generation',
+      plantUml: 'PlantUML',
+      behaviorModeling: 'Behavior Modeling',
+      requirementsAnalysis: 'Requirements Analysis',
+    },
+    items: {
+      iredev: {
+        title: 'iReDev：多智能体需求开发平台',
+        description:
+          'AI 驱动的多智能体需求开发平台，模拟真实需求工程团队，从客户访谈、需求分析到 SRS 文档生成，形成完整的需求开发流水线。',
+      },
+      reSkills: {
+        title: 'RE-Skills：需求工程 Skill 集合',
+        description:
+          '面向需求工程任务的 skill 集合，用于沉淀需求工程中的方法、流程和可复用能力，为大模型或智能体执行需求工程任务提供支持。',
+      },
+      requirementsPlugin: {
+        title: 'RE Requirements Plugin：OpenClaw 需求工程插件',
+        description:
+          '面向需求工程建模与文档导出的 OpenClaw 插件，支持实体抽取、用例建模、ER/CURD 检查、功能需求生成和文档导出。',
+      },
+      plato: {
+        title: 'PLATO：自然语言需求到 PlantUML 行为图生成系统',
+        description:
+          '面向需求工程与行为建模的 LLM 驱动系统，可将自然语言需求转换为 PlantUML 行为图，并支持语法校验、图像渲染与结果导出。',
+      },
+    },
+  },
 }

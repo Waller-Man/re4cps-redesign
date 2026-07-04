@@ -9,7 +9,7 @@ const { locale, t } = useI18n()
 const navigation = computed(() => [
   { key: 'home', label: t('nav.home'), to: '/' },
   { key: 'research', label: t('nav.research'), to: '/research' },
-  { key: 'tools', label: t('nav.tools') },
+  { key: 'tools', label: t('nav.tools'), to: '/tools' },
   { key: 'publications', label: t('nav.publications') },
   { key: 'members', label: t('nav.members') },
   { key: 'documentation', label: t('nav.documentation') },

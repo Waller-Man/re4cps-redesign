@@ -54,4 +54,55 @@ export default {
       },
     },
   },
+  tools: {
+    title: 'AI-based Requirements Engineering Tools',
+    description:
+      'This page highlights recent tools related to large language models, agents, requirements modeling and document generation. GitHub buttons currently link to repositories and can later be replaced by internal tool pages or online demos.',
+    cardsLabel: 'Recent requirements engineering tools',
+    actions: {
+      github: 'Use Online',
+      demo: 'Online Demo',
+      details: 'View Details',
+    },
+    tags: {
+      llm: 'LLM',
+      multiAgent: 'Multi-Agent',
+      requirementsDevelopment: 'Requirements Development',
+      srs: 'SRS',
+      reSkills: 'RE Skills',
+      knowledgeReuse: 'Knowledge Reuse',
+      methodology: 'Methodology',
+      openClaw: 'OpenClaw',
+      requirementsModeling: 'Requirements Modeling',
+      erModel: 'ER Model',
+      curd: 'CURD',
+      documentGeneration: 'Document Generation',
+      plantUml: 'PlantUML',
+      behaviorModeling: 'Behavior Modeling',
+      requirementsAnalysis: 'Requirements Analysis',
+    },
+    items: {
+      iredev: {
+        title: 'iReDev: Multi-Agent Requirements Development Platform',
+        description:
+          'An AI-driven multi-agent requirements development platform that simulates requirements engineering roles and supports an end-to-end workflow from customer interviews to SRS generation.',
+      },
+      reSkills: {
+        title: 'RE-Skills: Skill Collection for Requirements Engineering',
+        description:
+          'A collection of reusable skills for requirements engineering tasks, organizing methods, workflows and capabilities for LLMs or agents.',
+      },
+      requirementsPlugin: {
+        title:
+          'RE Requirements Plugin: OpenClaw Plugin for Requirements Engineering',
+        description:
+          'An OpenClaw plugin for requirements modeling and document generation, supporting entity extraction, use case modeling, ER/CURD checking and document export.',
+      },
+      plato: {
+        title: 'PLATO: Natural Language Requirements to PlantUML Behavior Diagrams',
+        description:
+          'An LLM-driven system that transforms natural language requirements into PlantUML behavior diagrams with syntax checking, rendering and export.',
+      },
+    },
+  },
 }
