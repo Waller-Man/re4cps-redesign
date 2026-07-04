@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import MainLayout from '../layouts/MainLayout.vue'
 import Home from '../pages/Home.vue'
+import Members from '../pages/Members.vue'
 import Publications from '../pages/Publications.vue'
 import Research from '../pages/Research.vue'
 import Tools from '../pages/Tools.vue'
@@ -31,6 +32,11 @@ const router = createRouter({
           path: 'publications',
           name: 'publications',
           component: Publications,
+        },
+        {
+          path: 'members',
+          name: 'members',
+          component: Members,
         },
       ],
     },

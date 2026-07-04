@@ -131,4 +131,48 @@ export default {
       tool: '在线工具',
     },
   },
+  members: {
+    title: '成员',
+    subtitle: '教师、学生与已毕业成员',
+    email: '邮箱',
+    homepage: '个人主页',
+    groups: {
+      faculty: '教师',
+      phd: '博士生',
+      master: '硕士生',
+      alumni: '已毕业学生',
+    },
+    people: {
+      zhiJin: {
+        name: '金芝',
+        role: '教授',
+        school: '北京大学，中国',
+        bio: '主要从事需求工程和知识驱动的软件工程研究。',
+      },
+      xiaohongChen: {
+        name: '陈小红',
+        role: '教授',
+        school: '华东师范大学，中国',
+        bio: '主要从事需求工程、形式化方法及其在信息物理系统中的应用研究。',
+      },
+      dongmingJin: {
+        name: '靳东明',
+        role: '博士生',
+        school: '北京大学，中国',
+        bio: '暂无',
+      },
+      zhujunWu: {
+        name: '吴祝骏',
+        role: '硕士生',
+        school: '华东师范大学，中国',
+        bio: '暂无',
+      },
+      huangyike: {
+        name: 'huangyike',
+        role: '已毕业学生',
+        school: '华东师范大学，中国',
+        bio: '暂无',
+      },
+    },
+  },
 }

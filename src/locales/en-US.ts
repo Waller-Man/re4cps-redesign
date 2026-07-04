@@ -133,4 +133,48 @@ export default {
       tool: 'Tool',
     },
   },
+  members: {
+    title: 'Members',
+    subtitle: 'Faculty, Students and Alumni',
+    email: 'Email',
+    homepage: 'Homepage',
+    groups: {
+      faculty: 'Faculty',
+      phd: 'PhD Students',
+      master: 'Master Students',
+      alumni: 'Alumni',
+    },
+    people: {
+      zhiJin: {
+        name: 'Dr. Zhi Jin',
+        role: 'Professor',
+        school: 'Peking University, China',
+        bio: 'Her research focuses on requirements engineering and knowledge-based software engineering.',
+      },
+      xiaohongChen: {
+        name: 'Dr. Xiaohong Chen',
+        role: 'Professor',
+        school: 'East China Normal University, China',
+        bio: 'Her research focuses on requirements engineering, formal methods, and their applications in cyber-physical systems.',
+      },
+      dongmingJin: {
+        name: 'Dongming Jin',
+        role: 'PhD Student',
+        school: 'Peking University, China',
+        bio: 'To be updated.',
+      },
+      zhujunWu: {
+        name: 'Zhujun Wu',
+        role: 'Master Student',
+        school: 'East China Normal University, China',
+        bio: 'To be updated.',
+      },
+      huangyike: {
+        name: 'huangyike',
+        role: 'Alumni',
+        school: 'East China Normal University, China',
+        bio: 'To be updated.',
+      },
+    },
+  },
 }
