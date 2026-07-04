@@ -12,7 +12,7 @@ const navigation = computed(() => [
   { key: 'tools', label: t('nav.tools'), to: '/tools' },
   { key: 'publications', label: t('nav.publications'), to: '/publications' },
   { key: 'members', label: t('nav.members'), to: '/members' },
-  { key: 'documentation', label: t('nav.documentation') },
+  { key: 'documentation', label: t('nav.documentation'), to: '/documentation' },
   { key: 'github', label: t('nav.github') },
 ])
 

@@ -175,4 +175,69 @@ export default {
       },
     },
   },
+  documentation: {
+    title: '文档与资源',
+    subtitle: '报告、教程与数据集',
+    description:
+      '本页面用于整理课题组的报告材料、教程文档、实验数据集和历史资源。当前先使用示例数据展示页面结构，后续可继续补充真实文件和链接。',
+    groups: {
+      presentations: '报告材料',
+      tutorials: '教程材料',
+      datasets: '数据集',
+    },
+    types: {
+      invitedTalk: '邀请报告',
+      presentation: '报告',
+      tutorial: '教程',
+      slides: '幻灯片',
+      dataset: '数据集',
+    },
+    statuses: {
+      archive: '归档',
+      toBeUpdated: '待更新',
+      mockData: '示例数据',
+    },
+    actions: {
+      open: '查看资源',
+      comingSoon: '待补充',
+    },
+    items: {
+      dmsviva2018: {
+        title: 'DMSVIVA2018 Invited Talk',
+        description: 'DMSVIVA2018 邀请报告的归档条目，相关材料链接待补充。',
+      },
+      isqe2019: {
+        title: 'iSQE2019 Invited Talk',
+        description: 'iSQE2019 邀请报告的归档条目，相关材料链接待补充。',
+      },
+      re4cpsOverview: {
+        title: 'RE4CPS Overview Presentation',
+        description: 'RE4CPS 研究方向与工具概览报告的示例条目。',
+      },
+      re4cpsTutorial: {
+        title: 'RE4CPS: Requirements Engineering for Cyber-Physical Systems',
+        description: 'RE4CPS 信息物理系统需求工程教程的归档条目。',
+      },
+      slidesPartOne: {
+        title: 'Slides for RE4CPS - Part I',
+        description: 'RE4CPS 教程第一部分幻灯片的归档条目。',
+      },
+      slidesPartTwo: {
+        title: 'Slides for RE4CPS - Part II',
+        description: 'RE4CPS 教程第二部分幻灯片的归档条目。',
+      },
+      cpsRequirementsDataset: {
+        title: 'CPS Requirements Dataset',
+        description: '用于信息物理系统需求建模和验证实验的占位数据集。',
+      },
+      smartHomeDataset: {
+        title: 'Smart Home Scenario Dataset',
+        description: '用于智能家居需求、TAP 规则和场景仿真的占位数据集。',
+      },
+      timingRequirementsBenchmark: {
+        title: 'Timing Requirements Benchmark',
+        description: '用于时序需求一致性检查的占位基准数据集。',
+      },
+    },
+  },
 }

@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import Documentation from '../pages/Documentation.vue'
 import MainLayout from '../layouts/MainLayout.vue'
 import Home from '../pages/Home.vue'
 import Members from '../pages/Members.vue'
@@ -37,6 +38,11 @@ const router = createRouter({
           path: 'members',
           name: 'members',
           component: Members,
+        },
+        {
+          path: 'documentation',
+          name: 'documentation',
+          component: Documentation,
         },
       ],
     },

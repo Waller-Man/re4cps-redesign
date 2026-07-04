@@ -177,4 +177,76 @@ export default {
       },
     },
   },
+  documentation: {
+    title: 'Documentation & Resources',
+    subtitle: 'Presentations, Tutorials and Datasets',
+    description:
+      'This page organizes presentations, tutorials, datasets and historical resources of the research group. Mock data is used for now and real files or links can be added later.',
+    groups: {
+      presentations: 'Presentations',
+      tutorials: 'Tutorials',
+      datasets: 'Datasets',
+    },
+    types: {
+      invitedTalk: 'Invited Talk',
+      presentation: 'Presentation',
+      tutorial: 'Tutorial',
+      slides: 'Slides',
+      dataset: 'Dataset',
+    },
+    statuses: {
+      archive: 'Archive',
+      toBeUpdated: 'To be updated',
+      mockData: 'Mock Data',
+    },
+    actions: {
+      open: 'Open Resource',
+      comingSoon: 'Coming Soon',
+    },
+    items: {
+      dmsviva2018: {
+        title: 'DMSVIVA2018 Invited Talk',
+        description:
+          'An archived entry for the DMSVIVA2018 invited talk; materials will be added later.',
+      },
+      isqe2019: {
+        title: 'iSQE2019 Invited Talk',
+        description:
+          'An archived entry for the iSQE2019 invited talk; materials will be added later.',
+      },
+      re4cpsOverview: {
+        title: 'RE4CPS Overview Presentation',
+        description:
+          'A mock entry for an overview presentation of RE4CPS research and tools.',
+      },
+      re4cpsTutorial: {
+        title: 'RE4CPS: Requirements Engineering for Cyber-Physical Systems',
+        description:
+          'An archived entry for the RE4CPS tutorial on cyber-physical systems requirements engineering.',
+      },
+      slidesPartOne: {
+        title: 'Slides for RE4CPS - Part I',
+        description: 'An archived entry for the first part of the RE4CPS tutorial slides.',
+      },
+      slidesPartTwo: {
+        title: 'Slides for RE4CPS - Part II',
+        description: 'An archived entry for the second part of the RE4CPS tutorial slides.',
+      },
+      cpsRequirementsDataset: {
+        title: 'CPS Requirements Dataset',
+        description:
+          'A placeholder dataset for CPS requirements modeling and verification experiments.',
+      },
+      smartHomeDataset: {
+        title: 'Smart Home Scenario Dataset',
+        description:
+          'A placeholder dataset for smart home requirements, TAP rules and scenario simulation.',
+      },
+      timingRequirementsBenchmark: {
+        title: 'Timing Requirements Benchmark',
+        description:
+          'A placeholder benchmark for timing requirements consistency checking.',
+      },
+    },
+  },
 }
