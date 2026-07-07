@@ -59,6 +59,23 @@ export default {
     description:
       'This page highlights recent tools related to large language models, agents, requirements modeling and document generation. GitHub buttons currently link to repositories and can later be replaced by internal tool pages or online demos.',
     cardsLabel: 'Recent requirements engineering tools',
+    categories: {
+      aiRequirementsDevelopment: {
+        title: 'AI-based Requirements Development',
+        description:
+          'Intelligent tools for requirements elicitation, analysis, development workflows and reusable requirements engineering capabilities.',
+      },
+      businessLogicCompletion: {
+        title: 'Business-Logic-driven Requirements Completion',
+        description:
+          'Tool prototypes centered on business-logic closure, requirements modeling, CRUD checking and requirements completion.',
+      },
+      behaviorModeling: {
+        title: 'Behavior Modeling and Diagram Generation',
+        description:
+          'Tools that transform natural language requirements into behavior models, diagrams and exportable modeling artifacts.',
+      },
+    },
     actions: {
       github: 'Use Online',
       demo: 'Online Demo',
@@ -72,6 +89,11 @@ export default {
       reSkills: 'RE Skills',
       knowledgeReuse: 'Knowledge Reuse',
       methodology: 'Methodology',
+      requirementsCompletion: 'Requirements Completion',
+      businessLogic: 'Business Logic',
+      useCase: 'Use Case',
+      erDiagram: 'E-R Diagram',
+      crud: 'CRUD',
       openClaw: 'OpenClaw',
       requirementsModeling: 'Requirements Modeling',
       erModel: 'ER Model',
@@ -91,6 +113,12 @@ export default {
         title: 'RE-Skills: Skill Collection for Requirements Engineering',
         description:
           'A collection of reusable skills for requirements engineering tasks, organizing methods, workflows and capabilities for LLMs or agents.',
+      },
+      reqCompleter: {
+        title:
+          'ReqCompleter: Business-Logic-Driven Iterative Requirements Auto-completion Tool',
+        description:
+          'ReqCompleter is a requirements auto-completion tool based on use case models, E-R diagrams and CRUD matrices. It detects CRUD gaps and iteratively completes missing requirements to improve completeness and reduce LLM hallucinations.',
       },
       requirementsPlugin: {
         title:

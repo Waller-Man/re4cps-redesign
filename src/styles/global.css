@@ -301,8 +301,32 @@ a {
   line-height: 1.8;
 }
 
-.tools-grid {
+.tool-sections {
+  display: flex;
+  flex-direction: column;
   margin-top: 48px;
+  gap: 52px;
+}
+
+.tool-section-heading {
+  max-width: 860px;
+  margin-bottom: 22px;
+}
+
+.tool-section-heading h2 {
+  margin: 0;
+  color: #143d8f;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.tool-section-heading p {
+  margin: 12px 0 0;
+  color: #667289;
+  font-size: 15px;
+  line-height: 1.75;
 }
 
 .tool-card.arco-card {
@@ -331,7 +355,7 @@ a {
   padding: 30px;
 }
 
-.tool-card h2 {
+.tool-card h3 {
   margin: 0;
   color: #1c2a42;
   font-size: clamp(20px, 2.1vw, 24px);
@@ -893,8 +917,17 @@ a {
     font-size: 16px;
   }
 
-  .tools-grid {
+  .tool-sections {
     margin-top: 36px;
+    gap: 42px;
+  }
+
+  .tool-section-heading {
+    margin-bottom: 18px;
+  }
+
+  .tool-section-heading h2 {
+    font-size: 22px;
   }
 
   .tool-card .arco-card-body {

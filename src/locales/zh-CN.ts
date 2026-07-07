@@ -58,6 +58,23 @@ export default {
     description:
       '本页面优先展示近期与大模型、智能体、需求建模和文档生成相关的工具。当前 GitHub 按钮暂时跳转到对应仓库，后续可替换为站内工具详情页或在线 Demo 页面。',
     cardsLabel: '近期需求工程工具',
+    categories: {
+      aiRequirementsDevelopment: {
+        title: 'AI-based Requirements Development',
+        description:
+          '面向需求获取、需求分析、需求开发流程和可复用需求工程能力的智能化工具。',
+      },
+      businessLogicCompletion: {
+        title: 'Business-Logic-driven Requirements Completion',
+        description:
+          '围绕业务逻辑闭环、需求建模、CRUD 检查和需求补全的工具原型。',
+      },
+      behaviorModeling: {
+        title: 'Behavior Modeling and Diagram Generation',
+        description:
+          '面向自然语言需求到行为模型、图形化表示和建模结果导出的工具。',
+      },
+    },
     actions: {
       github: '在线使用',
       demo: '在线 Demo',
@@ -71,6 +88,11 @@ export default {
       reSkills: 'RE Skills',
       knowledgeReuse: 'Knowledge Reuse',
       methodology: 'Methodology',
+      requirementsCompletion: 'Requirements Completion',
+      businessLogic: 'Business Logic',
+      useCase: 'Use Case',
+      erDiagram: 'E-R Diagram',
+      crud: 'CRUD',
       openClaw: 'OpenClaw',
       requirementsModeling: 'Requirements Modeling',
       erModel: 'ER Model',
@@ -90,6 +112,11 @@ export default {
         title: 'RE-Skills：需求工程 Skill 集合',
         description:
           '面向需求工程任务的 skill 集合，用于沉淀需求工程中的方法、流程和可复用能力，为大模型或智能体执行需求工程任务提供支持。',
+      },
+      reqCompleter: {
+        title: 'ReqCompleter：业务逻辑驱动的迭代式需求自动补全工具',
+        description:
+          'ReqCompleter 是一个面向需求自动补全的工具，基于用例模型、E-R 图和 CRUD 矩阵构建业务逻辑闭环，通过 CRUD 缺口检测触发迭代式补全过程，从而提升需求完整性并减少大模型幻觉。',
       },
       requirementsPlugin: {
         title: 'RE Requirements Plugin：OpenClaw 需求工程插件',

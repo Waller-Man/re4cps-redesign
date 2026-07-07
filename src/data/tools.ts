@@ -1,4 +1,8 @@
 export type ToolLinkKind = 'github' | 'demo' | 'details'
+export type ToolCategory =
+  | 'aiRequirementsDevelopment'
+  | 'businessLogicCompletion'
+  | 'behaviorModeling'
 
 export type ToolLink =
   | {
@@ -14,14 +18,22 @@ export type ToolLink =
 
 export interface ToolDefinition {
   id: string
+  category: ToolCategory
   localeKey: string
   tagKeys: readonly string[]
   links: readonly ToolLink[]
 }
 
+export const toolCategories: readonly ToolCategory[] = [
+  'aiRequirementsDevelopment',
+  'businessLogicCompletion',
+  'behaviorModeling',
+]
+
 export const tools: readonly ToolDefinition[] = [
   {
     id: 'iredev',
+    category: 'aiRequirementsDevelopment',
     localeKey: 'iredev',
     tagKeys: ['llm', 'multiAgent', 'requirementsDevelopment', 'srs'],
     links: [
@@ -34,6 +46,7 @@ export const tools: readonly ToolDefinition[] = [
   },
   {
     id: 're-skills',
+    category: 'aiRequirementsDevelopment',
     localeKey: 'reSkills',
     tagKeys: ['reSkills', 'llm', 'knowledgeReuse', 'methodology'],
     links: [
@@ -45,7 +58,28 @@ export const tools: readonly ToolDefinition[] = [
     ],
   },
   {
+    id: 'reqcompleter',
+    category: 'businessLogicCompletion',
+    localeKey: 'reqCompleter',
+    tagKeys: [
+      'llm',
+      'requirementsCompletion',
+      'businessLogic',
+      'useCase',
+      'erDiagram',
+      'crud',
+    ],
+    links: [
+      {
+        destination: 'external',
+        kind: 'github',
+        href: 'https://github.com/Waller-Man/re-requirements-plugin',
+      },
+    ],
+  },
+  {
     id: 're-requirements-plugin',
+    category: 'businessLogicCompletion',
     localeKey: 'requirementsPlugin',
     tagKeys: [
       'openClaw',
@@ -64,6 +98,7 @@ export const tools: readonly ToolDefinition[] = [
   },
   {
     id: 'plato',
+    category: 'behaviorModeling',
     localeKey: 'plato',
     tagKeys: ['llm', 'plantUml', 'behaviorModeling', 'requirementsAnalysis'],
     links: [
