@@ -61,81 +61,10 @@ export default {
     },
   },
   tools: {
-    title: '近期工具',
+    title: '工具',
     description:
-      '本页面优先展示近期与大模型、智能体、需求建模和文档生成相关的工具。当前 GitHub 按钮暂时跳转到对应仓库，后续可替换为站内工具详情页或在线 Demo 页面。',
-    cardsLabel: '近期需求工程工具',
-    categories: {
-      aiRequirementsDevelopment: {
-        title: 'AI-based Requirements Development',
-        description:
-          '面向需求获取、需求分析、需求开发流程和可复用需求工程能力的智能化工具。',
-      },
-      businessLogicCompletion: {
-        title: 'Business-Logic-driven Requirements Completion',
-        description:
-          '围绕业务逻辑闭环、需求建模、CRUD 检查和需求补全的工具原型。',
-      },
-      behaviorModeling: {
-        title: 'Behavior Modeling and Diagram Generation',
-        description:
-          '面向自然语言需求到行为模型、图形化表示和建模结果导出的工具。',
-      },
-    },
-    actions: {
-      github: '在线使用',
-      demo: '在线 Demo',
-      details: '查看详情',
-    },
-    tags: {
-      llm: 'LLM',
-      multiAgent: 'Multi-Agent',
-      requirementsDevelopment: 'Requirements Development',
-      srs: 'SRS',
-      reSkills: 'RE Skills',
-      knowledgeReuse: 'Knowledge Reuse',
-      methodology: 'Methodology',
-      requirementsCompletion: 'Requirements Completion',
-      businessLogic: 'Business Logic',
-      useCase: 'Use Case',
-      erDiagram: 'E-R Diagram',
-      crud: 'CRUD',
-      openClaw: 'OpenClaw',
-      requirementsModeling: 'Requirements Modeling',
-      erModel: 'ER Model',
-      curd: 'CURD',
-      documentGeneration: 'Document Generation',
-      plantUml: 'PlantUML',
-      behaviorModeling: 'Behavior Modeling',
-      requirementsAnalysis: 'Requirements Analysis',
-    },
-    items: {
-      iredev: {
-        title: 'iReDev：多智能体需求开发平台',
-        description:
-          'AI 驱动的多智能体需求开发平台，模拟真实需求工程团队，从客户访谈、需求分析到 SRS 文档生成，形成完整的需求开发流水线。',
-      },
-      reSkills: {
-        title: 'RE-Skills：需求工程 Skill 集合',
-        description:
-          '面向需求工程任务的 skill 集合，用于沉淀需求工程中的方法、流程和可复用能力，为大模型或智能体执行需求工程任务提供支持。',
-      },
-      reqCompleter: {
-        title: 'ReqCompleter：业务逻辑驱动的迭代式需求自动补全工具',
-        description:
-          'ReqCompleter 是一个面向需求自动补全的工具，基于用例模型、E-R 图和 CRUD 矩阵构建业务逻辑闭环，通过 CRUD 缺口检测触发迭代式补全过程，从而提升需求完整性并减少大模型幻觉。',
-      },
-      requirementsPlugin: {
-        title: 'RE Requirements Plugin：OpenClaw 需求工程插件',
-        description:
-          '面向需求工程建模与文档导出的 OpenClaw 插件，支持实体抽取、用例建模、ER/CURD 检查、功能需求生成和文档导出。',
-      },
-      plato: {
-        title: 'PLATO：自然语言需求到 PlantUML 行为图生成系统',
-        description:
-          '面向需求工程与行为建模的 LLM 驱动系统，可将自然语言需求转换为 PlantUML 行为图，并支持语法校验、图像渲染与结果导出。',
-      },
-    },
+      '本页面后续用于展示 RE4CPS 历史工具，工具数据将在后续版本中逐步补充。',
+    placeholder: '历史工具内容待更新。',
   },
   publications: {
     title: '论文与出版物',
@@ -217,10 +146,11 @@ export default {
   },
   reResources: {
     title: '需求工程知识与资源',
-    subtitle: '报告、教程与数据集',
+    subtitle: '报告、教程与工程资源',
     description:
-      '本页面用于整理课题组的报告材料、教程文档、实验数据集和历史资源。当前先使用示例数据展示页面结构，后续可继续补充真实文件和链接。',
+      '本页面用于整理需求工程 Skill、工程插件、报告材料、教程文档、实验数据集和历史资源。',
     groups: {
+      engineeringPlugins: 'RE Skills 与工程插件',
       presentations: '报告材料',
       tutorials: '教程材料',
       datasets: '数据集',
@@ -238,8 +168,34 @@ export default {
       mockData: '示例数据',
     },
     actions: {
+      github: '在线使用',
+      demo: '在线 Demo',
+      details: '查看详情',
       open: '查看资源',
       comingSoon: '待补充',
+    },
+    tags: {
+      reSkills: 'RE Skills',
+      llm: 'LLM',
+      knowledgeReuse: 'Knowledge Reuse',
+      methodology: 'Methodology',
+      openClaw: 'OpenClaw',
+      requirementsModeling: 'Requirements Modeling',
+      erModel: 'ER Model',
+      curd: 'CURD',
+      documentGeneration: 'Document Generation',
+    },
+    featuredItems: {
+      reSkills: {
+        title: 'RE-Skills：需求工程 Skill 集合',
+        description:
+          '面向需求工程任务的 skill 集合，用于沉淀需求工程中的方法、流程和可复用能力，为大模型或智能体执行需求工程任务提供支持。',
+      },
+      requirementsPlugin: {
+        title: 'RE Requirements Plugin：OpenClaw 需求工程插件',
+        description:
+          '面向需求工程建模与文档导出的 OpenClaw 插件，支持实体抽取、用例建模、ER/CURD 检查、功能需求生成和文档导出。',
+      },
     },
     items: {
       dmsviva2018: {
@@ -282,7 +238,85 @@ export default {
   },
   agents: {
     title: '智能体',
-    placeholder: '智能体页面正在建设中，相关内容将在后续版本中补充。',
+    description: '面向需求开发、需求演化、历史文档处理和测试生成的需求工程智能体。',
+    planned: '规划中',
+    placeholderDescription: '该子方向的智能体能力正在规划与整理中。',
+    categoryPlaceholderDescription: '该类别的智能体能力正在规划与整理中。',
+    placeholderFooter: '相关智能体与工具将在后续补充',
+    categories: {
+      softwareRequirementsDevelopment: {
+        title: '软件需求开发',
+        description: '覆盖需求获取、建模、分析、规格生成以及验证评审等需求开发活动。',
+      },
+      requirementsChangeEvolution: {
+        title: '需求变更与演化',
+        description: '面向需求补全、协商、变更分析及其驱动的软件制品演化。',
+      },
+      historicalRequirementsDocumentProcessing: {
+        title: '历史需求文档处理',
+        description: '面向历史需求文档的解析、抽取、检索、复用和一致性分析。',
+      },
+      testCaseGeneration: {
+        title: '测试用例生成',
+        description: '从需求及相关工程知识出发生成和演化测试用例。',
+      },
+    },
+    subcategories: {
+      endToEndRequirementsDevelopment: '端到端需求开发',
+      requirementsModelingBehavioralModelGeneration: '需求建模与行为模型生成',
+      requirementsElicitationUserInterviews: '需求获取与用户访谈',
+      requirementsClarificationAnalysis: '需求澄清与分析',
+      requirementsSpecificationDocumentationGeneration: '需求规格与文档生成',
+      requirementsValidationReview: '需求验证与评审',
+      requirementsClarificationCompletion: '需求澄清与补全',
+      requirementsNegotiation: '需求协商',
+      requirementsChangeAnalysis: '需求变更分析',
+      requirementChangeDrivenDesignEvolution: '需求变更驱动的设计演化',
+      requirementChangeDrivenCodeGeneration: '需求变更驱动的代码变更生成',
+      requirementChangeDrivenTestCaseEvolution: '需求变更驱动的测试用例演化',
+      documentParsingStructuring: '历史需求文档解析与结构化',
+      requirementElementRelationExtraction: '需求要素与关系抽取',
+      semanticRetrievalSimilarRequirementMatching: '需求语义检索与相似需求匹配',
+      historicalRequirementReuseRecommendation: '历史需求复用与推荐',
+      requirementsTraceabilityRecovery: '需求追踪关系恢复',
+      conflictDuplicationConsistencyAnalysis: '需求冲突、重复与一致性分析',
+    },
+    actions: {
+      github: '在线使用',
+      demo: '在线 Demo',
+      details: '查看详情',
+    },
+    tags: {
+      llm: 'LLM',
+      multiAgent: 'Multi-Agent',
+      requirementsDevelopment: 'Requirements Development',
+      srs: 'SRS',
+      requirementsCompletion: 'Requirements Completion',
+      businessLogic: 'Business Logic',
+      useCase: 'Use Case',
+      erDiagram: 'E-R Diagram',
+      crud: 'CRUD',
+      plantUml: 'PlantUML',
+      behaviorModeling: 'Behavior Modeling',
+      requirementsAnalysis: 'Requirements Analysis',
+    },
+    items: {
+      iredev: {
+        title: 'iReDev：多智能体需求开发平台',
+        description:
+          'AI 驱动的多智能体需求开发平台，模拟真实需求工程团队，从客户访谈、需求分析到 SRS 文档生成，形成完整的需求开发流水线。',
+      },
+      plato: {
+        title: 'PLATO：自然语言需求到 PlantUML 行为图生成系统',
+        description:
+          '面向需求工程与行为建模的 LLM 驱动系统，可将自然语言需求转换为 PlantUML 行为图，并支持语法校验、图像渲染与结果导出。',
+      },
+      reqCompleter: {
+        title: 'ReqCompleter：业务逻辑驱动的迭代式需求自动补全工具',
+        description:
+          'ReqCompleter 是一个面向需求自动补全的工具，基于用例模型、E-R 图和 CRUD 矩阵构建业务逻辑闭环，通过 CRUD 缺口检测触发迭代式补全过程，从而提升需求完整性并减少大模型幻觉。',
+      },
+    },
   },
   datasets: {
     title: '数据集',

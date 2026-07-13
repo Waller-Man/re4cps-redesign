@@ -1,4 +1,8 @@
-export type ReResourceGroup = 'presentations' | 'tutorials' | 'datasets'
+export type ReResourceGroup =
+  | 'engineeringPlugins'
+  | 'presentations'
+  | 'tutorials'
+  | 'datasets'
 export type ReResourceType =
   | 'invitedTalk'
   | 'presentation'
@@ -6,17 +10,45 @@ export type ReResourceType =
   | 'slides'
   | 'dataset'
 export type ReResourceStatus = 'archive' | 'toBeUpdated' | 'mockData'
+export type ReResourceLinkKind = 'github' | 'demo' | 'details'
 
-export interface ReResourceDefinition {
+export type ReResourceLink =
+  | {
+      destination: 'external'
+      kind: Exclude<ReResourceLinkKind, 'details'>
+      href: string
+    }
+  | {
+      destination: 'internal'
+      kind: Extract<ReResourceLinkKind, 'details'>
+      to: string
+    }
+
+export interface FeaturedReResourceDefinition {
+  kind: 'featured'
   id: string
-  group: ReResourceGroup
+  group: Extract<ReResourceGroup, 'engineeringPlugins'>
+  localeKey: string
+  tagKeys: readonly string[]
+  links: readonly ReResourceLink[]
+}
+
+export interface CatalogReResourceDefinition {
+  kind: 'catalog'
+  id: string
+  group: Exclude<ReResourceGroup, 'engineeringPlugins'>
   localeKey: string
   typeKey: ReResourceType
   statusKey: ReResourceStatus
   href?: string
 }
 
+export type ReResourceDefinition =
+  | FeaturedReResourceDefinition
+  | CatalogReResourceDefinition
+
 export const reResourceGroupOrder: readonly ReResourceGroup[] = [
+  'engineeringPlugins',
   'presentations',
   'tutorials',
   'datasets',
@@ -24,6 +56,41 @@ export const reResourceGroupOrder: readonly ReResourceGroup[] = [
 
 export const reResources: readonly ReResourceDefinition[] = [
   {
+    kind: 'featured',
+    id: 're-skills',
+    group: 'engineeringPlugins',
+    localeKey: 'reSkills',
+    tagKeys: ['reSkills', 'llm', 'knowledgeReuse', 'methodology'],
+    links: [
+      {
+        destination: 'external',
+        kind: 'github',
+        href: 'https://github.com/jdm4pku/RE-Skills',
+      },
+    ],
+  },
+  {
+    kind: 'featured',
+    id: 're-requirements-plugin',
+    group: 'engineeringPlugins',
+    localeKey: 'requirementsPlugin',
+    tagKeys: [
+      'openClaw',
+      'requirementsModeling',
+      'erModel',
+      'curd',
+      'documentGeneration',
+    ],
+    links: [
+      {
+        destination: 'external',
+        kind: 'github',
+        href: 'https://github.com/Waller-Man/re-requirements-plugin',
+      },
+    ],
+  },
+  {
+    kind: 'catalog',
     id: 'dmsviva-2018-invited-talk',
     group: 'presentations',
     localeKey: 'dmsviva2018',
@@ -31,6 +98,7 @@ export const reResources: readonly ReResourceDefinition[] = [
     statusKey: 'archive',
   },
   {
+    kind: 'catalog',
     id: 'isqe-2019-invited-talk',
     group: 'presentations',
     localeKey: 'isqe2019',
@@ -38,6 +106,7 @@ export const reResources: readonly ReResourceDefinition[] = [
     statusKey: 'archive',
   },
   {
+    kind: 'catalog',
     id: 're4cps-overview',
     group: 'presentations',
     localeKey: 're4cpsOverview',
@@ -45,6 +114,7 @@ export const reResources: readonly ReResourceDefinition[] = [
     statusKey: 'toBeUpdated',
   },
   {
+    kind: 'catalog',
     id: 're4cps-tutorial',
     group: 'tutorials',
     localeKey: 're4cpsTutorial',
@@ -52,6 +122,7 @@ export const reResources: readonly ReResourceDefinition[] = [
     statusKey: 'archive',
   },
   {
+    kind: 'catalog',
     id: 're4cps-slides-part-1',
     group: 'tutorials',
     localeKey: 'slidesPartOne',
@@ -59,6 +130,7 @@ export const reResources: readonly ReResourceDefinition[] = [
     statusKey: 'archive',
   },
   {
+    kind: 'catalog',
     id: 're4cps-slides-part-2',
     group: 'tutorials',
     localeKey: 'slidesPartTwo',
@@ -66,6 +138,7 @@ export const reResources: readonly ReResourceDefinition[] = [
     statusKey: 'archive',
   },
   {
+    kind: 'catalog',
     id: 'cps-requirements-dataset',
     group: 'datasets',
     localeKey: 'cpsRequirementsDataset',
@@ -73,6 +146,7 @@ export const reResources: readonly ReResourceDefinition[] = [
     statusKey: 'mockData',
   },
   {
+    kind: 'catalog',
     id: 'smart-home-scenario-dataset',
     group: 'datasets',
     localeKey: 'smartHomeDataset',
@@ -80,6 +154,7 @@ export const reResources: readonly ReResourceDefinition[] = [
     statusKey: 'mockData',
   },
   {
+    kind: 'catalog',
     id: 'timing-requirements-benchmark',
     group: 'datasets',
     localeKey: 'timingRequirementsBenchmark',

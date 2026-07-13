@@ -47,9 +47,51 @@ function statusColor(status: ReResourceStatus) {
             :key="resource.id"
             :xs="24"
             :md="12"
-            :xl="8"
+            :xl="resource.kind === 'featured' ? 12 : 8"
           >
-            <a-card class="resource-card" :bordered="false" hoverable>
+            <a-card
+              v-if="resource.kind === 'featured'"
+              class="tool-card resource-feature-card"
+              :bordered="false"
+              hoverable
+            >
+              <h3>{{ t(`reResources.featuredItems.${resource.localeKey}.title`) }}</h3>
+
+              <p class="tool-card-description">
+                {{ t(`reResources.featuredItems.${resource.localeKey}.description`) }}
+              </p>
+
+              <div class="tool-card-tags">
+                <a-tag v-for="tagKey in resource.tagKeys" :key="tagKey" size="small">
+                  {{ t(`reResources.tags.${tagKey}`) }}
+                </a-tag>
+              </div>
+
+              <div class="tool-card-actions">
+                <template
+                  v-for="link in resource.links"
+                  :key="`${link.kind}-${resource.id}`"
+                >
+                  <a-button
+                    v-if="link.destination === 'external'"
+                    type="primary"
+                    :href="link.href"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {{ t(`reResources.actions.${link.kind}`) }}
+                  </a-button>
+
+                  <RouterLink v-else :to="link.to" custom v-slot="{ navigate }">
+                    <a-button type="primary" @click="navigate">
+                      {{ t(`reResources.actions.${link.kind}`) }}
+                    </a-button>
+                  </RouterLink>
+                </template>
+              </div>
+            </a-card>
+
+            <a-card v-else class="resource-card" :bordered="false" hoverable>
               <h3>{{ t(`reResources.items.${resource.localeKey}.title`) }}</h3>
 
               <div class="resource-tags">
