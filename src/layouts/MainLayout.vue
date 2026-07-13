@@ -25,7 +25,7 @@ const navigation = computed<NavigationItem[]>(() => [
   {
     key: 'github',
     label: t('nav.github'),
-    href: 'https://github.com/Waller-Man/re4cps-redesign',
+    href: 'https://github.com',
   },
 ])
 
