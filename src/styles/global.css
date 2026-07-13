@@ -294,22 +294,20 @@ a {
   line-height: 1.08;
 }
 
-.tools-heading p {
-  margin: 24px 0 0;
+.tools-subtitle {
+  margin: 18px 0 0;
+  color: #34425a;
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 520;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.tools-description {
+  margin: 22px 0 0;
   color: #667289;
   font-size: 17px;
   line-height: 1.8;
-}
-
-.tools-empty-state {
-  margin-top: 48px;
-  padding: 42px 28px;
-  color: #7a8699;
-  font-size: 15px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.56);
-  border: 1px dashed #cbd6e7;
-  border-radius: 16px;
 }
 
 .tool-sections {
@@ -407,6 +405,28 @@ a {
 
 .tool-card-actions .arco-btn {
   min-width: 104px;
+}
+
+.tool-direction-label {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 13px;
+  color: #49658f;
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  line-height: 1.45;
+  gap: 8px;
+}
+
+.tool-direction-label::before {
+  flex-shrink: 0;
+  width: 3px;
+  height: 14px;
+  content: '';
+  background: #6f9bda;
+  border-radius: 999px;
 }
 
 .agents-page {
@@ -1102,13 +1122,8 @@ a {
     padding: 52px 0 72px;
   }
 
-  .tools-heading p {
+  .tools-description {
     font-size: 16px;
-  }
-
-  .tools-empty-state {
-    margin-top: 36px;
-    padding: 34px 22px;
   }
 
   .tool-sections {
