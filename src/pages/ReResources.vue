@@ -3,8 +3,11 @@ import { useI18n } from 'vue-i18n'
 import {
   reResourceGroupOrder,
   reResources,
+  reResourceTagTones,
   type ReResourceGroup,
   type ReResourceStatus,
+  type ReResourceTagKey,
+  type ReResourceTagTone,
 } from '../data/reResources'
 
 const { t } = useI18n()
@@ -17,6 +20,17 @@ const resourceGroups = reResourceGroupOrder.map((key: ReResourceGroup) => ({
 function statusColor(status: ReResourceStatus) {
   if (status === 'archive') return 'gray'
   return 'orange'
+}
+
+const featuredTagColors: Record<ReResourceTagTone, string> = {
+  resource: 'green',
+  ai: 'purple',
+  engineering: 'arcoblue',
+  documentation: 'orange',
+}
+
+function featuredTagColor(tagKey: ReResourceTagKey) {
+  return featuredTagColors[reResourceTagTones[tagKey]]
 }
 </script>
 
@@ -60,7 +74,7 @@ function statusColor(status: ReResourceStatus) {
                 <a-tag
                   v-for="tagKey in resource.tagKeys"
                   :key="tagKey"
-                  color="arcoblue"
+                  :color="featuredTagColor(tagKey)"
                   size="small"
                 >
                   {{ t(`reResources.tags.${tagKey}`) }}

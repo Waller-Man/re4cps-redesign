@@ -461,13 +461,13 @@ export default {
     tags: {
       reSkills: 'RE Skills',
       llm: 'LLM',
-      knowledgeReuse: 'Knowledge Reuse',
-      methodology: 'Methodology',
+      knowledgeReuse: '知识复用',
+      methodology: '方法论',
       openClaw: 'OpenClaw',
-      requirementsModeling: 'Requirements Modeling',
-      erModel: 'ER Model',
+      requirementsModeling: '需求建模',
+      erModel: 'ER 模型',
       curd: 'CURD',
-      documentGeneration: 'Document Generation',
+      documentGeneration: '文档生成',
     },
     featuredItems: {
       reSkills: {
@@ -592,6 +592,26 @@ export default {
   },
   datasets: {
     title: '数据集',
-    placeholder: '数据集页面正在建设中，相关内容将在后续版本中补充。',
+    subtitle: '需求工程实验数据与基准',
+    description: '本页面整理课题组用于需求工程研究、实验与评测的数据集，后续可继续补充真实下载链接和相关资源。',
+    groups: {
+      datasets: '数据集',
+    },
+    types: {
+      dataset: '数据集',
+    },
+    statuses: {
+      comingSoon: '待补充',
+    },
+    actions: {
+      open: '查看数据集',
+      comingSoon: '待补充',
+    },
+    items: {
+      iotReqCompletionBench: {
+        title: 'IoT-ReqCompletionBench',
+        description: '自研智能家居领域的最终用户需求补全数据集，包含质量需求。',
+      },
+    },
   },
 }

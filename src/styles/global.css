@@ -1042,6 +1042,7 @@ a {
 }
 
 .re-resources-page,
+.datasets-page,
 .placeholder-page {
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
@@ -1049,11 +1050,13 @@ a {
 }
 
 .re-resources-heading,
+.datasets-heading,
 .placeholder-heading {
   max-width: 920px;
 }
 
 .re-resources-heading h1,
+.datasets-heading h1,
 .placeholder-heading h1 {
   margin: 0;
   color: #123b87;
@@ -1063,7 +1066,8 @@ a {
   line-height: 1.08;
 }
 
-.re-resources-subtitle {
+.re-resources-subtitle,
+.datasets-subtitle {
   margin: 18px 0 0;
   color: #34425a;
   font-size: clamp(20px, 3vw, 30px);
@@ -1073,6 +1077,7 @@ a {
 }
 
 .re-resources-description,
+.datasets-description,
 .placeholder-heading p {
   margin: 22px 0 0;
   color: #667289;
@@ -1453,12 +1458,14 @@ a {
   }
 
   .re-resources-page,
+  .datasets-page,
   .placeholder-page {
     width: min(100% - 36px, 1180px);
     padding: 52px 0 72px;
   }
 
   .re-resources-description,
+  .datasets-description,
   .placeholder-heading p {
     font-size: 16px;
   }

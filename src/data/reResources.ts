@@ -9,6 +9,17 @@ export type ReResourceType =
   | 'slides'
 export type ReResourceStatus = 'archive' | 'toBeUpdated'
 export type ReResourceLinkKind = 'github' | 'demo' | 'details'
+export type ReResourceTagKey =
+  | 'reSkills'
+  | 'llm'
+  | 'knowledgeReuse'
+  | 'methodology'
+  | 'openClaw'
+  | 'requirementsModeling'
+  | 'erModel'
+  | 'curd'
+  | 'documentGeneration'
+export type ReResourceTagTone = 'resource' | 'ai' | 'engineering' | 'documentation'
 
 export type ReResourceLink =
   | {
@@ -27,7 +38,7 @@ export interface FeaturedReResourceDefinition {
   id: string
   group: Extract<ReResourceGroup, 'engineeringPlugins'>
   localeKey: string
-  tagKeys: readonly string[]
+  tagKeys: readonly ReResourceTagKey[]
   links: readonly ReResourceLink[]
 }
 
@@ -50,6 +61,20 @@ export const reResourceGroupOrder: readonly ReResourceGroup[] = [
   'presentations',
   'tutorials',
 ]
+
+export const reResourceTagTones: Readonly<
+  Record<ReResourceTagKey, ReResourceTagTone>
+> = {
+  reSkills: 'resource',
+  llm: 'ai',
+  knowledgeReuse: 'resource',
+  methodology: 'resource',
+  openClaw: 'engineering',
+  requirementsModeling: 'engineering',
+  erModel: 'engineering',
+  curd: 'engineering',
+  documentGeneration: 'documentation',
+}
 
 export const reResources: readonly ReResourceDefinition[] = [
   {
