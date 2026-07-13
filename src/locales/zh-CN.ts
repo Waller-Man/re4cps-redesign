@@ -435,24 +435,21 @@ export default {
     title: '需求工程知识与资源',
     subtitle: '报告、教程与工程资源',
     description:
-      '本页面用于整理需求工程 Skill、工程插件、报告材料、教程文档、实验数据集和历史资源。',
+      '本页面用于整理需求工程 Skill、工程插件、报告材料、教程文档和历史资源。',
     groups: {
       engineeringPlugins: 'RE Skills 与工程插件',
       presentations: '报告材料',
       tutorials: '教程材料',
-      datasets: '数据集',
     },
     types: {
       invitedTalk: '邀请报告',
       presentation: '报告',
       tutorial: '教程',
       slides: '幻灯片',
-      dataset: '数据集',
     },
     statuses: {
       archive: '归档',
       toBeUpdated: '待更新',
-      mockData: '示例数据',
     },
     actions: {
       github: '在线使用',
@@ -508,18 +505,6 @@ export default {
       slidesPartTwo: {
         title: 'Slides for RE4CPS - Part II',
         description: 'RE4CPS 教程第二部分幻灯片的归档条目。',
-      },
-      cpsRequirementsDataset: {
-        title: 'CPS Requirements Dataset',
-        description: '用于信息物理系统需求建模和验证实验的占位数据集。',
-      },
-      smartHomeDataset: {
-        title: 'Smart Home Scenario Dataset',
-        description: '用于智能家居需求、TAP 规则和场景仿真的占位数据集。',
-      },
-      timingRequirementsBenchmark: {
-        title: 'Timing Requirements Benchmark',
-        description: '用于时序需求一致性检查的占位基准数据集。',
       },
     },
   },

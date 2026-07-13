@@ -2,14 +2,12 @@ export type ReResourceGroup =
   | 'engineeringPlugins'
   | 'presentations'
   | 'tutorials'
-  | 'datasets'
 export type ReResourceType =
   | 'invitedTalk'
   | 'presentation'
   | 'tutorial'
   | 'slides'
-  | 'dataset'
-export type ReResourceStatus = 'archive' | 'toBeUpdated' | 'mockData'
+export type ReResourceStatus = 'archive' | 'toBeUpdated'
 export type ReResourceLinkKind = 'github' | 'demo' | 'details'
 
 export type ReResourceLink =
@@ -51,7 +49,6 @@ export const reResourceGroupOrder: readonly ReResourceGroup[] = [
   'engineeringPlugins',
   'presentations',
   'tutorials',
-  'datasets',
 ]
 
 export const reResources: readonly ReResourceDefinition[] = [
@@ -136,29 +133,5 @@ export const reResources: readonly ReResourceDefinition[] = [
     localeKey: 'slidesPartTwo',
     typeKey: 'slides',
     statusKey: 'archive',
-  },
-  {
-    kind: 'catalog',
-    id: 'cps-requirements-dataset',
-    group: 'datasets',
-    localeKey: 'cpsRequirementsDataset',
-    typeKey: 'dataset',
-    statusKey: 'mockData',
-  },
-  {
-    kind: 'catalog',
-    id: 'smart-home-scenario-dataset',
-    group: 'datasets',
-    localeKey: 'smartHomeDataset',
-    typeKey: 'dataset',
-    statusKey: 'mockData',
-  },
-  {
-    kind: 'catalog',
-    id: 'timing-requirements-benchmark',
-    group: 'datasets',
-    localeKey: 'timingRequirementsBenchmark',
-    typeKey: 'dataset',
-    statusKey: 'mockData',
   },
 ]

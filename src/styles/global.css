@@ -598,10 +598,6 @@ a {
   min-height: 180px;
 }
 
-.resource-feature-card .arco-card-body {
-  min-height: 320px;
-}
-
 .publications-page {
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
@@ -1295,10 +1291,6 @@ a {
 
   .agent-placeholder-card .arco-card-body {
     padding: 19px 20px 17px;
-  }
-
-  .resource-feature-card .arco-card-body {
-    min-height: 0;
   }
 
   .publications-page {

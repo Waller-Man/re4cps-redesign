@@ -16,7 +16,6 @@ const resourceGroups = reResourceGroupOrder.map((key: ReResourceGroup) => ({
 
 function statusColor(status: ReResourceStatus) {
   if (status === 'archive') return 'gray'
-  if (status === 'mockData') return 'purple'
   return 'orange'
 }
 </script>
@@ -47,48 +46,51 @@ function statusColor(status: ReResourceStatus) {
             :key="resource.id"
             :xs="24"
             :md="12"
-            :xl="resource.kind === 'featured' ? 12 : 8"
+            :xl="8"
           >
             <a-card
               v-if="resource.kind === 'featured'"
-              class="tool-card resource-feature-card"
+              class="resource-card"
               :bordered="false"
               hoverable
             >
               <h3>{{ t(`reResources.featuredItems.${resource.localeKey}.title`) }}</h3>
 
-              <p class="tool-card-description">
-                {{ t(`reResources.featuredItems.${resource.localeKey}.description`) }}
-              </p>
-
-              <div class="tool-card-tags">
-                <a-tag v-for="tagKey in resource.tagKeys" :key="tagKey" size="small">
+              <div class="resource-tags">
+                <a-tag
+                  v-for="tagKey in resource.tagKeys"
+                  :key="tagKey"
+                  color="arcoblue"
+                  size="small"
+                >
                   {{ t(`reResources.tags.${tagKey}`) }}
                 </a-tag>
               </div>
 
-              <div class="tool-card-actions">
-                <template
-                  v-for="link in resource.links"
-                  :key="`${link.kind}-${resource.id}`"
+              <p class="resource-description">
+                {{ t(`reResources.featuredItems.${resource.localeKey}.description`) }}
+              </p>
+
+              <template
+                v-for="link in resource.links"
+                :key="`${link.kind}-${resource.id}`"
+              >
+                <a-button
+                  v-if="link.destination === 'external'"
+                  type="primary"
+                  :href="link.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <a-button
-                    v-if="link.destination === 'external'"
-                    type="primary"
-                    :href="link.href"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  {{ t(`reResources.actions.${link.kind}`) }}
+                </a-button>
+
+                <RouterLink v-else :to="link.to" custom v-slot="{ navigate }">
+                  <a-button type="primary" @click="navigate">
                     {{ t(`reResources.actions.${link.kind}`) }}
                   </a-button>
-
-                  <RouterLink v-else :to="link.to" custom v-slot="{ navigate }">
-                    <a-button type="primary" @click="navigate">
-                      {{ t(`reResources.actions.${link.kind}`) }}
-                    </a-button>
-                  </RouterLink>
-                </template>
-              </div>
+                </RouterLink>
+              </template>
             </a-card>
 
             <a-card v-else class="resource-card" :bordered="false" hoverable>

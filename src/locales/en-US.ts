@@ -440,24 +440,21 @@ export default {
     title: 'Requirements Engineering Knowledge & Resources',
     subtitle: 'Presentations, Tutorials and Engineering Resources',
     description:
-      'This page organizes requirements engineering skills, engineering plugins, presentations, tutorials, datasets and historical resources.',
+      'This page organizes requirements engineering skills, engineering plugins, presentations, tutorials and historical resources.',
     groups: {
       engineeringPlugins: 'RE Skills and Engineering Plugins',
       presentations: 'Presentations',
       tutorials: 'Tutorials',
-      datasets: 'Datasets',
     },
     types: {
       invitedTalk: 'Invited Talk',
       presentation: 'Presentation',
       tutorial: 'Tutorial',
       slides: 'Slides',
-      dataset: 'Dataset',
     },
     statuses: {
       archive: 'Archive',
       toBeUpdated: 'To be updated',
-      mockData: 'Mock Data',
     },
     actions: {
       github: 'Use Online',
@@ -518,21 +515,6 @@ export default {
       slidesPartTwo: {
         title: 'Slides for RE4CPS - Part II',
         description: 'An archived entry for the second part of the RE4CPS tutorial slides.',
-      },
-      cpsRequirementsDataset: {
-        title: 'CPS Requirements Dataset',
-        description:
-          'A placeholder dataset for CPS requirements modeling and verification experiments.',
-      },
-      smartHomeDataset: {
-        title: 'Smart Home Scenario Dataset',
-        description:
-          'A placeholder dataset for smart home requirements, TAP rules and scenario simulation.',
-      },
-      timingRequirementsBenchmark: {
-        title: 'Timing Requirements Benchmark',
-        description:
-          'A placeholder benchmark for timing requirements consistency checking.',
       },
     },
   },
