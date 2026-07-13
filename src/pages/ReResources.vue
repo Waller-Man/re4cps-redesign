@@ -40,7 +40,7 @@ function statusColor(status: ReResourceStatus) {
           </h2>
         </div>
 
-        <a-row :gutter="[24, 24]">
+        <a-row class="equal-height-card-grid" :gutter="[24, 24]">
           <a-col
             v-for="resource in group.items"
             :key="resource.id"
@@ -50,7 +50,7 @@ function statusColor(status: ReResourceStatus) {
           >
             <a-card
               v-if="resource.kind === 'featured'"
-              class="resource-card"
+              class="resource-card equal-height-card"
               :bordered="false"
               hoverable
             >
@@ -93,7 +93,12 @@ function statusColor(status: ReResourceStatus) {
               </template>
             </a-card>
 
-            <a-card v-else class="resource-card" :bordered="false" hoverable>
+            <a-card
+              v-else
+              class="resource-card equal-height-card"
+              :bordered="false"
+              hoverable
+            >
               <h3>{{ t(`reResources.items.${resource.localeKey}.title`) }}</h3>
 
               <div class="resource-tags">

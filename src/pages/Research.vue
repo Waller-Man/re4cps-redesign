@@ -58,7 +58,7 @@ const directions = [
     </section>
 
     <section :aria-label="t('research.directionsLabel')">
-      <a-row :gutter="[24, 24]">
+      <a-row class="equal-height-card-grid" :gutter="[24, 24]">
         <a-col
           v-for="direction in directions"
           :key="direction.key"
@@ -67,7 +67,7 @@ const directions = [
           :md="12"
           :xl="8"
         >
-          <a-card class="research-card" :bordered="false" hoverable>
+          <a-card class="research-card equal-height-card" :bordered="false" hoverable>
             <template #title>
               <h2>{{ t(`research.directions.${direction.key}.title`) }}</h2>
             </template>

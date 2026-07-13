@@ -53,7 +53,7 @@ const memberGroups = memberGroupOrder.map((key: MemberGroup) => {
           </h2>
         </div>
 
-        <a-row :gutter="[24, 24]">
+        <a-row class="equal-height-card-grid" :gutter="[24, 24]">
           <a-col
             v-for="member in group.items"
             :key="member.id"
@@ -62,7 +62,7 @@ const memberGroups = memberGroupOrder.map((key: MemberGroup) => {
             :lg="8"
           >
             <a-card
-              class="member-card"
+              class="member-card equal-height-card"
               :class="{
                 'member-card-master': member.group === 'master',
                 'member-card-alumni': member.group === 'alumni',

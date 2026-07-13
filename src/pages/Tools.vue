@@ -27,9 +27,9 @@ const { t } = useI18n()
           <p>{{ t(`tools.categories.${category.descriptionLocaleKey}.description`) }}</p>
         </header>
 
-        <a-row :gutter="[24, 24]">
+        <a-row class="equal-height-card-grid" :gutter="[24, 24]">
           <a-col v-for="tool in category.tools" :key="tool.id" :xs="24" :md="12">
-            <a-card class="tool-card" :bordered="false" hoverable>
+            <a-card class="tool-card equal-height-card" :bordered="false" hoverable>
               <div class="tool-direction-label">
                 {{ t(`tools.categories.${category.titleLocaleKey}.title`) }}
               </div>

@@ -27,7 +27,11 @@ const { t } = useI18n()
           <p>{{ t(`agents.categories.${category.localeKey}.description`) }}</p>
         </header>
 
-        <a-row v-if="category.subcategories.length" :gutter="[24, 24]">
+        <a-row
+          v-if="category.subcategories.length"
+          class="equal-height-card-grid"
+          :gutter="[24, 24]"
+        >
           <a-col
             v-for="subcategory in category.subcategories"
             :key="subcategory.id"
@@ -39,7 +43,7 @@ const { t } = useI18n()
                 <a-card
                   v-for="agent in subcategory.agents"
                   :key="agent.id"
-                  class="tool-card agent-card"
+                  class="tool-card agent-card equal-height-card"
                   :bordered="false"
                   hoverable
                 >
@@ -84,7 +88,11 @@ const { t } = useI18n()
                 </a-card>
               </div>
 
-              <a-card v-else class="agent-placeholder-card" :bordered="false">
+              <a-card
+                v-else
+                class="agent-placeholder-card equal-height-card"
+                :bordered="false"
+              >
                 <div class="agent-placeholder-header">
                   <div class="agent-placeholder-identity">
                     <span class="agent-placeholder-icon" aria-hidden="true">

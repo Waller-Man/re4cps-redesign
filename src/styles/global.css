@@ -1169,6 +1169,56 @@ a {
   min-width: 112px;
 }
 
+/* Shared equal-height behavior for responsive card grids. */
+.equal-height-card-grid {
+  align-items: stretch;
+}
+
+.equal-height-card-grid > .arco-col {
+  display: flex;
+  align-self: stretch;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.equal-height-card-grid > .arco-col > * {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.equal-height-card.arco-card {
+  display: flex;
+  height: 100%;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.equal-height-card.arco-card > .arco-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.equal-height-card-grid .agent-card-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.equal-height-card-grid .agent-card-stack > .equal-height-card,
+.equal-height-card-grid .agent-subcategory > .equal-height-card {
+  flex: 1 1 auto;
+}
+
+.equal-height-card.member-card .member-bio {
+  flex: 1;
+}
+
+.equal-height-card.member-card .member-contact:last-child,
+.equal-height-card.member-card .alumni-career,
+.equal-height-card.agent-placeholder-card .agent-placeholder-footer {
+  margin-top: auto;
+}
+
 @media (max-width: 1040px) {
   .header-inner {
     grid-template-columns: auto 1fr auto;
@@ -1188,6 +1238,40 @@ a {
 }
 
 @media (max-width: 680px) {
+  .equal-height-card-grid > .arco-col {
+    display: block;
+  }
+
+  .equal-height-card.arco-card,
+  .agent-subcategory,
+  .agent-card-stack .agent-card {
+    height: auto;
+  }
+
+  .agent-card-stack {
+    flex: none;
+  }
+
+  .equal-height-card.member-card .member-bio {
+    flex: none;
+  }
+
+  .equal-height-card.member-card .member-contact:last-child {
+    margin-top: 22px;
+  }
+
+  .equal-height-card.member-card-alumni .member-contact:last-child {
+    margin-top: 18px;
+  }
+
+  .equal-height-card.member-card .alumni-career {
+    margin-top: 20px;
+  }
+
+  .equal-height-card.agent-placeholder-card .agent-placeholder-footer {
+    margin-top: 12px;
+  }
+
   .header-inner {
     grid-template-columns: 1fr auto;
     width: min(100% - 28px, 1180px);
