@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n'
 import {
   publicationGroupOrder,
   publications,
+  type Publication,
   type PublicationGroup,
 } from '../data/publications'
 
@@ -12,6 +13,11 @@ const publicationGroups = publicationGroupOrder.map((key: PublicationGroup) => (
   key,
   items: publications.filter((publication) => publication.group === key),
 }))
+
+const getPublicationTitle = (publication: Publication) =>
+  publication.titleLocaleKey
+    ? t(`publications.titles.${publication.titleLocaleKey}`)
+    : publication.title
 </script>
 
 <template>
@@ -40,8 +46,16 @@ const publicationGroups = publicationGroupOrder.map((key: PublicationGroup) => (
             <a-list-item v-for="publication in group.items" :key="publication.id">
               <article class="publication-entry">
                 <div class="publication-entry-heading">
-                  <h3>{{ publication.title }}</h3>
+                  <h3>{{ getPublicationTitle(publication) }}</h3>
                   <div class="publication-types">
+                    <a-tag
+                      v-for="rankTag in publication.rankTags"
+                      :key="rankTag"
+                      size="small"
+                      color="purple"
+                    >
+                      {{ t(`publications.rankTags.${rankTag}`) }}
+                    </a-tag>
                     <a-tag
                       v-for="type in publication.types"
                       :key="type"

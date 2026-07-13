@@ -3,14 +3,22 @@ export default {
     primary: 'Primary navigation',
     home: 'Home',
     research: 'Research',
-    tools: 'Tools',
     publications: 'Publications',
+    agents: 'Agents',
+    tools: 'Tools',
     members: 'Members',
-    documentation: 'Documentation',
+    reResources: 'RE Resources',
+    datasets: 'Datasets',
     github: 'GitHub',
   },
   language: {
     label: 'Switch language',
+  },
+  home: {
+    title: 'RE4CPS',
+    subtitle: 'Requirements Engineering for Cyber-Physical Systems',
+    description:
+      'A research tool portal for CPS requirements modeling, verification, and AI-assisted requirements engineering.',
   },
   research: {
     title: 'Research Directions',
@@ -145,6 +153,13 @@ export default {
       '2024': '2024',
       book: 'Book',
     },
+    titles: {
+      softwareRequirementsEngineeringPractice:
+        '教材：软件需求工程与实践',
+    },
+    rankTags: {
+      textbook: 'Textbook',
+    },
     types: {
       conference: 'Conference',
       journal: 'Journal',
@@ -205,8 +220,8 @@ export default {
       },
     },
   },
-  documentation: {
-    title: 'Documentation & Resources',
+  reResources: {
+    title: 'Requirements Engineering Knowledge & Resources',
     subtitle: 'Presentations, Tutorials and Datasets',
     description:
       'This page organizes presentations, tutorials, datasets and historical resources of the research group. Mock data is used for now and real files or links can be added later.',
@@ -276,5 +291,13 @@ export default {
           'A placeholder benchmark for timing requirements consistency checking.',
       },
     },
+  },
+  agents: {
+    title: 'Agents',
+    placeholder: 'The Agents page is under construction. More content will be added later.',
+  },
+  datasets: {
+    title: 'Datasets',
+    placeholder: 'The Datasets page is under construction. More content will be added later.',
   },
 }

@@ -3,14 +3,21 @@ export default {
     primary: '主导航',
     home: '首页',
     research: '研究方向',
-    tools: '工具',
     publications: '论文',
+    agents: '智能体',
+    tools: '工具',
     members: '成员',
-    documentation: '文档',
+    reResources: 'RE资源',
+    datasets: '数据集',
     github: 'GitHub',
   },
   language: {
     label: '切换语言',
+  },
+  home: {
+    title: 'RE4CPS',
+    subtitle: '面向信息物理系统的需求工程',
+    description: '面向 CPS 需求建模、验证与人工智能辅助需求工程的学术工具门户。',
   },
   research: {
     title: '研究方向',
@@ -140,7 +147,13 @@ export default {
       '2026': '2026',
       '2025': '2025',
       '2024': '2024',
-      book: 'Book',
+      book: '专著与教材',
+    },
+    titles: {
+      softwareRequirementsEngineeringPractice: '教材：软件需求工程与实践',
+    },
+    rankTags: {
+      textbook: '教材',
     },
     types: {
       conference: '会议论文',
@@ -202,8 +215,8 @@ export default {
       },
     },
   },
-  documentation: {
-    title: '文档与资源',
+  reResources: {
+    title: '需求工程知识与资源',
     subtitle: '报告、教程与数据集',
     description:
       '本页面用于整理课题组的报告材料、教程文档、实验数据集和历史资源。当前先使用示例数据展示页面结构，后续可继续补充真实文件和链接。',
@@ -266,5 +279,13 @@ export default {
         description: '用于时序需求一致性检查的占位基准数据集。',
       },
     },
+  },
+  agents: {
+    title: '智能体',
+    placeholder: '智能体页面正在建设中，相关内容将在后续版本中补充。',
+  },
+  datasets: {
+    title: '数据集',
+    placeholder: '数据集页面正在建设中，相关内容将在后续版本中补充。',
   },
 }

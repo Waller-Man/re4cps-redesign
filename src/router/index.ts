@@ -1,9 +1,11 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Documentation from '../pages/Documentation.vue'
 import MainLayout from '../layouts/MainLayout.vue'
+import Agents from '../pages/Agents.vue'
+import Datasets from '../pages/Datasets.vue'
 import Home from '../pages/Home.vue'
 import Members from '../pages/Members.vue'
 import Publications from '../pages/Publications.vue'
+import ReResources from '../pages/ReResources.vue'
 import Research from '../pages/Research.vue'
 import Tools from '../pages/Tools.vue'
 
@@ -25,14 +27,19 @@ const router = createRouter({
           component: Research,
         },
         {
-          path: 'tools',
-          name: 'tools',
-          component: Tools,
-        },
-        {
           path: 'publications',
           name: 'publications',
           component: Publications,
+        },
+        {
+          path: 'agents',
+          name: 'agents',
+          component: Agents,
+        },
+        {
+          path: 'tools',
+          name: 'tools',
+          component: Tools,
         },
         {
           path: 'members',
@@ -40,9 +47,14 @@ const router = createRouter({
           component: Members,
         },
         {
-          path: 'documentation',
-          name: 'documentation',
-          component: Documentation,
+          path: 're-resources',
+          name: 're-resources',
+          component: ReResources,
+        },
+        {
+          path: 'datasets',
+          name: 'datasets',
+          component: Datasets,
         },
       ],
     },

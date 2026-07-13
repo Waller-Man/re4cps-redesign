@@ -717,17 +717,20 @@ a {
   color: #8792a6;
 }
 
-.documentation-page {
+.re-resources-page,
+.placeholder-page {
   width: min(1180px, calc(100% - 48px));
   margin: 0 auto;
   padding: 72px 0 96px;
 }
 
-.documentation-heading {
+.re-resources-heading,
+.placeholder-heading {
   max-width: 920px;
 }
 
-.documentation-heading h1 {
+.re-resources-heading h1,
+.placeholder-heading h1 {
   margin: 0;
   color: #123b87;
   font-size: clamp(42px, 6vw, 68px);
@@ -736,7 +739,7 @@ a {
   line-height: 1.08;
 }
 
-.documentation-subtitle {
+.re-resources-subtitle {
   margin: 18px 0 0;
   color: #34425a;
   font-size: clamp(20px, 3vw, 30px);
@@ -745,7 +748,8 @@ a {
   line-height: 1.4;
 }
 
-.documentation-description {
+.re-resources-description,
+.placeholder-heading p {
   margin: 22px 0 0;
   color: #667289;
   font-size: 17px;
@@ -1010,12 +1014,14 @@ a {
     padding: 22px;
   }
 
-  .documentation-page {
+  .re-resources-page,
+  .placeholder-page {
     width: min(100% - 36px, 1180px);
     padding: 52px 0 72px;
   }
 
-  .documentation-description {
+  .re-resources-description,
+  .placeholder-heading p {
     font-size: 16px;
   }
 

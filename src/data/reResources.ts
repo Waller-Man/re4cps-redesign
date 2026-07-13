@@ -1,28 +1,28 @@
-export type ResourceGroup = 'presentations' | 'tutorials' | 'datasets'
-export type ResourceType =
+export type ReResourceGroup = 'presentations' | 'tutorials' | 'datasets'
+export type ReResourceType =
   | 'invitedTalk'
   | 'presentation'
   | 'tutorial'
   | 'slides'
   | 'dataset'
-export type ResourceStatus = 'archive' | 'toBeUpdated' | 'mockData'
+export type ReResourceStatus = 'archive' | 'toBeUpdated' | 'mockData'
 
-export interface ResourceDefinition {
+export interface ReResourceDefinition {
   id: string
-  group: ResourceGroup
+  group: ReResourceGroup
   localeKey: string
-  typeKey: ResourceType
-  statusKey: ResourceStatus
+  typeKey: ReResourceType
+  statusKey: ReResourceStatus
   href?: string
 }
 
-export const resourceGroupOrder: readonly ResourceGroup[] = [
+export const reResourceGroupOrder: readonly ReResourceGroup[] = [
   'presentations',
   'tutorials',
   'datasets',
 ]
 
-export const resources: readonly ResourceDefinition[] = [
+export const reResources: readonly ReResourceDefinition[] = [
   {
     id: 'dmsviva-2018-invited-talk',
     group: 'presentations',

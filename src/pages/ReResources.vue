@@ -1,20 +1,20 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
 import {
-  resourceGroupOrder,
-  resources,
-  type ResourceGroup,
-  type ResourceStatus,
-} from '../data/resources'
+  reResourceGroupOrder,
+  reResources,
+  type ReResourceGroup,
+  type ReResourceStatus,
+} from '../data/reResources'
 
 const { t } = useI18n()
 
-const resourceGroups = resourceGroupOrder.map((key: ResourceGroup) => ({
+const resourceGroups = reResourceGroupOrder.map((key: ReResourceGroup) => ({
   key,
-  items: resources.filter((resource) => resource.group === key),
+  items: reResources.filter((resource) => resource.group === key),
 }))
 
-function statusColor(status: ResourceStatus) {
+function statusColor(status: ReResourceStatus) {
   if (status === 'archive') return 'gray'
   if (status === 'mockData') return 'purple'
   return 'orange'
@@ -22,11 +22,11 @@ function statusColor(status: ResourceStatus) {
 </script>
 
 <template>
-  <main class="documentation-page">
-    <header class="documentation-heading">
-      <h1>{{ t('documentation.title') }}</h1>
-      <p class="documentation-subtitle">{{ t('documentation.subtitle') }}</p>
-      <p class="documentation-description">{{ t('documentation.description') }}</p>
+  <main class="re-resources-page">
+    <header class="re-resources-heading">
+      <h1>{{ t('reResources.title') }}</h1>
+      <p class="re-resources-subtitle">{{ t('reResources.subtitle') }}</p>
+      <p class="re-resources-description">{{ t('reResources.description') }}</p>
     </header>
 
     <div class="resource-sections">
@@ -37,7 +37,7 @@ function statusColor(status: ResourceStatus) {
       >
         <div class="resource-section-heading">
           <h2 :id="`resource-group-${group.key}`">
-            {{ t(`documentation.groups.${group.key}`) }}
+            {{ t(`reResources.groups.${group.key}`) }}
           </h2>
         </div>
 
@@ -50,19 +50,19 @@ function statusColor(status: ResourceStatus) {
             :xl="8"
           >
             <a-card class="resource-card" :bordered="false" hoverable>
-              <h3>{{ t(`documentation.items.${resource.localeKey}.title`) }}</h3>
+              <h3>{{ t(`reResources.items.${resource.localeKey}.title`) }}</h3>
 
               <div class="resource-tags">
                 <a-tag color="arcoblue" size="small">
-                  {{ t(`documentation.types.${resource.typeKey}`) }}
+                  {{ t(`reResources.types.${resource.typeKey}`) }}
                 </a-tag>
                 <a-tag :color="statusColor(resource.statusKey)" size="small">
-                  {{ t(`documentation.statuses.${resource.statusKey}`) }}
+                  {{ t(`reResources.statuses.${resource.statusKey}`) }}
                 </a-tag>
               </div>
 
               <p class="resource-description">
-                {{ t(`documentation.items.${resource.localeKey}.description`) }}
+                {{ t(`reResources.items.${resource.localeKey}.description`) }}
               </p>
 
               <a-button
@@ -74,8 +74,8 @@ function statusColor(status: ResourceStatus) {
               >
                 {{
                   resource.href
-                    ? t('documentation.actions.open')
-                    : t('documentation.actions.comingSoon')
+                    ? t('reResources.actions.open')
+                    : t('reResources.actions.comingSoon')
                 }}
               </a-button>
             </a-card>

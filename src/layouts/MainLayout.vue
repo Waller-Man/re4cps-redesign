@@ -4,16 +4,29 @@ import { useI18n } from 'vue-i18n'
 
 type SupportedLocale = 'zh-CN' | 'en-US'
 
+interface NavigationItem {
+  key: string
+  label: string
+  to?: string
+  href?: string
+}
+
 const { locale, t } = useI18n()
 
-const navigation = computed(() => [
+const navigation = computed<NavigationItem[]>(() => [
   { key: 'home', label: t('nav.home'), to: '/' },
   { key: 'research', label: t('nav.research'), to: '/research' },
-  { key: 'tools', label: t('nav.tools'), to: '/tools' },
   { key: 'publications', label: t('nav.publications'), to: '/publications' },
+  { key: 'agents', label: t('nav.agents'), to: '/agents' },
+  { key: 'tools', label: t('nav.tools'), to: '/tools' },
   { key: 'members', label: t('nav.members'), to: '/members' },
-  { key: 'documentation', label: t('nav.documentation'), to: '/documentation' },
-  { key: 'github', label: t('nav.github') },
+  { key: 'reResources', label: t('nav.reResources'), to: '/re-resources' },
+  { key: 'datasets', label: t('nav.datasets'), to: '/datasets' },
+  {
+    key: 'github',
+    label: t('nav.github'),
+    href: 'https://github.com/Waller-Man/re4cps-redesign',
+  },
 ])
 
 function setLocale(nextLocale: SupportedLocale) {
@@ -35,9 +48,15 @@ function setLocale(nextLocale: SupportedLocale) {
             <RouterLink v-if="item.to" class="nav-link" :to="item.to">
               {{ item.label }}
             </RouterLink>
-            <span v-else class="nav-link nav-placeholder" aria-disabled="true">
+            <a
+              v-else-if="item.href"
+              class="nav-link"
+              :href="item.href"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {{ item.label }}
-            </span>
+            </a>
           </template>
         </nav>
 

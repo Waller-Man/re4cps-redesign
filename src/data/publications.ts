@@ -9,6 +9,7 @@ export type PublicationType =
   | 'accepted'
 
 export type PublicationLinkKind = 'pdf' | 'doi' | 'bibtex' | 'code' | 'tool'
+export type PublicationRankTag = 'textbook'
 
 export interface PublicationLink {
   kind: PublicationLinkKind
@@ -20,9 +21,11 @@ export interface Publication {
   group: PublicationGroup
   year: number
   title: string
+  titleLocaleKey?: string
   authors: string
   venue: string
   types: readonly PublicationType[]
+  rankTags?: readonly PublicationRankTag[]
   links?: readonly PublicationLink[]
   relatedToolIds?: readonly string[]
 }
@@ -247,6 +250,17 @@ export const publications: readonly Publication[] = [
     authors: '靳东明, 金芝, 陈小红, 王春晖',
     venue: '计算机研究与发展, 61(2): 338-350',
     types: ['chineseJournal'],
+  },
+  {
+    id: 'jin-2023-software-requirements-textbook',
+    group: 'book',
+    year: 2023,
+    title: '软件需求工程与实践',
+    titleLocaleKey: 'softwareRequirementsEngineeringPractice',
+    authors: '金芝, 刘璘, 陈小红, 李童',
+    venue: '清华大学出版社',
+    types: ['book'],
+    rankTags: ['textbook'],
   },
   {
     id: 'jin-2018-environment-modeling-book',
