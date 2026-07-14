@@ -20,6 +20,7 @@ export default {
     axera: 'AXERA Semiconductor',
     neteaseGames: 'NetEase Games',
     agriculturalBankOfChina: 'Agricultural Bank of China',
+    pinduoduo: 'Pinduoduo',
     didi: 'DiDi',
     poizon: 'POIZON',
   },
@@ -153,6 +154,11 @@ export default {
     },
     liangguoLi: {
       name: 'Liangguo Li',
+      role: "Master's",
+      school: 'East China Normal University, China',
+    },
+    shiChen: {
+      name: 'Shi Chen',
       role: "Master's",
       school: 'East China Normal University, China',
     },

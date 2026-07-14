@@ -20,6 +20,7 @@ export default {
     axera: '爱芯元智半导体股份有限公司',
     neteaseGames: '网易互娱',
     agriculturalBankOfChina: '中国农业银行',
+    pinduoduo: '拼多多',
     didi: '滴滴出行',
     poizon: '得物',
   },
@@ -153,6 +154,11 @@ export default {
     },
     liangguoLi: {
       name: '李靓果',
+      role: '硕士',
+      school: '华东师范大学，中国',
+    },
+    shiChen: {
+      name: '陈实',
       role: '硕士',
       school: '华东师范大学，中国',
     },

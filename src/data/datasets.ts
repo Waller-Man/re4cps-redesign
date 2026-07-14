@@ -1,5 +1,5 @@
 export type DatasetGroup = 'datasets'
-export type DatasetStatus = 'comingSoon'
+export type DatasetStatus = 'available' | 'comingSoon'
 
 export interface DatasetDefinition {
   id: string
@@ -17,5 +17,12 @@ export const datasets: readonly DatasetDefinition[] = [
     group: 'datasets',
     localeKey: 'iotReqCompletionBench',
     statusKey: 'comingSoon',
+  },
+  {
+    id: 'req-completer-bench',
+    group: 'datasets',
+    localeKey: 'reqCompleterBench',
+    statusKey: 'available',
+    href: 'https://github.com/ecnu-wzj/ICSE_Submission',
   },
 ]

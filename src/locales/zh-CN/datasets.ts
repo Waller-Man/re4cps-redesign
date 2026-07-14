@@ -9,6 +9,7 @@ export default {
     dataset: '数据集',
   },
   statuses: {
+    available: '可访问',
     comingSoon: '待补充',
   },
   actions: {
@@ -19,6 +20,10 @@ export default {
     iotReqCompletionBench: {
       title: 'IoT-ReqCompletionBench',
       description: '自研智能家居领域的最终用户需求补全数据集，包含质量需求。',
+    },
+    reqCompleterBench: {
+      title: 'ReqCompleterBench',
+      description: '信息系统基于业务逻辑的用户需求补全数据集',
     },
   },
 }

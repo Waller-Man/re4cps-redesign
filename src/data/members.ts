@@ -1,6 +1,7 @@
 import defaultAvatar from '../assets/members/avatar-placeholder.svg'
 import xiaohongChenPhoto from '../assets/members/Faculty/ChenXiaohong.jpg'
 import zhiJinPhoto from '../assets/members/Faculty/JinZhi.jpg'
+import shiChenPhoto from '../assets/members/alumni/ChenShi.jpg'
 import gaoYuanPhoto from '../assets/members/alumni/GaoYuan.jpg'
 import liuJiachengPhoto from '../assets/members/alumni/LiuJiacheng.jpg'
 import ruanKunPhoto from '../assets/members/alumni/RuanKun.jpg'
@@ -16,6 +17,7 @@ import axeraLogo from '../assets/organizations/AXERA-semiconductor.svg'
 import didiLogo from '../assets/organizations/didi.svg'
 import meituanLogo from '../assets/organizations/meituan.svg'
 import neteaseGamesLogo from '../assets/organizations/netease-games.svg'
+import pddLogo from '../assets/organizations/pdd.svg'
 import poizonLogo from '../assets/organizations/poizon.svg'
 import hithinkLogo from '../assets/organizations/tonghuashun.svg'
 
@@ -300,12 +302,24 @@ export const members: readonly MemberProfile[] = [
     },
   },
   {
+    id: 'shi-chen',
+    group: 'alumni',
+    localeKey: 'shiChen',
+    photo: shiChenPhoto,
+    graduationYear: 2025,
+    order: 5,
+    organization: {
+      nameLocaleKey: 'pinduoduo',
+      logo: pddLogo,
+    },
+  },
+  {
     id: 'kun-ruan',
     group: 'alumni',
     localeKey: 'kunRuan',
     photo: ruanKunPhoto,
     graduationYear: 2026,
-    order: 5,
+    order: 6,
     organization: {
       nameLocaleKey: 'didi',
       logo: didiLogo,
@@ -317,7 +331,7 @@ export const members: readonly MemberProfile[] = [
     localeKey: 'yuanGao',
     photo: gaoYuanPhoto,
     graduationYear: 2026,
-    order: 6,
+    order: 7,
     organization: {
       nameLocaleKey: 'poizon',
       logo: poizonLogo,
@@ -329,7 +343,7 @@ export const members: readonly MemberProfile[] = [
     localeKey: 'yikeHuang',
     photo: defaultAvatar,
     graduationYear: 2026,
-    order: 7,
+    order: 8,
     homepage: 'https://github.com/Ekay47',
     organization: {
       nameLocaleKey: 'meituan',

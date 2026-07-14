@@ -15,6 +15,7 @@ const datasetGroups = datasetGroupOrder.map((key: DatasetGroup) => ({
 }))
 
 function statusColor(status: DatasetStatus) {
+  if (status === 'available') return 'green'
   if (status === 'comingSoon') return 'orange'
   return 'gray'
 }

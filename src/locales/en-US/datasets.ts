@@ -10,6 +10,7 @@ export default {
     dataset: 'Dataset',
   },
   statuses: {
+    available: 'Available',
     comingSoon: 'Coming Soon',
   },
   actions: {
@@ -21,6 +22,11 @@ export default {
       title: 'IoT-ReqCompletionBench',
       description:
         'A self-developed end-user requirements completion dataset for the smart home domain, including quality requirements.',
+    },
+    reqCompleterBench: {
+      title: 'ReqCompleterBench',
+      description:
+        'A business-logic-based user requirements completion dataset for information systems.',
     },
   },
 }
