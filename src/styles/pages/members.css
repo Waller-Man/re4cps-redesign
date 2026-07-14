@@ -199,6 +199,10 @@
   border-top: 0;
 }
 
+.equal-height-card.member-card-alumni .member-contact + .alumni-career {
+  margin-top: 5px;
+}
+
 .alumni-career {
   margin-top: 20px;
   padding-top: 18px;

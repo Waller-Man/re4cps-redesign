@@ -1,6 +1,6 @@
 # RE4CPS Portal
 
-> 当前正式版本：**v1.0.0**
+> 当前正式版本：**v1.0.1**
 
 RE4CPS Portal 是 RE4CPS（Requirements Engineering for Cyber-Physical Systems）课题组的展示网站，用于集中呈现研究方向、论文与著作、需求工程智能体、历史工具、成员信息、RE 资源和数据集。**本项目使用CodeX与GPT5.6 sol辅助开发。**
 
