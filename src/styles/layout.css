@@ -1,0 +1,86 @@
+.main-layout {
+  background:
+    radial-gradient(circle at 78% 12%, rgba(22, 93, 255, 0.08), transparent 28rem),
+    #f7f9fc;
+}
+
+.site-header {
+  height: auto;
+  padding: 0;
+  color: #172033;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid #e8edf5;
+  backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  width: min(1180px, calc(100% - 48px));
+  min-height: 72px;
+  margin: 0 auto;
+  gap: 36px;
+}
+
+.brand {
+  color: #143d8f;
+  font-size: 22px;
+  font-weight: 750;
+  letter-spacing: -0.03em;
+}
+
+.site-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+
+.nav-link {
+  position: relative;
+  padding: 25px 0 23px;
+  color: #556176;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.nav-link.router-link-exact-active {
+  color: #143d8f;
+}
+
+.nav-link.router-link-exact-active::after {
+  position: absolute;
+  right: 0;
+  bottom: 16px;
+  left: 0;
+  height: 2px;
+  content: '';
+  background: #165dff;
+  border-radius: 999px;
+}
+
+.nav-placeholder {
+  cursor: default;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  color: #8a94a6;
+  white-space: nowrap;
+}
+
+.language-switcher .arco-btn {
+  padding: 0 7px;
+}
+
+.language-divider {
+  margin: 0 1px;
+  font-size: 12px;
+}
+
+.site-content {
+  min-height: calc(100vh - 73px);
+}

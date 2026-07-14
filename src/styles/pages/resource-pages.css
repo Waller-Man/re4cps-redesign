@@ -1,0 +1,73 @@
+.re-resources-page,
+.datasets-page,
+.placeholder-page {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 72px 0 96px;
+}
+
+.re-resources-heading,
+.datasets-heading,
+.placeholder-heading {
+  max-width: 920px;
+}
+
+.re-resources-heading h1,
+.datasets-heading h1,
+.placeholder-heading h1 {
+  margin: 0;
+  color: #123b87;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 740;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+.re-resources-subtitle,
+.datasets-subtitle {
+  margin: 18px 0 0;
+  color: #34425a;
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 520;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.re-resources-description,
+.datasets-description,
+.placeholder-heading p {
+  margin: 22px 0 0;
+  color: #667289;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.resource-sections {
+  display: flex;
+  flex-direction: column;
+  margin-top: 52px;
+  gap: 52px;
+}
+
+.resource-section-heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+  gap: 18px;
+}
+
+.resource-section-heading::after {
+  flex: 1;
+  height: 1px;
+  content: '';
+  background: #dfe6f1;
+}
+
+.resource-section-heading h2 {
+  margin: 0;
+  color: #143d8f;
+  font-size: 25px;
+  font-weight: 680;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}

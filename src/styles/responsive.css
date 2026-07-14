@@ -1,0 +1,265 @@
+@media (max-width: 1040px) {
+  .header-inner {
+    grid-template-columns: auto 1fr auto;
+    gap: 20px;
+  }
+
+  .site-navigation {
+    justify-content: flex-start;
+    gap: 18px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .site-navigation::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .equal-height-card-grid > .arco-col {
+    display: block;
+  }
+
+  .equal-height-card.arco-card,
+  .agent-subcategory,
+  .agent-card-stack .agent-card {
+    height: auto;
+  }
+
+  .agent-card-stack {
+    flex: none;
+  }
+
+  .equal-height-card.member-card .member-bio {
+    flex: none;
+  }
+
+  .equal-height-card.member-card .member-contact:last-child {
+    margin-top: 22px;
+  }
+
+  .equal-height-card.member-card-alumni .member-contact:last-child {
+    margin-top: 18px;
+  }
+
+  .equal-height-card.member-card .alumni-career {
+    margin-top: 20px;
+  }
+
+  .equal-height-card.agent-placeholder-card .agent-placeholder-footer {
+    margin-top: 12px;
+  }
+
+  .header-inner {
+    grid-template-columns: 1fr auto;
+    width: min(100% - 28px, 1180px);
+    min-height: 64px;
+  }
+
+  .site-navigation {
+    grid-column: 1 / -1;
+    order: 3;
+    margin: 0 -14px;
+    padding: 0 14px;
+  }
+
+  .nav-link {
+    padding: 5px 0 17px;
+  }
+
+  .nav-link.router-link-exact-active::after {
+    bottom: 10px;
+  }
+
+  .site-content,
+  .home-page {
+    min-height: calc(100vh - 108px);
+  }
+
+  .home-page {
+    padding: 56px 22px;
+  }
+
+  .research-page {
+    width: min(100% - 36px, 1180px);
+    padding: 52px 0 72px;
+  }
+
+  .research-keywords {
+    margin: 26px 0 36px;
+  }
+
+  .research-card .arco-card-header {
+    padding: 22px 22px 0;
+  }
+
+  .research-card .arco-card-body {
+    min-height: 0;
+    padding: 16px 22px 22px;
+  }
+
+  .tools-page {
+    width: min(100% - 36px, 1180px);
+    padding: 52px 0 72px;
+  }
+
+  .tools-description {
+    font-size: 16px;
+  }
+
+  .tool-sections {
+    margin-top: 36px;
+    gap: 42px;
+  }
+
+  .tool-section-heading {
+    margin-bottom: 18px;
+  }
+
+  .tool-section-heading h2 {
+    font-size: 22px;
+  }
+
+  .tool-card .arco-card-body {
+    min-height: 0;
+    padding: 24px 22px;
+  }
+
+  .agents-page {
+    width: min(100% - 36px, 1180px);
+    padding: 52px 0 72px;
+  }
+
+  .agents-heading p {
+    font-size: 16px;
+  }
+
+  .agent-category-sections {
+    margin-top: 40px;
+    gap: 48px;
+  }
+
+  .agent-category-heading {
+    margin-bottom: 20px;
+  }
+
+  .agent-category-heading h2 {
+    font-size: 24px;
+  }
+
+  .agent-placeholder-card.arco-card {
+    min-height: 0;
+  }
+
+  .agent-placeholder-card .arco-card-body {
+    padding: 19px 20px 17px;
+  }
+
+  .publications-page {
+    width: min(100% - 36px, 1180px);
+    padding: 52px 0 72px;
+  }
+
+  .publications-description {
+    font-size: 16px;
+  }
+
+  .publication-groups {
+    margin-top: 36px;
+    gap: 22px;
+  }
+
+  .publication-group-heading {
+    padding: 21px 22px 18px;
+  }
+
+  .publication-group-heading h2 {
+    font-size: 23px;
+  }
+
+  .publication-entry {
+    padding: 22px;
+  }
+
+  .publication-entry-heading {
+    display: block;
+  }
+
+  .publication-entry h3 {
+    font-size: 17px;
+  }
+
+  .publication-types {
+    max-width: 100%;
+    justify-content: flex-start;
+    margin-top: 14px;
+  }
+
+  .publication-meta {
+    display: block;
+  }
+
+  .publication-venue {
+    display: block;
+    margin-top: 3px;
+  }
+
+  .publication-venue::before {
+    display: none;
+  }
+
+  .members-page {
+    width: min(100% - 36px, 1180px);
+    padding: 52px 0 72px;
+  }
+
+  .member-sections {
+    margin-top: 40px;
+    gap: 42px;
+  }
+
+  .member-section-heading {
+    margin-bottom: 18px;
+  }
+
+  .member-section-heading h2 {
+    font-size: 22px;
+  }
+
+  .member-card .arco-card-body {
+    min-height: 0;
+    padding: 22px;
+  }
+
+  .re-resources-page,
+  .datasets-page,
+  .placeholder-page {
+    width: min(100% - 36px, 1180px);
+    padding: 52px 0 72px;
+  }
+
+  .re-resources-description,
+  .datasets-description,
+  .placeholder-heading p {
+    font-size: 16px;
+  }
+
+  .resource-sections {
+    margin-top: 40px;
+    gap: 42px;
+  }
+
+  .resource-section-heading {
+    margin-bottom: 18px;
+  }
+
+  .resource-section-heading h2 {
+    font-size: 22px;
+  }
+
+  .resource-card .arco-card-body {
+    min-height: 0;
+    padding: 22px;
+  }
+}

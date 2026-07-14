@@ -1,0 +1,58 @@
+.resource-card.arco-card {
+  height: 100%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e6ebf3;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(37, 52, 79, 0.06);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.resource-card.arco-card:hover {
+  border-color: #cfdcf7;
+  box-shadow: 0 18px 46px rgba(37, 67, 122, 0.11);
+  transform: translateY(-3px);
+}
+
+.resource-card .arco-card-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 292px;
+  padding: 26px;
+}
+
+.resource-card h3 {
+  margin: 0;
+  color: #1c2a42;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.012em;
+  line-height: 1.45;
+}
+
+.resource-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  gap: 8px;
+}
+
+.resource-tags .arco-tag {
+  border-radius: 6px;
+}
+
+.resource-description {
+  flex: 1;
+  margin: 20px 0 24px;
+  color: #667289;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.resource-card .arco-btn {
+  align-self: flex-start;
+  min-width: 112px;
+}

@@ -1,0 +1,68 @@
+.tool-card.arco-card {
+  height: 100%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #e6ebf3;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(37, 52, 79, 0.06);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.tool-card.arco-card:hover {
+  border-color: #cfdcf7;
+  box-shadow: 0 18px 46px rgba(37, 67, 122, 0.11);
+  transform: translateY(-3px);
+}
+
+.tool-card .arco-card-body {
+  display: flex;
+  flex-direction: column;
+  min-height: 354px;
+  padding: 30px;
+}
+
+.tool-card h3,
+.agent-card h4 {
+  margin: 0;
+  color: #1c2a42;
+  font-size: clamp(20px, 2.1vw, 24px);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  line-height: 1.42;
+}
+
+.tool-card-description {
+  flex: 1;
+  margin: 20px 0 0;
+  color: #667289;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.tool-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  gap: 8px;
+}
+
+.tool-card-tags .arco-tag {
+  color: #35558a;
+  background: #f1f5fc;
+  border-color: #e0e8f5;
+  border-radius: 6px;
+}
+
+.tool-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 24px;
+  gap: 10px;
+}
+
+.tool-card-actions .arco-btn {
+  min-width: 104px;
+}

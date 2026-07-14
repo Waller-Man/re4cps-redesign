@@ -1,0 +1,49 @@
+/* Shared equal-height behavior for responsive card grids. */
+.equal-height-card-grid {
+  align-items: stretch;
+}
+
+.equal-height-card-grid > .arco-col {
+  display: flex;
+  align-self: stretch;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.equal-height-card-grid > .arco-col > * {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.equal-height-card.arco-card {
+  display: flex;
+  height: 100%;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+.equal-height-card.arco-card > .arco-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.equal-height-card-grid .agent-card-stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.equal-height-card-grid .agent-card-stack > .equal-height-card,
+.equal-height-card-grid .agent-subcategory > .equal-height-card {
+  flex: 1 1 auto;
+}
+
+.equal-height-card.member-card .member-bio {
+  flex: 1;
+}
+
+.equal-height-card.member-card .member-contact:last-child,
+.equal-height-card.member-card .alumni-career,
+.equal-height-card.agent-placeholder-card .agent-placeholder-footer {
+  margin-top: auto;
+}
