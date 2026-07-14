@@ -1,9 +1,31 @@
 <script setup lang="ts">
 import { IconRobot } from '@arco-design/web-vue/es/icon'
 import { useI18n } from 'vue-i18n'
-import { agentCategories } from '../data/agents'
+import {
+  agentCategories,
+  type AgentSubcategoryDefinition,
+} from '../data/agents'
 
 const { t } = useI18n()
+
+const getSortedSubcategories = (
+  subcategories: readonly AgentSubcategoryDefinition[],
+) =>
+  subcategories
+    .map((subcategory, index) => ({ subcategory, index }))
+    .sort((left, right) => {
+      const leftHasAgents = left.subcategory.agents.length > 0
+      const rightHasAgents = right.subcategory.agents.length > 0
+
+      if (leftHasAgents !== rightHasAgents) {
+        return leftHasAgents ? -1 : 1
+      }
+
+      return left.index - right.index
+    })
+    .map(({ subcategory }) => subcategory)
+
+const defaultActiveCategoryKeys = [agentCategories[0].id]
 </script>
 
 <template>
@@ -13,27 +35,30 @@ const { t } = useI18n()
       <p>{{ t('agents.description') }}</p>
     </header>
 
-    <div class="agent-category-sections">
-      <section
+    <a-collapse
+      class="agent-category-collapse"
+      :default-active-key="defaultActiveCategoryKeys"
+    >
+      <a-collapse-item
         v-for="category in agentCategories"
         :key="category.id"
-        class="agent-category-section"
-        :aria-labelledby="`agent-category-${category.id}`"
       >
-        <header class="agent-category-heading">
-          <h2 :id="`agent-category-${category.id}`">
-            {{ t(`agents.categories.${category.localeKey}.title`) }}
-          </h2>
-          <p>{{ t(`agents.categories.${category.localeKey}.description`) }}</p>
-        </header>
+        <template #header>
+          <div class="agent-category-collapse-header">
+            <h2 :id="`agent-category-${category.id}`">
+              {{ t(`agents.categories.${category.localeKey}.title`) }}
+            </h2>
+            <p>{{ t(`agents.categories.${category.localeKey}.description`) }}</p>
+          </div>
+        </template>
 
         <a-row
           v-if="category.subcategories.length"
-          class="equal-height-card-grid"
+          class="equal-height-card-grid agent-subcategory-grid"
           :gutter="[24, 24]"
         >
           <a-col
-            v-for="subcategory in category.subcategories"
+            v-for="subcategory in getSortedSubcategories(category.subcategories)"
             :key="subcategory.id"
             :xs="24"
             :md="12"
@@ -42,7 +67,7 @@ const { t } = useI18n()
               <div v-if="subcategory.agents.length" class="agent-card-stack">
                 <a-card
                   v-for="agent in subcategory.agents"
-                  :key="agent.id"
+                  :key="`${subcategory.id}-${agent.id}`"
                   class="tool-card agent-card equal-height-card"
                   :bordered="false"
                   hoverable
@@ -58,7 +83,11 @@ const { t } = useI18n()
                   </p>
 
                   <div class="tool-card-tags">
-                    <a-tag v-for="tagKey in agent.tagKeys" :key="tagKey" size="small">
+                    <a-tag
+                      v-for="tagKey in agent.tagKeys"
+                      :key="tagKey"
+                      size="small"
+                    >
                       {{ t(`agents.tags.${tagKey}`) }}
                     </a-tag>
                   </div>
@@ -66,7 +95,7 @@ const { t } = useI18n()
                   <div class="tool-card-actions">
                     <template
                       v-for="link in agent.links"
-                      :key="`${link.kind}-${agent.id}`"
+                      :key="`${subcategory.id}-${agent.id}-${link.kind}`"
                     >
                       <a-button
                         v-if="link.destination === 'external'"
@@ -78,7 +107,12 @@ const { t } = useI18n()
                         {{ t(`agents.actions.${link.kind}`) }}
                       </a-button>
 
-                      <RouterLink v-else :to="link.to" custom v-slot="{ navigate }">
+                      <RouterLink
+                        v-else
+                        :to="link.to"
+                        custom
+                        v-slot="{ navigate }"
+                      >
                         <a-button type="primary" @click="navigate">
                           {{ t(`agents.actions.${link.kind}`) }}
                         </a-button>
@@ -134,7 +168,7 @@ const { t } = useI18n()
             {{ t('agents.placeholderFooter') }}
           </div>
         </a-card>
-      </section>
-    </div>
+      </a-collapse-item>
+    </a-collapse>
   </main>
 </template>

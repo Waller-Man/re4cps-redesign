@@ -31,35 +31,83 @@ export default {
     },
   },
   subcategories: {
-    endToEndRequirementsDevelopment: 'End-to-End Requirements Development',
-    requirementsModelingBehavioralModelGeneration:
-      'Requirements Modeling and Behavioral Model Generation',
-    requirementsElicitationUserInterviews:
-      'Requirements Elicitation and User Interviews',
-    requirementsClarificationAnalysis: 'Requirements Clarification and Analysis',
-    requirementsSpecificationDocumentationGeneration:
-      'Requirements Specification and Documentation Generation',
-    requirementsValidationReview: 'Requirements Validation and Review',
-    requirementsClarificationCompletion:
-      'Requirements Clarification and Completion',
-    requirementsNegotiation: 'Requirements Negotiation',
-    requirementsChangeAnalysis: 'Requirements Change Analysis',
-    requirementChangeDrivenDesignEvolution:
-      'Requirement-Change-Driven Design Evolution',
-    requirementChangeDrivenCodeGeneration:
-      'Requirement-Change-Driven Code Generation',
-    requirementChangeDrivenTestCaseEvolution:
-      'Requirement-Change-Driven Test Case Evolution',
-    documentParsingStructuring: 'Document Parsing and Structuring',
-    requirementElementRelationExtraction:
-      'Requirement Element and Relation Extraction',
-    semanticRetrievalSimilarRequirementMatching:
-      'Semantic Retrieval and Similar Requirement Matching',
-    historicalRequirementReuseRecommendation:
-      'Historical Requirement Reuse and Recommendation',
-    requirementsTraceabilityRecovery: 'Requirements Traceability Recovery',
-    conflictDuplicationConsistencyAnalysis:
-      'Conflict, Duplication and Consistency Analysis',
+    requirementsFunctionalLogicCompletion: 'Requirements Functional Logic Completion',
+    softwareRequirementsGenerationBasedOnUserRequirements:
+      'Software Requirements Generation Based on User Requirements',
+    requirementsExtraction: 'Requirements Extraction',
+    requirementsClarification: 'Requirements Clarification',
+    abnormalScenarioCompletion: 'Abnormal Scenario Completion',
+    humanSafetyRequirementsCompletionRecommendation:
+      'Human Safety Requirements Completion Recommendation',
+    reliabilityRequirementsCompletionRecommendation:
+      'Reliability Requirements Completion Recommendation',
+    informationSecurityRequirementsCompletionRecommendation:
+      'Information Security Requirements Completion Recommendation',
+    softwareRequirementsGenerationBasedOnBusinessRules:
+      'Software Requirements Generation Based on Business Rules',
+    fdirRequirementsGenerationBasedOnFeedforwardFeedbackControl:
+      'FDIR Requirements Generation Based on Feedforward-Feedback Control',
+    softwareRequirementsGenerationBasedOnSystemRequirements:
+      'Software Requirements Generation Based on System Requirements',
+    requirementsDocumentStructurePlanning: 'Requirements Document Structure Planning',
+    requirementsDocumentContentGeneration: 'Requirements Document Content Generation',
+    requirementsDocumentStructureCompletion: 'Requirements Document Structure Completion',
+    requirementsDocumentFormattingEnhancement:
+      'Requirements Document Formatting Enhancement',
+    requirementsDocumentSemanticConflictDetection:
+      'Semantic Conflict Detection for Requirements Documents',
+    requirementsDocumentLogicalConflictDetection:
+      'Logical Conflict Detection for Requirements Documents',
+    requirementsDocumentFunctionalScenarioCoverageCompletenessCheck:
+      'Functional Scenario Coverage Completeness Check',
+    requirementsDocumentFunctionalSafetyCoverageCompletenessCheck:
+      'Functional Safety Coverage Completeness Check',
+    requirementsDocumentInformationSecurityCoverageCompletenessCheck:
+      'Information Security Coverage Completeness Check',
+    requirementsDocumentReliabilityCoverageCompletenessCheck:
+      'Reliability Coverage Completeness Check',
+    requirementsDocumentPerformanceCoverageCompletenessCheck:
+      'Performance Coverage Completeness Check',
+    reviewAssistantAgent: 'Review Assistant Agent',
+    complianceReviewAgent: 'Compliance Review Agent',
+    differenceComparison: 'Difference Comparison',
+    potentialChangeSourceIdentificationBasedOnRequirementsDocuments:
+      'Potential Change Source Identification Based on Requirements Documents',
+    userRequirementsChangeIdentification: 'User Requirements Change Identification',
+    businessRuleChangeIdentification: 'Business Rule Change Identification',
+    externalEnvironmentChangeIdentification: 'External Environment Change Identification',
+    specificationEvolutionBasedOnBusinessRuleChanges:
+      'Specification Evolution Based on Business Rule Changes',
+    specificationEvolutionBasedOnUserRequirementsChanges:
+      'Specification Evolution Based on User Requirements Changes',
+    specificationEvolutionBasedOnExternalEnvironmentChanges:
+      'Specification Evolution Based on External Environment Changes',
+    changeImpactAnalysis: 'Change Impact Analysis',
+    multiSourceRequirementsSpecificationChangeFusion:
+      'Multi-Source Requirements Specification Change Fusion',
+    baselineManagement: 'Baseline Management',
+    changeTraceability: 'Change Traceability',
+    activityDiagramBasedBehavioralModeling:
+      'Behavioral Modeling Based on Activity Diagrams',
+    sequenceDiagramBasedBehavioralModeling:
+      'Behavioral Modeling Based on Sequence Diagrams',
+    stateDiagramBasedBehavioralModeling:
+      'Behavioral Modeling Based on State Diagrams',
+    documentSegmentation: 'Document Segmentation',
+    documentParsing: 'Document Parsing',
+    terminologyUnification: 'Terminology Unification',
+    invalidContentFiltering: 'Invalid Content Filtering',
+    requirementsInformationExtractionAndFusion:
+      'Requirements Information Extraction and Fusion',
+    functionalModelingBasedOnUseCaseModels:
+      'Functional Modeling Based on Use Case Models',
+    functionalModelingBasedOnDataFlowDiagrams:
+      'Functional Modeling Based on Data Flow Diagrams',
+    flowchartGeneration: 'Flowchart Generation',
+    dataModelingBasedOnErDiagrams: 'Data Modeling Based on E-R Diagrams',
+    requirementsRelationshipIdentification: 'Requirements Relationship Identification',
+    highLevelToSoftwareRequirementsTraceabilityNetworkConstruction:
+      'High-Level-to-Software Requirements Traceability Network Construction',
   },
   actions: {
     github: 'Use Online',
