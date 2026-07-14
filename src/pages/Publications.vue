@@ -5,6 +5,7 @@ import {
   publications,
   type Publication,
   type PublicationGroup,
+  type PublicationRankTag,
 } from '../data/publications'
 
 const { t } = useI18n()
@@ -18,6 +19,19 @@ const getPublicationTitle = (publication: Publication) =>
   publication.titleLocaleKey
     ? t(`publications.titles.${publication.titleLocaleKey}`)
     : publication.title
+
+const publicationRankTagColors: Record<PublicationRankTag, string> = {
+  ccfa: 'red',
+  ccfb: 'orange',
+  ccfc: 'blue',
+  ccfT1: 'red',
+  sciQ1: 'green',
+  aclFindings: 'cyan',
+  icseCompanion: 'cyan',
+  reWorkshop: 'cyan',
+  textbook: 'purple',
+  academicMonograph: 'purple',
+}
 </script>
 
 <template>
@@ -52,17 +66,9 @@ const getPublicationTitle = (publication: Publication) =>
                       v-for="rankTag in publication.rankTags"
                       :key="rankTag"
                       size="small"
-                      color="purple"
+                      :color="publicationRankTagColors[rankTag]"
                     >
                       {{ t(`publications.rankTags.${rankTag}`) }}
-                    </a-tag>
-                    <a-tag
-                      v-for="type in publication.types"
-                      :key="type"
-                      size="small"
-                      :color="type === 'accepted' ? 'green' : 'arcoblue'"
-                    >
-                      {{ t(`publications.types.${type}`) }}
                     </a-tag>
                   </div>
                 </div>

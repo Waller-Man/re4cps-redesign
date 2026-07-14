@@ -9,7 +9,17 @@ export type PublicationType =
   | 'accepted'
 
 export type PublicationLinkKind = 'pdf' | 'doi' | 'bibtex' | 'code' | 'tool'
-export type PublicationRankTag = 'textbook'
+export type PublicationRankTag =
+  | 'ccfa'
+  | 'ccfb'
+  | 'ccfc'
+  | 'ccfT1'
+  | 'sciQ1'
+  | 'aclFindings'
+  | 'icseCompanion'
+  | 'reWorkshop'
+  | 'textbook'
+  | 'academicMonograph'
 
 export interface PublicationLink {
   kind: PublicationLinkKind
@@ -47,6 +57,7 @@ export const publications: readonly Publication[] = [
     authors: 'Zhujun Wu, Xiaohong Chen*, Zhi Jin*, Ming Hu, Dongming Jin',
     venue: 'ICSE',
     types: ['conference', 'accepted'],
+    rankTags: ['ccfa'],
   },
   {
     id: 'fang-2026-restl',
@@ -58,6 +69,7 @@ export const publications: readonly Publication[] = [
       'Yue Fang, Zhi Jin*, Jie An*, Hongshen Chen, Xiaohong Chen, Naijun Zhan',
     venue: 'AAAI 2026',
     types: ['conference'],
+    rankTags: ['ccfa'],
   },
   {
     id: 'huang-2026-onion-modeling',
@@ -68,6 +80,7 @@ export const publications: readonly Publication[] = [
     authors: 'Yike Huang, Ming Hu, Xiaohong Chen*, Zhi Jin*, Shuyuan Xiao',
     venue: 'ICSE',
     types: ['conference', 'accepted'],
+    rankTags: ['ccfa'],
   },
   {
     id: 'chen-2025-smart-home-needs',
@@ -78,6 +91,7 @@ export const publications: readonly Publication[] = [
       'Xiaohong Chen, Shi Chen, Zhi Jin, Han Bian, Zihan Chen, Haotian Li',
     venue: 'ACM Transactions on Computer-Human Interaction, 32(2): 16:1-16:38',
     types: ['journal'],
+    rankTags: ['ccfa', 'sciQ1'],
   },
   {
     id: 'chen-2025-prototype-generation',
@@ -88,6 +102,7 @@ export const publications: readonly Publication[] = [
     authors: 'Xiaohong Chen, Shi Chen, Zhi Jin, Zihan Chen, Mingsong Chen',
     venue: 'IEEE Transactions on Software Engineering, 51(7): 1996-2014',
     types: ['journal'],
+    rankTags: ['ccfa', 'sciQ1'],
   },
   {
     id: 'huang-2025-airborne-modeling',
@@ -97,6 +112,7 @@ export const publications: readonly Publication[] = [
     authors: '黄益柯, 阮锟, 陈小红, 金芝',
     venue: '计算机研究与发展, 62(9): 2362-2381',
     types: ['chineseJournal'],
+    rankTags: ['ccfT1'],
   },
   {
     id: 'li-2025-securities-rules',
@@ -106,6 +122,7 @@ export const publications: readonly Publication[] = [
     authors: '李靓果, 薛志一, 陈小红, 张民, 陈良育, 李萍萍, 姜婷婷',
     venue: '软件学报, 36(10): 4671-4694',
     types: ['chineseJournal'],
+    rankTags: ['ccfT1'],
   },
   {
     id: 'chen-2025-embedded-requirements-survey',
@@ -115,6 +132,7 @@ export const publications: readonly Publication[] = [
     authors: '陈小红, 刘少彬, 金芝',
     venue: '软件学报, 36(1): 27-46',
     types: ['chineseJournal'],
+    rankTags: ['ccfT1'],
   },
   {
     id: 'yang-2025-compositional-verification',
@@ -124,6 +142,7 @@ export const publications: readonly Publication[] = [
     authors: '杨晓, 王小齐, 陈小红, 金芝',
     venue: '软件学报, 36(4): 1413-1434',
     types: ['chineseJournal'],
+    rankTags: ['ccfT1'],
   },
   {
     id: 'xu-2025-test-case-generation',
@@ -135,6 +154,7 @@ export const publications: readonly Publication[] = [
       'Tong Xu, Zheng Zhou, Xiaohong Chen, Zhiyi Xue, Yi Zhao, Min Zhang, Zhi Jin',
     venue: 'RE 2025: 400-404',
     types: ['conference'],
+    rankTags: ['ccfb'],
   },
   {
     id: 'lin-2025-structured-requirements',
@@ -146,6 +166,7 @@ export const publications: readonly Publication[] = [
     venue:
       '2025 IEEE 33rd International Requirements Engineering Conference Workshops, REW 2025: 181-188',
     types: ['workshop'],
+    rankTags: ['reWorkshop', 'ccfb'],
   },
   {
     id: 'fang-2025-stl-transformation',
@@ -157,6 +178,7 @@ export const publications: readonly Publication[] = [
       'Yue Fang, Zhi Jin, Jie An, Hongshen Chen, Xiaohong Chen, Naijun Zhan',
     venue: 'ACL Findings 2025: 10446-10458',
     types: ['conference'],
+    rankTags: ['aclFindings', 'ccfa'],
   },
   {
     id: 'xue-2024-llm4fin',
@@ -168,6 +190,7 @@ export const publications: readonly Publication[] = [
       'Zhiyi Xue, Liangguo Li, Senyue Tian, Xiaohong Chen*, Pingping Li, Liangyu Chen, Tingting Jiang, Min Zhang',
     venue: 'ISSTA 2024: 1643-1655',
     types: ['conference'],
+    rankTags: ['ccfa'],
   },
   {
     id: 'chen-2024-railway-inconsistencies',
@@ -180,6 +203,7 @@ export const publications: readonly Publication[] = [
     venue:
       'IEEE Transactions on Intelligent Transportation Systems, 25(8): 8375-8386',
     types: ['journal'],
+    rankTags: ['sciQ1', 'ccfb'],
   },
   {
     id: 'chen-2024-tapchecker',
@@ -191,6 +215,7 @@ export const publications: readonly Publication[] = [
       'Liangyu Chen, Chen Wang, Cheng Chen, Caidie Huang, Xiaohong Chen, Min Zhang',
     venue: 'IEEE Internet of Things Journal, 11(12): 21411-21426',
     types: ['journal'],
+    rankTags: ['sciQ1', 'ccfc'],
   },
   {
     id: 'xue-2024-domain-knowledge',
@@ -202,6 +227,7 @@ export const publications: readonly Publication[] = [
       'Zhiyi Xue, Liangguo Li, Senyue Tian, Xiaohong Chen*, Pingping Li, Liangyu Chen, Tingting Jiang, Min Zhang',
     venue: 'ICSE Companion 2024: 314-315',
     types: ['conference'],
+    rankTags: ['icseCompanion', 'ccfa'],
   },
   {
     id: 'chen-2024-device-models',
@@ -212,6 +238,7 @@ export const publications: readonly Publication[] = [
     authors: 'Shi Chen, Xiaohong Chen*, Zhi Jin, Tingliang Zhou',
     venue: 'REW 2024: 176-183',
     types: ['workshop'],
+    rankTags: ['reWorkshop', 'ccfb'],
   },
   {
     id: 'huang-2024-realtime-inconsistency',
@@ -222,6 +249,7 @@ export const publications: readonly Publication[] = [
     authors: 'Yike Huang, Xiaohong Chen, Zhi Jin, Tingliang Zhou',
     venue: 'REW 2024: 222-229',
     types: ['workshop'],
+    rankTags: ['reWorkshop', 'ccfb'],
   },
   {
     id: 'wang-2024-requirements-documents',
@@ -232,6 +260,7 @@ export const publications: readonly Publication[] = [
     authors: 'Chunhui Wang, Jiaqi Zhao, Xiaohong Chen, Zhi Jin',
     venue: 'REW 2024: 200-205',
     types: ['workshop'],
+    rankTags: ['reWorkshop', 'ccfb'],
   },
   {
     id: 'wang-2024-projection-analysis',
@@ -241,6 +270,7 @@ export const publications: readonly Publication[] = [
     authors: '王小齐, 陈小红, 金芝, 顾斌, 綦艳霞',
     venue: '软件学报, 35(12): 5397-5418',
     types: ['chineseJournal'],
+    rankTags: ['ccfT1'],
   },
   {
     id: 'jin-2024-chatmodeler',
@@ -250,6 +280,7 @@ export const publications: readonly Publication[] = [
     authors: '靳东明, 金芝, 陈小红, 王春晖',
     venue: '计算机研究与发展, 61(2): 338-350',
     types: ['chineseJournal'],
+    rankTags: ['ccfT1'],
   },
   {
     id: 'jin-2023-software-requirements-textbook',
@@ -271,5 +302,6 @@ export const publications: readonly Publication[] = [
     authors: 'Zhi Jin',
     venue: '1st Edition, Morgan Kaufmann',
     types: ['book'],
+    rankTags: ['academicMonograph'],
   },
 ]

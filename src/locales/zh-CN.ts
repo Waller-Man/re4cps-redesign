@@ -238,7 +238,16 @@ export default {
       softwareRequirementsEngineeringPractice: '教材：软件需求工程与实践',
     },
     rankTags: {
+      ccfa: 'CCFA',
+      ccfb: 'CCFB',
+      ccfc: 'CCFC',
+      ccfT1: 'CCF-T1',
+      sciQ1: 'SCIQ1',
+      aclFindings: 'ACL Findings',
+      icseCompanion: 'ICSE Companion',
+      reWorkshop: 'RE Workshop',
       textbook: '教材',
+      academicMonograph: '学术专著',
     },
     types: {
       conference: '会议论文',
