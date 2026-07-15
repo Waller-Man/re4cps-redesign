@@ -24,58 +24,98 @@
   line-height: 1.8;
 }
 
-.agent-category-collapse.arco-collapse {
+.agent-tree {
   display: flex;
-  overflow: visible;
   flex-direction: column;
   margin-top: 52px;
-  background: transparent;
-  border: 0;
   gap: 18px;
 }
 
-.agent-category-collapse .arco-collapse-item {
+.agent-tree-node {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.agent-tree-node .arco-card,
+.agent-tree-node .arco-card-body {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.agent-tree-branch.arco-collapse {
+  overflow: visible;
+  grid-column: 1 / -1;
+  background: transparent;
+  border: 0;
+}
+
+.agent-tree-branch > .arco-collapse-item {
   overflow: hidden;
   background: #fff;
   border: 1px solid #d9e3f1;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(45, 73, 119, 0.05);
+}
+
+.agent-tree-root > .arco-collapse-item {
   border-radius: 18px;
   box-shadow: 0 9px 24px rgba(45, 73, 119, 0.06);
 }
 
-.agent-category-collapse .arco-collapse-item-header {
+.agent-tree-branch > .arco-collapse-item > .arco-collapse-item-header {
+  min-height: 64px;
+  padding: 14px 20px 14px 48px;
+  background: linear-gradient(135deg, #fff, #f7faff);
+}
+
+.agent-tree-root > .arco-collapse-item > .arco-collapse-item-header {
   min-height: 98px;
   padding-top: 20px;
   padding-right: 24px;
   padding-bottom: 20px;
-  background: linear-gradient(135deg, #fff, #f7faff);
+  padding-left: 54px;
 }
 
-.agent-category-collapse .arco-collapse-item-header-left {
-  padding-left: 50px;
+.agent-tree-branch > .arco-collapse-item > .arco-collapse-item-header.arco-collapse-item-header-left {
+  min-width: 0;
 }
 
-.agent-category-collapse .arco-collapse-item-header-title {
+.agent-tree-branch > .arco-collapse-item > .arco-collapse-item-header .arco-collapse-item-icon-hover {
+  left: 16px;
+  width: 24px;
+}
+
+.agent-tree-branch > .arco-collapse-item > .arco-collapse-item-header .arco-collapse-item-header-title {
   display: block;
   width: 100%;
   min-width: 0;
 }
 
-.agent-category-collapse-header {
+.agent-tree-branch-header {
   min-width: 0;
   padding-right: 8px;
 }
 
-.agent-category-collapse-header h2 {
+.agent-tree-branch-header h2,
+.agent-tree-branch-header h3 {
   margin: 0;
   color: #143d8f;
-  font-size: clamp(24px, 3vw, 31px);
   font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.3;
+  line-height: 1.35;
   overflow-wrap: anywhere;
 }
 
-.agent-category-collapse-header p {
+.agent-tree-branch-header h2 {
+  font-size: clamp(24px, 3vw, 31px);
+  letter-spacing: -0.025em;
+}
+
+.agent-tree-branch-header h3 {
+  font-size: 18px;
+}
+
+.agent-tree-branch-header p {
   margin: 7px 0 0;
   color: #667289;
   font-size: 14px;
@@ -84,43 +124,78 @@
   overflow-wrap: anywhere;
 }
 
-.agent-category-collapse .arco-collapse-item-content {
-  padding-right: 24px;
-  padding-left: 24px;
+.agent-tree-branch > .arco-collapse-item > .arco-collapse-item-content {
+  padding: 0 18px;
   background: #f7faff;
 }
 
-.agent-category-collapse .arco-collapse-item-content-box {
+.agent-tree-root > .arco-collapse-item > .arco-collapse-item-content {
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.agent-tree-branch > .arco-collapse-item > .arco-collapse-item-content > .arco-collapse-item-content-box {
+  padding: 18px 0 20px;
+}
+
+.agent-tree-root > .arco-collapse-item > .arco-collapse-item-content > .arco-collapse-item-content-box {
   padding: 24px 0 26px;
 }
 
-.agent-subcategory-grid {
-  width: 100%;
+.agent-tree-children {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.agent-subcategory {
+.agent-tree-branches {
   display: flex;
+  min-width: 0;
   flex-direction: column;
+  gap: 16px;
+}
+
+.agent-tree-leaf-grid {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 24px;
+}
+
+.agent-tree-leaf {
+  display: flex;
+  width: 100%;
+  min-width: 0;
   height: 100%;
+  flex-direction: column;
 }
 
 .agent-card-stack {
+  display: flex;
+  height: 100%;
   flex: 1;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .agent-card-stack .agent-card {
-  height: 100%;
+  flex: 1 1 auto;
 }
 
 .agent-subcategory-label {
   display: flex;
-  align-items: center;
   width: fit-content;
+  min-width: 0;
+  align-items: center;
   color: #49658f;
   font-size: 16px;
   font-weight: 650;
   letter-spacing: 0.01em;
   line-height: 1.45;
+  overflow-wrap: anywhere;
   gap: 8px;
 }
 
@@ -138,7 +213,7 @@
 }
 
 .agent-placeholder-card.arco-card {
-  height: auto;
+  width: 100%;
   min-height: 180px;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(247, 250, 255, 0.98), rgba(238, 245, 255, 0.72));
@@ -149,6 +224,10 @@
     transform 180ms ease,
     border-color 180ms ease,
     box-shadow 180ms ease;
+}
+
+.agent-tree-leaf > .agent-placeholder-card.arco-card {
+  height: 100%;
 }
 
 .agent-placeholder-card.arco-card:hover {
@@ -164,14 +243,20 @@
 
 .agent-placeholder-header {
   display: flex;
-  align-items: center;
+  min-width: 0;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 16px;
+}
+
+.agent-placeholder-header > .arco-tag {
+  flex-shrink: 0;
 }
 
 .agent-placeholder-identity {
   display: flex;
   min-width: 0;
+  flex: 1 1 auto;
   align-items: center;
   gap: 12px;
 }
@@ -184,6 +269,7 @@
   display: grid;
   width: 34px;
   height: 34px;
+  flex-shrink: 0;
   color: #416fae;
   font-size: 18px;
   background: rgba(214, 228, 249, 0.72);
@@ -200,7 +286,7 @@
 }
 
 .agent-placeholder-footer {
-  margin-top: 12px;
+  margin-top: auto;
   padding-top: 10px;
   color: #95a0b2;
   font-size: 12px;
@@ -210,5 +296,4 @@
 
 .agent-category-placeholder.arco-card {
   width: min(570px, 100%);
-  min-height: 180px;
 }

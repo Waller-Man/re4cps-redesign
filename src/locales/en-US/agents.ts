@@ -30,12 +30,13 @@ export default {
         'Generating and evolving test cases from requirements and related engineering knowledge.',
     },
   },
-  subcategories: {
+  nodes: {
     requirementsFunctionalLogicCompletion: 'Requirements Functional Logic Completion',
     softwareRequirementsGenerationBasedOnUserRequirements:
       'Software Requirements Generation Based on User Requirements',
     requirementsExtraction: 'Requirements Extraction',
     requirementsClarification: 'Requirements Clarification',
+    requirementsCompletionRecommendation: 'Requirements Completion Recommendation',
     abnormalScenarioCompletion: 'Abnormal Scenario Completion',
     humanSafetyRequirementsCompletionRecommendation:
       'Human Safety Requirements Completion Recommendation',
@@ -43,21 +44,29 @@ export default {
       'Reliability Requirements Completion Recommendation',
     informationSecurityRequirementsCompletionRecommendation:
       'Information Security Requirements Completion Recommendation',
+    requirementsSpecification: 'Requirements Specification',
     softwareRequirementsGenerationBasedOnBusinessRules:
       'Software Requirements Generation Based on Business Rules',
     fdirRequirementsGenerationBasedOnFeedforwardFeedbackControl:
       'FDIR Requirements Generation Based on Feedforward-Feedback Control',
     softwareRequirementsGenerationBasedOnSystemRequirements:
       'Software Requirements Generation Based on System Requirements',
-    requirementsDocumentStructurePlanning: 'Requirements Document Structure Planning',
-    requirementsDocumentContentGeneration: 'Requirements Document Content Generation',
-    requirementsDocumentStructureCompletion: 'Requirements Document Structure Completion',
+    requirementsDocumentGeneration: 'Requirements Document Generation',
+    requirementsDocumentStructurePlanning:
+      'Requirements Document Generation Based on Structure Planning',
+    requirementsDocumentContentGeneration:
+      'Requirements Document Generation Based on Content Generation',
+    requirementsDocumentStructureCompletion:
+      'Requirements Document Generation Based on Structure Completion',
     requirementsDocumentFormattingEnhancement:
-      'Requirements Document Formatting Enhancement',
+      'Requirements Document Generation Based on Formatting Enhancement',
+    requirementsDocumentQualityInspection: 'Requirements Document Quality Inspection',
+    requirementsDocumentConsistencyCheck: 'Requirements Document Consistency Check',
     requirementsDocumentSemanticConflictDetection:
       'Semantic Conflict Detection for Requirements Documents',
     requirementsDocumentLogicalConflictDetection:
       'Logical Conflict Detection for Requirements Documents',
+    requirementsDocumentCompletenessCheck: 'Requirements Document Completeness Check',
     requirementsDocumentFunctionalScenarioCoverageCompletenessCheck:
       'Functional Scenario Coverage Completeness Check',
     requirementsDocumentFunctionalSafetyCoverageCompletenessCheck:
@@ -73,9 +82,13 @@ export default {
     differenceComparison: 'Difference Comparison',
     potentialChangeSourceIdentificationBasedOnRequirementsDocuments:
       'Potential Change Source Identification Based on Requirements Documents',
+    realWorldChangeSourceAndChangeIdentification:
+      'Real-World Change Source and Change Identification',
     userRequirementsChangeIdentification: 'User Requirements Change Identification',
     businessRuleChangeIdentification: 'Business Rule Change Identification',
     externalEnvironmentChangeIdentification: 'External Environment Change Identification',
+    specificationEvolutionForMultiSourceRequirementsChanges:
+      'Specification Evolution for Multi-Source Requirements Changes',
     specificationEvolutionBasedOnBusinessRuleChanges:
       'Specification Evolution Based on Business Rule Changes',
     specificationEvolutionBasedOnUserRequirementsChanges:
@@ -99,11 +112,15 @@ export default {
     invalidContentFiltering: 'Invalid Content Filtering',
     requirementsInformationExtractionAndFusion:
       'Requirements Information Extraction and Fusion',
+    requirementsModeling: 'Requirements Modeling',
+    functionalModeling: 'Functional Modeling',
     functionalModelingBasedOnUseCaseModels:
       'Functional Modeling Based on Use Case Models',
     functionalModelingBasedOnDataFlowDiagrams:
       'Functional Modeling Based on Data Flow Diagrams',
+    behavioralModeling: 'Behavioral Modeling',
     flowchartGeneration: 'Flowchart Generation',
+    dataModeling: 'Data Modeling',
     dataModelingBasedOnErDiagrams: 'Data Modeling Based on E-R Diagrams',
     requirementsRelationshipIdentification: 'Requirements Relationship Identification',
     highLevelToSoftwareRequirementsTraceabilityNetworkConstruction:

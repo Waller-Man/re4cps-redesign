@@ -19,16 +19,11 @@ export interface AgentDefinition {
   links: readonly AgentLink[]
 }
 
-export interface AgentSubcategoryDefinition {
+export interface AgentNode {
   id: string
   localeKey: string
-  agents: readonly AgentDefinition[]
-}
-
-export interface AgentCategoryDefinition {
-  id: string
-  localeKey: string
-  subcategories: readonly AgentSubcategoryDefinition[]
+  children?: readonly AgentNode[]
+  agents?: readonly AgentDefinition[]
 }
 
 const iReDev: AgentDefinition = {
@@ -77,21 +72,11 @@ const reqCompleter: AgentDefinition = {
   ],
 }
 
-export const agentCategories: readonly AgentCategoryDefinition[] = [
+export const agentCategories: readonly AgentNode[] = [
   {
     id: 'software-requirements-development',
     localeKey: 'softwareRequirementsDevelopment',
-    subcategories: [
-      {
-        id: 'requirements-functional-logic-completion',
-        localeKey: 'requirementsFunctionalLogicCompletion',
-        agents: [reqCompleter],
-      },
-      {
-        id: 'software-requirements-generation-based-on-user-requirements',
-        localeKey: 'softwareRequirementsGenerationBasedOnUserRequirements',
-        agents: [iReDev],
-      },
+    children: [
       {
         id: 'requirements-extraction',
         localeKey: 'requirementsExtraction',
@@ -103,111 +88,157 @@ export const agentCategories: readonly AgentCategoryDefinition[] = [
         agents: [],
       },
       {
-        id: 'abnormal-scenario-completion',
-        localeKey: 'abnormalScenarioCompletion',
-        agents: [],
+        id: 'requirements-completion-recommendation',
+        localeKey: 'requirementsCompletionRecommendation',
+        children: [
+          {
+            id: 'requirements-functional-logic-completion',
+            localeKey: 'requirementsFunctionalLogicCompletion',
+            agents: [reqCompleter],
+          },
+          {
+            id: 'abnormal-scenario-completion',
+            localeKey: 'abnormalScenarioCompletion',
+            agents: [],
+          },
+          {
+            id: 'human-safety-requirements-completion-recommendation',
+            localeKey: 'humanSafetyRequirementsCompletionRecommendation',
+            agents: [],
+          },
+          {
+            id: 'reliability-requirements-completion-recommendation',
+            localeKey: 'reliabilityRequirementsCompletionRecommendation',
+            agents: [],
+          },
+          {
+            id: 'information-security-requirements-completion-recommendation',
+            localeKey: 'informationSecurityRequirementsCompletionRecommendation',
+            agents: [],
+          },
+        ],
       },
       {
-        id: 'human-safety-requirements-completion-recommendation',
-        localeKey: 'humanSafetyRequirementsCompletionRecommendation',
-        agents: [],
+        id: 'requirements-specification',
+        localeKey: 'requirementsSpecification',
+        children: [
+          {
+            id: 'software-requirements-generation-based-on-user-requirements',
+            localeKey: 'softwareRequirementsGenerationBasedOnUserRequirements',
+            agents: [iReDev],
+          },
+          {
+            id: 'software-requirements-generation-based-on-business-rules',
+            localeKey: 'softwareRequirementsGenerationBasedOnBusinessRules',
+            agents: [],
+          },
+          {
+            id: 'fdir-requirements-generation-based-on-feedforward-feedback-control',
+            localeKey: 'fdirRequirementsGenerationBasedOnFeedforwardFeedbackControl',
+            agents: [],
+          },
+          {
+            id: 'software-requirements-generation-based-on-system-requirements',
+            localeKey: 'softwareRequirementsGenerationBasedOnSystemRequirements',
+            agents: [],
+          },
+        ],
       },
       {
-        id: 'reliability-requirements-completion-recommendation',
-        localeKey: 'reliabilityRequirementsCompletionRecommendation',
-        agents: [],
+        id: 'requirements-document-generation',
+        localeKey: 'requirementsDocumentGeneration',
+        children: [
+          {
+            id: 'requirements-document-structure-planning',
+            localeKey: 'requirementsDocumentStructurePlanning',
+            agents: [],
+          },
+          {
+            id: 'requirements-document-content-generation',
+            localeKey: 'requirementsDocumentContentGeneration',
+            agents: [],
+          },
+          {
+            id: 'requirements-document-structure-completion',
+            localeKey: 'requirementsDocumentStructureCompletion',
+            agents: [],
+          },
+          {
+            id: 'requirements-document-formatting-enhancement',
+            localeKey: 'requirementsDocumentFormattingEnhancement',
+            agents: [],
+          },
+        ],
       },
       {
-        id: 'information-security-requirements-completion-recommendation',
-        localeKey: 'informationSecurityRequirementsCompletionRecommendation',
-        agents: [],
-      },
-      {
-        id: 'software-requirements-generation-based-on-business-rules',
-        localeKey: 'softwareRequirementsGenerationBasedOnBusinessRules',
-        agents: [],
-      },
-      {
-        id: 'fdir-requirements-generation-based-on-feedforward-feedback-control',
-        localeKey: 'fdirRequirementsGenerationBasedOnFeedforwardFeedbackControl',
-        agents: [],
-      },
-      {
-        id: 'software-requirements-generation-based-on-system-requirements',
-        localeKey: 'softwareRequirementsGenerationBasedOnSystemRequirements',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-structure-planning',
-        localeKey: 'requirementsDocumentStructurePlanning',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-content-generation',
-        localeKey: 'requirementsDocumentContentGeneration',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-structure-completion',
-        localeKey: 'requirementsDocumentStructureCompletion',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-formatting-enhancement',
-        localeKey: 'requirementsDocumentFormattingEnhancement',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-semantic-conflict-detection',
-        localeKey: 'requirementsDocumentSemanticConflictDetection',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-logical-conflict-detection',
-        localeKey: 'requirementsDocumentLogicalConflictDetection',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-functional-scenario-coverage-completeness-check',
-        localeKey: 'requirementsDocumentFunctionalScenarioCoverageCompletenessCheck',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-functional-safety-coverage-completeness-check',
-        localeKey: 'requirementsDocumentFunctionalSafetyCoverageCompletenessCheck',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-information-security-coverage-completeness-check',
-        localeKey: 'requirementsDocumentInformationSecurityCoverageCompletenessCheck',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-reliability-coverage-completeness-check',
-        localeKey: 'requirementsDocumentReliabilityCoverageCompletenessCheck',
-        agents: [],
-      },
-      {
-        id: 'requirements-document-performance-coverage-completeness-check',
-        localeKey: 'requirementsDocumentPerformanceCoverageCompletenessCheck',
-        agents: [],
-      },
-      {
-        id: 'review-assistant-agent',
-        localeKey: 'reviewAssistantAgent',
-        agents: [],
-      },
-      {
-        id: 'compliance-review-agent',
-        localeKey: 'complianceReviewAgent',
-        agents: [],
+        id: 'requirements-document-quality-inspection',
+        localeKey: 'requirementsDocumentQualityInspection',
+        children: [
+          {
+            id: 'requirements-document-consistency-check',
+            localeKey: 'requirementsDocumentConsistencyCheck',
+            children: [
+              {
+                id: 'requirements-document-semantic-conflict-detection',
+                localeKey: 'requirementsDocumentSemanticConflictDetection',
+                agents: [],
+              },
+              {
+                id: 'requirements-document-logical-conflict-detection',
+                localeKey: 'requirementsDocumentLogicalConflictDetection',
+                agents: [],
+              },
+            ],
+          },
+          {
+            id: 'requirements-document-completeness-check',
+            localeKey: 'requirementsDocumentCompletenessCheck',
+            children: [
+              {
+                id: 'requirements-document-functional-scenario-coverage-completeness-check',
+                localeKey: 'requirementsDocumentFunctionalScenarioCoverageCompletenessCheck',
+                agents: [],
+              },
+              {
+                id: 'requirements-document-functional-safety-coverage-completeness-check',
+                localeKey: 'requirementsDocumentFunctionalSafetyCoverageCompletenessCheck',
+                agents: [],
+              },
+              {
+                id: 'requirements-document-information-security-coverage-completeness-check',
+                localeKey: 'requirementsDocumentInformationSecurityCoverageCompletenessCheck',
+                agents: [],
+              },
+              {
+                id: 'requirements-document-reliability-coverage-completeness-check',
+                localeKey: 'requirementsDocumentReliabilityCoverageCompletenessCheck',
+                agents: [],
+              },
+              {
+                id: 'requirements-document-performance-coverage-completeness-check',
+                localeKey: 'requirementsDocumentPerformanceCoverageCompletenessCheck',
+                agents: [],
+              },
+            ],
+          },
+          {
+            id: 'review-assistant-agent',
+            localeKey: 'reviewAssistantAgent',
+            agents: [],
+          },
+          {
+            id: 'compliance-review-agent',
+            localeKey: 'complianceReviewAgent',
+            agents: [],
+          },
+        ],
       },
     ],
   },
   {
     id: 'requirements-change-evolution',
     localeKey: 'requirementsChangeEvolution',
-    subcategories: [
+    children: [
       {
         id: 'difference-comparison',
         localeKey: 'differenceComparison',
@@ -219,34 +250,46 @@ export const agentCategories: readonly AgentCategoryDefinition[] = [
         agents: [],
       },
       {
-        id: 'user-requirements-change-identification',
-        localeKey: 'userRequirementsChangeIdentification',
-        agents: [],
+        id: 'real-world-change-source-and-change-identification',
+        localeKey: 'realWorldChangeSourceAndChangeIdentification',
+        children: [
+          {
+            id: 'user-requirements-change-identification',
+            localeKey: 'userRequirementsChangeIdentification',
+            agents: [],
+          },
+          {
+            id: 'business-rule-change-identification',
+            localeKey: 'businessRuleChangeIdentification',
+            agents: [],
+          },
+          {
+            id: 'external-environment-change-identification',
+            localeKey: 'externalEnvironmentChangeIdentification',
+            agents: [],
+          },
+        ],
       },
       {
-        id: 'business-rule-change-identification',
-        localeKey: 'businessRuleChangeIdentification',
-        agents: [],
-      },
-      {
-        id: 'external-environment-change-identification',
-        localeKey: 'externalEnvironmentChangeIdentification',
-        agents: [],
-      },
-      {
-        id: 'specification-evolution-based-on-business-rule-changes',
-        localeKey: 'specificationEvolutionBasedOnBusinessRuleChanges',
-        agents: [],
-      },
-      {
-        id: 'specification-evolution-based-on-user-requirements-changes',
-        localeKey: 'specificationEvolutionBasedOnUserRequirementsChanges',
-        agents: [],
-      },
-      {
-        id: 'specification-evolution-based-on-external-environment-changes',
-        localeKey: 'specificationEvolutionBasedOnExternalEnvironmentChanges',
-        agents: [],
+        id: 'specification-evolution-for-multi-source-requirements-changes',
+        localeKey: 'specificationEvolutionForMultiSourceRequirementsChanges',
+        children: [
+          {
+            id: 'specification-evolution-based-on-business-rule-changes',
+            localeKey: 'specificationEvolutionBasedOnBusinessRuleChanges',
+            agents: [],
+          },
+          {
+            id: 'specification-evolution-based-on-user-requirements-changes',
+            localeKey: 'specificationEvolutionBasedOnUserRequirementsChanges',
+            agents: [],
+          },
+          {
+            id: 'specification-evolution-based-on-external-environment-changes',
+            localeKey: 'specificationEvolutionBasedOnExternalEnvironmentChanges',
+            agents: [],
+          },
+        ],
       },
       {
         id: 'change-impact-analysis',
@@ -273,22 +316,7 @@ export const agentCategories: readonly AgentCategoryDefinition[] = [
   {
     id: 'historical-requirements-document-processing',
     localeKey: 'historicalRequirementsDocumentProcessing',
-    subcategories: [
-      {
-        id: 'activity-diagram-based-behavioral-modeling',
-        localeKey: 'activityDiagramBasedBehavioralModeling',
-        agents: [plato],
-      },
-      {
-        id: 'sequence-diagram-based-behavioral-modeling',
-        localeKey: 'sequenceDiagramBasedBehavioralModeling',
-        agents: [plato],
-      },
-      {
-        id: 'state-diagram-based-behavioral-modeling',
-        localeKey: 'stateDiagramBasedBehavioralModeling',
-        agents: [plato],
-      },
+    children: [
       {
         id: 'document-segmentation',
         localeKey: 'documentSegmentation',
@@ -315,24 +343,63 @@ export const agentCategories: readonly AgentCategoryDefinition[] = [
         agents: [],
       },
       {
-        id: 'functional-modeling-based-on-use-case-models',
-        localeKey: 'functionalModelingBasedOnUseCaseModels',
-        agents: [],
-      },
-      {
-        id: 'functional-modeling-based-on-data-flow-diagrams',
-        localeKey: 'functionalModelingBasedOnDataFlowDiagrams',
-        agents: [],
-      },
-      {
-        id: 'flowchart-generation',
-        localeKey: 'flowchartGeneration',
-        agents: [],
-      },
-      {
-        id: 'data-modeling-based-on-er-diagrams',
-        localeKey: 'dataModelingBasedOnErDiagrams',
-        agents: [],
+        id: 'requirements-modeling',
+        localeKey: 'requirementsModeling',
+        children: [
+          {
+            id: 'functional-modeling',
+            localeKey: 'functionalModeling',
+            children: [
+              {
+                id: 'functional-modeling-based-on-use-case-models',
+                localeKey: 'functionalModelingBasedOnUseCaseModels',
+                agents: [],
+              },
+              {
+                id: 'functional-modeling-based-on-data-flow-diagrams',
+                localeKey: 'functionalModelingBasedOnDataFlowDiagrams',
+                agents: [],
+              },
+            ],
+          },
+          {
+            id: 'behavioral-modeling',
+            localeKey: 'behavioralModeling',
+            children: [
+              {
+                id: 'activity-diagram-based-behavioral-modeling',
+                localeKey: 'activityDiagramBasedBehavioralModeling',
+                agents: [plato],
+              },
+              {
+                id: 'sequence-diagram-based-behavioral-modeling',
+                localeKey: 'sequenceDiagramBasedBehavioralModeling',
+                agents: [plato],
+              },
+              {
+                id: 'state-diagram-based-behavioral-modeling',
+                localeKey: 'stateDiagramBasedBehavioralModeling',
+                agents: [plato],
+              },
+              {
+                id: 'flowchart-generation',
+                localeKey: 'flowchartGeneration',
+                agents: [],
+              },
+            ],
+          },
+          {
+            id: 'data-modeling',
+            localeKey: 'dataModeling',
+            children: [
+              {
+                id: 'data-modeling-based-on-er-diagrams',
+                localeKey: 'dataModelingBasedOnErDiagrams',
+                agents: [],
+              },
+            ],
+          },
+        ],
       },
       {
         id: 'requirements-relationship-identification',
@@ -349,6 +416,6 @@ export const agentCategories: readonly AgentCategoryDefinition[] = [
   {
     id: 'test-case-generation',
     localeKey: 'testCaseGeneration',
-    subcategories: [],
+    children: [],
   },
 ]
