@@ -6,6 +6,7 @@ export default {
   agents: 'Agents',
   tools: 'Tools',
   members: 'Members',
+  joinUs: 'Join Us',
   reResources: 'RE Resources',
   datasets: 'Datasets',
   github: 'GitHub',

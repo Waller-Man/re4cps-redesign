@@ -3,6 +3,7 @@ import MainLayout from '../layouts/MainLayout.vue'
 import Agents from '../pages/Agents.vue'
 import Datasets from '../pages/Datasets.vue'
 import Home from '../pages/Home.vue'
+import JoinUs from '../pages/JoinUs.vue'
 import Members from '../pages/Members.vue'
 import Publications from '../pages/Publications.vue'
 import ReResources from '../pages/ReResources.vue'
@@ -45,6 +46,11 @@ const router = createRouter({
           path: 'members',
           name: 'members',
           component: Members,
+        },
+        {
+          path: 'join-us',
+          name: 'join-us',
+          component: JoinUs,
         },
         {
           path: 're-resources',

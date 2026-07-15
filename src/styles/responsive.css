@@ -240,6 +240,72 @@
     padding: 52px 0 72px;
   }
 
+  .join-us-page {
+    width: min(100% - 36px, 1180px);
+    padding: 52px 0 72px;
+  }
+
+  .join-us-groups {
+    margin-top: 40px;
+    gap: 30px;
+  }
+
+  .join-us-group-card > .arco-card-body {
+    padding: 24px 20px;
+  }
+
+  .join-us-profile {
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .join-us-avatar.arco-avatar {
+    width: 92px !important;
+    height: 92px !important;
+  }
+
+  .join-us-profile h2 {
+    font-size: 24px;
+  }
+
+  .join-us-leader-bio {
+    margin-top: 22px;
+    padding: 18px;
+  }
+
+  .join-us-detail-grid,
+  .join-us-training-grid,
+  .join-us-postdoc-grid,
+  .join-us-two-column,
+  .join-us-check-list {
+    grid-template-columns: 1fr;
+  }
+
+  .join-us-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 21px;
+  }
+
+  .join-us-cta-contact {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .join-us-postdoc {
+    padding: 22px 18px;
+  }
+
+  .join-us-postdoc-heading h3 {
+    font-size: 22px;
+  }
+
+  .join-us-strengths {
+    grid-template-columns: 1fr;
+  }
+
   .member-sections {
     margin-top: 40px;
     gap: 42px;

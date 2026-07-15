@@ -6,6 +6,7 @@ export default {
   agents: '智能体',
   tools: '工具',
   members: '成员',
+  joinUs: '招生',
   reResources: 'RE资源',
   datasets: '数据集',
   github: 'GitHub',
