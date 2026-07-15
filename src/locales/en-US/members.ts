@@ -19,6 +19,11 @@ export default {
     hithink: 'Hithink RoyalFlush',
     axera: 'AXERA Semiconductor',
     neteaseGames: 'NetEase Games',
+    netease: 'NetEase',
+    tencent: 'Tencent',
+    nio: 'NIO',
+    bytedance: 'ByteDance',
+    eleme: 'Ele.me',
     agriculturalBankOfChina: 'Agricultural Bank of China',
     pinduoduo: 'Pinduoduo',
     didi: 'DiDi',
@@ -136,8 +141,28 @@ export default {
       school: 'East China Normal University, China',
       bio: 'Master of Software Engineering, focusing on intelligent requirements engineering and LLM-driven software engineering.',
     },
+    xiaoshanLiu: {
+      name: 'Xiaoshan Liu',
+      role: "Master's",
+      school: 'East China Normal University, China',
+    },
+    hanBian: {
+      name: 'Han Bian',
+      role: "Master's",
+      school: 'East China Normal University, China',
+    },
+    qianqianLiu: {
+      name: 'Qianqian Liu',
+      role: "Master's",
+      school: 'East China Normal University, China',
+    },
+    jiajiaYang: {
+      name: 'Jiajia Yang',
+      role: "Master's",
+      school: 'East China Normal University, China',
+    },
     liuJiacheng: {
-      name: 'jackenLeu',
+      name: 'Jiacheng Liu',
       role: "Master's",
       school: 'East China Normal University, China',
       bio: 'My name is jackenLeu. From XuZhou, Jiangsu.',
@@ -159,6 +184,11 @@ export default {
     },
     shiChen: {
       name: 'Shi Chen',
+      role: "Master's",
+      school: 'East China Normal University, China',
+    },
+    xiaoYang: {
+      name: 'Xiao Yang',
       role: "Master's",
       school: 'East China Normal University, China',
     },

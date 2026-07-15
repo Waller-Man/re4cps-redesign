@@ -544,6 +544,8 @@ src/assets/organizations/
 - 文件名大小写必须与静态 import 一致。
 - 没有可靠 SVG 时，应先寻找官方品牌资源。
 - 不要把低质量 PNG 自动描摹为形状错误的 SVG。
+- logo资源建议从 https://www.iconfont.cn/ 阿里巴巴矢量图标库中获取。
+- svg文件格式的logo如果有大量留白，可能会造成显示错误，**建议自行进行裁剪**。
 
 当前项目在 src/data/members.ts 顶部集中静态导入 Logo，并在 organization 或 careerPath 中引用。新增 Logo 后需要：
 

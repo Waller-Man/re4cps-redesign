@@ -19,6 +19,11 @@ export default {
     hithink: '同花顺',
     axera: '爱芯元智半导体股份有限公司',
     neteaseGames: '网易互娱',
+    netease: '网易',
+    tencent: '腾讯',
+    nio: '蔚来',
+    bytedance: '字节跳动',
+    eleme: '饿了么',
     agriculturalBankOfChina: '中国农业银行',
     pinduoduo: '拼多多',
     didi: '滴滴出行',
@@ -136,6 +141,26 @@ export default {
       school: '华东师范大学，中国',
       bio: '软件工程硕士，聚焦智能需求工程与大模型驱动的软件工程。',
     },
+    xiaoshanLiu: {
+      name: '刘筱珊',
+      role: '硕士',
+      school: '华东师范大学，中国',
+    },
+    hanBian: {
+      name: '边寒',
+      role: '硕士',
+      school: '华东师范大学，中国',
+    },
+    qianqianLiu: {
+      name: '刘倩倩',
+      role: '硕士',
+      school: '华东师范大学，中国',
+    },
+    jiajiaYang: {
+      name: '杨佳佳',
+      role: '硕士',
+      school: '华东师范大学，中国',
+    },
     liuJiacheng: {
       name: '刘家诚',
       role: '硕士',
@@ -159,6 +184,11 @@ export default {
     },
     shiChen: {
       name: '陈实',
+      role: '硕士',
+      school: '华东师范大学，中国',
+    },
+    xiaoYang: {
+      name: '杨晓',
       role: '硕士',
       school: '华东师范大学，中国',
     },

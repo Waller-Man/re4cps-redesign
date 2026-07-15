@@ -14,11 +14,16 @@ import boyiYePhoto from '../assets/members/master-students/YeBoyi.jpg'
 import zhujunWuPhoto from '../assets/members/master-students/WuZhujun.jpg'
 import abcLogo from '../assets/organizations/agricultural-bank-of-china.svg'
 import axeraLogo from '../assets/organizations/AXERA-semiconductor.svg'
+import bytedanceLogo from '../assets/organizations/bytedance.svg'
 import didiLogo from '../assets/organizations/didi.svg'
+import elemeLogo from '../assets/organizations/eleme.svg'
 import meituanLogo from '../assets/organizations/meituan.svg'
+import neteaseLogo from '../assets/organizations/netease.svg'
 import neteaseGamesLogo from '../assets/organizations/netease-games.svg'
+import nioLogo from '../assets/organizations/nio.svg'
 import pddLogo from '../assets/organizations/pdd.svg'
 import poizonLogo from '../assets/organizations/poizon.svg'
+import tencentLogo from '../assets/organizations/tencent.svg'
 import hithinkLogo from '../assets/organizations/tonghuashun.svg'
 
 export type MemberGroup = 'faculty' | 'phd' | 'master' | 'alumni'
@@ -234,12 +239,60 @@ export const members: readonly MemberProfile[] = [
     homepage: 'https://github.com/Waller-Man',
   },
   {
+    id: 'xiaoshan-liu',
+    group: 'alumni',
+    localeKey: 'xiaoshanLiu',
+    photo: defaultAvatar,
+    graduationYear: 2021,
+    order: 1,
+    organization: {
+      nameLocaleKey: 'netease',
+      logo: neteaseLogo,
+    },
+  },
+  {
+    id: 'han-bian',
+    group: 'alumni',
+    localeKey: 'hanBian',
+    photo: defaultAvatar,
+    graduationYear: 2022,
+    order: 2,
+    organization: {
+      nameLocaleKey: 'tencent',
+      logo: tencentLogo,
+    },
+  },
+  {
+    id: 'qianqian-liu',
+    group: 'alumni',
+    localeKey: 'qianqianLiu',
+    photo: defaultAvatar,
+    graduationYear: 2022,
+    order: 3,
+    organization: {
+      nameLocaleKey: 'nio',
+      logo: nioLogo,
+    },
+  },
+  {
+    id: 'jiajia-yang',
+    group: 'alumni',
+    localeKey: 'jiajiaYang',
+    photo: defaultAvatar,
+    graduationYear: 2022,
+    order: 4,
+    organization: {
+      nameLocaleKey: 'bytedance',
+      logo: bytedanceLogo,
+    },
+  },
+  {
     id: 'liu-jiacheng',
     group: 'alumni',
     localeKey: 'liuJiacheng',
     photo: liuJiachengPhoto,
     graduationYear: 2023,
-    order: 1,
+    order: 5,
     hasBio: true,
     email: '707516345@qq.com',
     homepage: 'https://mp.weixin.qq.com/s/9TkIpxZyW3mGpMLsIRT01Q',
@@ -271,7 +324,7 @@ export const members: readonly MemberProfile[] = [
     localeKey: 'xiaoqiWang',
     photo: defaultAvatar,
     graduationYear: 2024,
-    order: 2,
+    order: 6,
     organization: {
       nameLocaleKey: 'axera',
       logo: axeraLogo,
@@ -283,7 +336,7 @@ export const members: readonly MemberProfile[] = [
     localeKey: 'weihaoZeng',
     photo: defaultAvatar,
     graduationYear: 2024,
-    order: 3,
+    order: 7,
     organization: {
       nameLocaleKey: 'neteaseGames',
       logo: neteaseGamesLogo,
@@ -295,7 +348,7 @@ export const members: readonly MemberProfile[] = [
     localeKey: 'liangguoLi',
     photo: defaultAvatar,
     graduationYear: 2025,
-    order: 4,
+    order: 8,
     organization: {
       nameLocaleKey: 'agriculturalBankOfChina',
       logo: abcLogo,
@@ -307,10 +360,22 @@ export const members: readonly MemberProfile[] = [
     localeKey: 'shiChen',
     photo: shiChenPhoto,
     graduationYear: 2025,
-    order: 5,
+    order: 9,
     organization: {
       nameLocaleKey: 'pinduoduo',
       logo: pddLogo,
+    },
+  },
+  {
+    id: 'xiao-yang',
+    group: 'alumni',
+    localeKey: 'xiaoYang',
+    photo: defaultAvatar,
+    graduationYear: 2025,
+    order: 10,
+    organization: {
+      nameLocaleKey: 'eleme',
+      logo: elemeLogo,
     },
   },
   {
@@ -319,7 +384,7 @@ export const members: readonly MemberProfile[] = [
     localeKey: 'kunRuan',
     photo: ruanKunPhoto,
     graduationYear: 2026,
-    order: 6,
+    order: 11,
     organization: {
       nameLocaleKey: 'didi',
       logo: didiLogo,
@@ -331,7 +396,7 @@ export const members: readonly MemberProfile[] = [
     localeKey: 'yuanGao',
     photo: gaoYuanPhoto,
     graduationYear: 2026,
-    order: 7,
+    order: 12,
     organization: {
       nameLocaleKey: 'poizon',
       logo: poizonLogo,
@@ -343,7 +408,7 @@ export const members: readonly MemberProfile[] = [
     localeKey: 'yikeHuang',
     photo: defaultAvatar,
     graduationYear: 2026,
-    order: 8,
+    order: 13,
     homepage: 'https://github.com/Ekay47',
     organization: {
       nameLocaleKey: 'meituan',

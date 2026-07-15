@@ -83,6 +83,24 @@ export const publications: readonly Publication[] = [
     rankTags: ['ccfa'],
   },
   {
+    id: 'liu-2026-agencytree',
+    group: '2026',
+    year: 2026,
+    title:
+      'AgencyTree: Automated Multimedia Workflow Generation with Robust Planning via an Abstract Capability Tree',
+    authors:
+      'Wei Liu, Bowen Luo, Xiaohong Chen, Dongming Jin, Zhi Jin, and Chengfei Yuan',
+    venue: 'ACM Transactions on Software Engineering and Methodology',
+    types: ['journal'],
+    rankTags: ['ccfa', 'sciQ1'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1145/3812545',
+      },
+    ],
+  },
+  {
     id: 'chen-2025-smart-home-needs',
     group: '2025',
     year: 2025,
