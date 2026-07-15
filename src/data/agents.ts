@@ -29,7 +29,7 @@ export interface AgentNode {
 const iReDev: AgentDefinition = {
   id: 'iredev',
   localeKey: 'iredev',
-  tagKeys: ['llm', 'multiAgent', 'requirementsDevelopment', 'srs'],
+  tagKeys: ['llm', 'multiAgent', 'requirementsDevelopment'],
   links: [
     {
       destination: 'external',
@@ -42,7 +42,7 @@ const iReDev: AgentDefinition = {
 const plato: AgentDefinition = {
   id: 'plato',
   localeKey: 'plato',
-  tagKeys: ['llm', 'plantUml', 'behaviorModeling', 'requirementsAnalysis'],
+  tagKeys: ['llm', 'behaviorModeling', 'plantUml'],
   links: [
     {
       destination: 'external',
@@ -55,14 +55,7 @@ const plato: AgentDefinition = {
 const reqCompleter: AgentDefinition = {
   id: 'reqcompleter',
   localeKey: 'reqCompleter',
-  tagKeys: [
-    'llm',
-    'requirementsCompletion',
-    'businessLogic',
-    'useCase',
-    'erDiagram',
-    'crud',
-  ],
+  tagKeys: ['llm', 'requirementsCompletion', 'businessLogic'],
   links: [
     {
       destination: 'external',
@@ -70,6 +63,84 @@ const reqCompleter: AgentDefinition = {
       href: 'https://github.com/ecnu-wzj/ICSE_Submission',
     },
   ],
+}
+
+const reqUnderstander: AgentDefinition = {
+  id: 'requnderstander',
+  localeKey: 'reqUnderstander',
+  tagKeys: ['llm', 'requirementsUnderstanding', 'knowledgeGraph'],
+  links: [],
+}
+
+const requirementsInterviewAgent: AgentDefinition = {
+  id: 'requirements-interview-agent',
+  localeKey: 'requirementsInterviewAgent',
+  tagKeys: ['requirementsInterview', 'ontologyDriven', 'multiTurnDialogue'],
+  links: [],
+}
+
+const reqExceptionHunter: AgentDefinition = {
+  id: 'reqexceptionhunter',
+  localeKey: 'reqExceptionHunter',
+  tagKeys: ['exceptionalScenarios', 'useCaseAnalysis', 'exceptionRemediation'],
+  links: [],
+}
+
+const informationSecurityRequirementsCompletionAgent: AgentDefinition = {
+  id: 'information-security-requirements-completion-agent',
+  localeKey: 'informationSecurityRequirementsCompletionAgent',
+  tagKeys: ['informationSecurity', 'threatModeling', 'requirementsCompletion'],
+  links: [],
+}
+
+const businessRuleRequirementsGenerationAgent: AgentDefinition = {
+  id: 'business-rule-requirements-generation-agent',
+  localeKey: 'businessRuleRequirementsGenerationAgent',
+  tagKeys: ['businessRules', 'requirementsGeneration', 'formalSpecification'],
+  links: [],
+}
+
+const fdirRequirementsGenerationAgent: AgentDefinition = {
+  id: 'fdir-requirements-generation-agent',
+  localeKey: 'fdirRequirementsGenerationAgent',
+  tagKeys: ['fdir', 'faultAnalysis', 'requirementsGeneration'],
+  links: [],
+}
+
+const constraintSolvingConflictDetectionAgent: AgentDefinition = {
+  id: 'constraint-solving-conflict-detection-agent',
+  localeKey: 'constraintSolvingConflictDetectionAgent',
+  tagKeys: ['conflictDetection', 'constraintSolving', 'temporalAnalysis'],
+  links: [],
+}
+
+const sceneOpt: AgentDefinition = {
+  id: 'sceneopt',
+  localeKey: 'sceneOpt',
+  tagKeys: ['scenarioModeling', 'coverageChecking', 'requirementsCompletion'],
+  links: [],
+}
+
+const terminologyConsistencyCheckingAgent: AgentDefinition = {
+  id: 'terminology-consistency-checking-agent',
+  localeKey: 'terminologyConsistencyCheckingAgent',
+  tagKeys: [
+    'terminologyUnification',
+    'consistencyChecking',
+    'abbreviationStandardization',
+  ],
+  links: [],
+}
+
+const requirementsInformationExtractionFusionAgent: AgentDefinition = {
+  id: 'requirements-information-extraction-fusion-agent',
+  localeKey: 'requirementsInformationExtractionFusionAgent',
+  tagKeys: [
+    'requirementsExtraction',
+    'informationFusion',
+    'requirementsMetamodel',
+  ],
+  links: [],
 }
 
 export const agentCategories: readonly AgentNode[] = [
@@ -80,12 +151,12 @@ export const agentCategories: readonly AgentNode[] = [
       {
         id: 'requirements-extraction',
         localeKey: 'requirementsExtraction',
-        agents: [],
+        agents: [reqUnderstander],
       },
       {
         id: 'requirements-clarification',
         localeKey: 'requirementsClarification',
-        agents: [],
+        agents: [requirementsInterviewAgent],
       },
       {
         id: 'requirements-completion-recommendation',
@@ -99,7 +170,7 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'abnormal-scenario-completion',
             localeKey: 'abnormalScenarioCompletion',
-            agents: [],
+            agents: [reqExceptionHunter],
           },
           {
             id: 'human-safety-requirements-completion-recommendation',
@@ -114,7 +185,7 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'information-security-requirements-completion-recommendation',
             localeKey: 'informationSecurityRequirementsCompletionRecommendation',
-            agents: [],
+            agents: [informationSecurityRequirementsCompletionAgent],
           },
         ],
       },
@@ -130,12 +201,12 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'software-requirements-generation-based-on-business-rules',
             localeKey: 'softwareRequirementsGenerationBasedOnBusinessRules',
-            agents: [],
+            agents: [businessRuleRequirementsGenerationAgent],
           },
           {
             id: 'fdir-requirements-generation-based-on-feedforward-feedback-control',
             localeKey: 'fdirRequirementsGenerationBasedOnFeedforwardFeedbackControl',
-            agents: [],
+            agents: [fdirRequirementsGenerationAgent],
           },
           {
             id: 'software-requirements-generation-based-on-system-requirements',
@@ -186,7 +257,7 @@ export const agentCategories: readonly AgentNode[] = [
               {
                 id: 'requirements-document-logical-conflict-detection',
                 localeKey: 'requirementsDocumentLogicalConflictDetection',
-                agents: [],
+                agents: [constraintSolvingConflictDetectionAgent],
               },
             ],
           },
@@ -197,7 +268,7 @@ export const agentCategories: readonly AgentNode[] = [
               {
                 id: 'requirements-document-functional-scenario-coverage-completeness-check',
                 localeKey: 'requirementsDocumentFunctionalScenarioCoverageCompletenessCheck',
-                agents: [],
+                agents: [sceneOpt],
               },
               {
                 id: 'requirements-document-functional-safety-coverage-completeness-check',
@@ -330,7 +401,7 @@ export const agentCategories: readonly AgentNode[] = [
       {
         id: 'terminology-unification',
         localeKey: 'terminologyUnification',
-        agents: [],
+        agents: [terminologyConsistencyCheckingAgent],
       },
       {
         id: 'invalid-content-filtering',
@@ -340,7 +411,7 @@ export const agentCategories: readonly AgentNode[] = [
       {
         id: 'requirements-information-extraction-and-fusion',
         localeKey: 'requirementsInformationExtractionAndFusion',
-        agents: [],
+        agents: [requirementsInformationExtractionFusionAgent],
       },
       {
         id: 'requirements-modeling',
@@ -416,6 +487,122 @@ export const agentCategories: readonly AgentNode[] = [
   {
     id: 'test-case-generation',
     localeKey: 'testCaseGeneration',
-    children: [],
+    children: [
+      {
+        id: 'test-condition-scenario-construction',
+        localeKey: 'testConditionScenarioConstruction',
+        children: [
+          {
+            id: 'test-condition-derivation',
+            localeKey: 'testConditionDerivation',
+            agents: [],
+          },
+          {
+            id: 'normal-exceptional-scenario-generation',
+            localeKey: 'normalExceptionalScenarioGeneration',
+            agents: [],
+          },
+          {
+            id: 'boundary-combinatorial-scenario-generation',
+            localeKey: 'boundaryCombinatorialScenarioGeneration',
+            agents: [],
+          },
+        ],
+      },
+      {
+        id: 'test-case-generation-methods',
+        localeKey: 'testCaseGenerationMethods',
+        children: [
+          {
+            id: 'functional-test-case-generation',
+            localeKey: 'functionalTestCaseGeneration',
+            agents: [],
+          },
+          {
+            id: 'api-test-case-generation',
+            localeKey: 'apiTestCaseGeneration',
+            agents: [],
+          },
+          {
+            id: 'integration-test-case-generation',
+            localeKey: 'integrationTestCaseGeneration',
+            agents: [],
+          },
+          {
+            id: 'non-functional-test-case-generation',
+            localeKey: 'nonFunctionalTestCaseGeneration',
+            agents: [],
+          },
+        ],
+      },
+      {
+        id: 'test-quality-coverage-analysis',
+        localeKey: 'testQualityCoverageAnalysis',
+        children: [
+          {
+            id: 'test-case-completeness-checking',
+            localeKey: 'testCaseCompletenessChecking',
+            agents: [],
+          },
+          {
+            id: 'test-case-executability-checking',
+            localeKey: 'testCaseExecutabilityChecking',
+            agents: [],
+          },
+          {
+            id: 'test-case-redundancy-obsolescence-detection',
+            localeKey: 'testCaseRedundancyObsolescenceDetection',
+            agents: [],
+          },
+          {
+            id: 'requirements-scenario-coverage-analysis',
+            localeKey: 'requirementsScenarioCoverageAnalysis',
+            agents: [],
+          },
+          {
+            id: 'test-blind-spot-risk-identification',
+            localeKey: 'testBlindSpotRiskIdentification',
+            agents: [],
+          },
+        ],
+      },
+      {
+        id: 'change-driven-test-evolution',
+        localeKey: 'changeDrivenTestEvolution',
+        children: [
+          {
+            id: 'test-impact-scope-analysis',
+            localeKey: 'testImpactScopeAnalysis',
+            agents: [],
+          },
+          {
+            id: 'test-case-reuse-modification',
+            localeKey: 'testCaseReuseModification',
+            agents: [],
+          },
+          {
+            id: 'incremental-test-case-generation',
+            localeKey: 'incrementalTestCaseGeneration',
+            agents: [],
+          },
+        ],
+      },
+      {
+        id: 'test-asset-management',
+        localeKey: 'testAssetManagement',
+        children: [
+          {
+            id: 'requirements-test-case-traceability-establishment',
+            localeKey: 'requirementsTestCaseTraceabilityEstablishment',
+            agents: [],
+          },
+          {
+            id: 'test-case-version-management-delivery',
+            localeKey: 'testCaseVersionManagementDelivery',
+            agents: [],
+          },
+        ],
+      },
+    ],
   },
 ]

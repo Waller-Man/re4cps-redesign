@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-本项目是 RE4CPS 课题组展示网站，正式版本为 v1.0.0。技术栈为 Vue 3、Vite、TypeScript、Vue Router、vue-i18n 和 Arco Design Vue；使用 GitHub Actions 部署到 GitHub Pages。项目为纯前端，不包含后端、数据库、登录或在线 API。
+本项目是 RE4CPS 课题组展示网站，正式版本为 v1.0.2。技术栈为 Vue 3、Vite、TypeScript、Vue Router、vue-i18n 和 Arco Design Vue；使用 GitHub Actions 部署到 GitHub Pages。项目为纯前端，不包含后端、数据库、登录或在线 API。
 
 ## 常用命令
 

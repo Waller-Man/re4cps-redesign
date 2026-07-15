@@ -4,8 +4,8 @@ import { IconRobot } from '@arco-design/web-vue/es/icon'
 import { useI18n } from 'vue-i18n'
 import type { AgentNode } from '../../data/agents'
 import {
+  getNodesInRenderOrder,
   isAgentBranch,
-  sortNodesByAgentAvailability,
 } from '../../utils/agentTree'
 
 const props = withDefaults(
@@ -33,14 +33,14 @@ const nodePath = computed(() =>
 const defaultActiveKeys = computed(() =>
   props.defaultExpandedKeys.has(nodePath.value) ? [nodePath.value] : [],
 )
-const sortedChildren = computed(() =>
-  sortNodesByAgentAvailability(props.node.children ?? []),
+const orderedChildren = computed(() =>
+  getNodesInRenderOrder(props.node.children ?? []),
 )
 const branchChildren = computed(() =>
-  sortedChildren.value.filter(isAgentBranch),
+  orderedChildren.value.filter(isAgentBranch),
 )
 const leafChildren = computed(() =>
-  sortedChildren.value.filter((node) => !isAgentBranch(node)),
+  orderedChildren.value.filter((node) => !isAgentBranch(node)),
 )
 
 const getNodeTitle = (node: AgentNode) =>
@@ -147,7 +147,7 @@ const getNodeTitle = (node: AgentNode) =>
           </a-tag>
         </div>
 
-        <div class="tool-card-actions">
+        <div v-if="agent.links.length" class="tool-card-actions">
           <template
             v-for="link in agent.links"
             :key="`${nodePath}-${agent.id}-${link.kind}`"

@@ -25,17 +25,40 @@ export const sortNodesByAgentAvailability = (
     })
     .map(({ node }) => node)
 
-export const getDefaultExpandedKeys = (
+export const getNodesInRenderOrder = (
   nodes: readonly AgentNode[],
-  parentPath = '',
-): string[] =>
-  nodes.flatMap((node) => {
+): AgentNode[] => {
+  const sortedNodes = sortNodesByAgentAvailability(nodes)
+
+  return [
+    ...sortedNodes.filter(isAgentBranch),
+    ...sortedNodes.filter((node) => !isAgentBranch(node)),
+  ]
+}
+
+const findFirstAgentPathFromNodes = (
+  nodes: readonly AgentNode[],
+  parentPath: string,
+  ancestorPaths: readonly string[],
+): string[] | undefined => {
+  for (const node of getNodesInRenderOrder(nodes)) {
     const nodePath = parentPath ? `${parentPath}/${node.id}` : node.id
 
-    if (!isAgentBranch(node) || !hasAgentInSubtree(node)) return []
+    if (isAgentBranch(node)) {
+      const path = findFirstAgentPathFromNodes(
+        node.children ?? [],
+        nodePath,
+        [...ancestorPaths, nodePath],
+      )
 
-    return [
-      nodePath,
-      ...getDefaultExpandedKeys(node.children ?? [], nodePath),
-    ]
-  })
+      if (path) return path
+    } else if (node.agents?.length) {
+      return [...ancestorPaths]
+    }
+  }
+
+  return undefined
+}
+
+export const findFirstAgentPath = (nodes: readonly AgentNode[]): string[] =>
+  findFirstAgentPathFromNodes(nodes, '', []) ?? []

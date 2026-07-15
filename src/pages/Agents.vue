@@ -3,13 +3,13 @@ import { useI18n } from 'vue-i18n'
 import AgentTreeNode from '../components/agents/AgentTreeNode.vue'
 import { agentCategories } from '../data/agents'
 import {
-  getDefaultExpandedKeys,
+  findFirstAgentPath,
   sortNodesByAgentAvailability,
 } from '../utils/agentTree'
 
 const { t } = useI18n()
 const sortedAgentCategories = sortNodesByAgentAvailability(agentCategories)
-const defaultExpandedKeys = new Set(getDefaultExpandedKeys(agentCategories))
+const defaultExpandedKeys = new Set(findFirstAgentPath(agentCategories))
 </script>
 
 <template>

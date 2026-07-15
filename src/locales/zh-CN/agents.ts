@@ -94,6 +94,28 @@ export default {
     requirementsRelationshipIdentification: '需求关系识别',
     highLevelToSoftwareRequirementsTraceabilityNetworkConstruction:
       '高层需求—软件需求追溯关系网络建立',
+    testConditionScenarioConstruction: '测试条件与场景构建',
+    testConditionDerivation: '测试条件推导',
+    normalExceptionalScenarioGeneration: '正常与异常场景生成',
+    boundaryCombinatorialScenarioGeneration: '边界与组合场景生成',
+    testCaseGenerationMethods: '测试用例生成',
+    functionalTestCaseGeneration: '功能测试用例生成',
+    apiTestCaseGeneration: '接口测试用例生成',
+    integrationTestCaseGeneration: '集成测试用例生成',
+    nonFunctionalTestCaseGeneration: '非功能测试用例生成',
+    testQualityCoverageAnalysis: '测试质量与覆盖分析',
+    testCaseCompletenessChecking: '测试用例完整性检查',
+    testCaseExecutabilityChecking: '测试用例可执行性检查',
+    testCaseRedundancyObsolescenceDetection: '测试用例冗余与过时检测',
+    requirementsScenarioCoverageAnalysis: '需求与场景覆盖分析',
+    testBlindSpotRiskIdentification: '测试盲区与风险识别',
+    changeDrivenTestEvolution: '变更驱动的测试演化',
+    testImpactScopeAnalysis: '测试影响范围分析',
+    testCaseReuseModification: '测试用例复用与修改',
+    incrementalTestCaseGeneration: '增量测试用例生成',
+    testAssetManagement: '测试资产管理',
+    requirementsTestCaseTraceabilityEstablishment: '需求—测试用例追溯关系建立',
+    testCaseVersionManagementDelivery: '测试用例版本管理与交付',
   },
   actions: {
     github: '在线使用',
@@ -102,17 +124,43 @@ export default {
   },
   tags: {
     llm: 'LLM',
-    multiAgent: 'Multi-Agent',
-    requirementsDevelopment: 'Requirements Development',
+    multiAgent: '多智能体',
+    requirementsDevelopment: '需求开发',
     srs: 'SRS',
-    requirementsCompletion: 'Requirements Completion',
-    businessLogic: 'Business Logic',
+    requirementsCompletion: '需求补全',
+    businessLogic: '业务逻辑',
     useCase: 'Use Case',
     erDiagram: 'E-R Diagram',
     crud: 'CRUD',
     plantUml: 'PlantUML',
-    behaviorModeling: 'Behavior Modeling',
+    behaviorModeling: '行为建模',
     requirementsAnalysis: 'Requirements Analysis',
+    requirementsUnderstanding: '需求理解',
+    knowledgeGraph: '知识图谱',
+    requirementsInterview: '需求访谈',
+    ontologyDriven: '本体驱动',
+    multiTurnDialogue: '多轮对话',
+    exceptionalScenarios: '异常场景',
+    useCaseAnalysis: '用例分析',
+    exceptionRemediation: '异常修复',
+    informationSecurity: '信息安全',
+    threatModeling: '威胁建模',
+    businessRules: '业务规则',
+    requirementsGeneration: '需求生成',
+    formalSpecification: '形式化规约',
+    fdir: 'FDIR',
+    faultAnalysis: '故障分析',
+    conflictDetection: '冲突检测',
+    constraintSolving: '约束求解',
+    temporalAnalysis: '时序分析',
+    scenarioModeling: '场景建模',
+    coverageChecking: '覆盖检查',
+    terminologyUnification: '术语统一',
+    consistencyChecking: '一致性检查',
+    abbreviationStandardization: '缩写规范',
+    requirementsExtraction: '需求抽取',
+    informationFusion: '信息融合',
+    requirementsMetamodel: '需求元模型',
   },
   items: {
     iredev: {
@@ -128,7 +176,57 @@ export default {
     reqCompleter: {
       title: 'ReqCompleter：业务逻辑驱动的迭代式需求自动补全工具',
       description:
-        'ReqCompleter 是一个面向需求自动补全的工具，基于用例模型、E-R 图和 CRUD 矩阵构建业务逻辑闭环，通过 CRUD 缺口检测触发迭代式补全过程，从而提升需求完整性并减少大模型幻觉。',
+        'ReqCompleter 基于用例模型、E-R 图和增删改查矩阵构建业务逻辑闭环，自动识别功能逻辑缺口，补充缺失用例和数据操作，并通过迭代检查与幻觉过滤提升需求完整性。',
+    },
+    reqUnderstander: {
+      title: 'ReqUnderstander：嵌入式需求语义理解与知识网络构建工具',
+      description:
+        'ReqUnderstander 以“功能—设备—数据—逻辑”四元组为核心，对嵌入式需求文档进行语义解析、关键要素抽取、关系构建与一致性校验，将自然语言需求转化为可计算、可追溯的需求知识网络。',
+    },
+    requirementsInterviewAgent: {
+      title: '需求访谈智能体',
+      description:
+        '基于经验本体开展多轮需求访谈，通过需求槽位排序、针对性追问、用户回答解析和分层剪枝，持续发现与澄清隐含需求，最终形成经过用户确认的需求集合。',
+    },
+    reqExceptionHunter: {
+      title: 'ReqExceptionHunter：异常场景完备性检测与修复工具',
+      description:
+        'ReqExceptionHunter 从正常用例主流程出发，基于参与者分类和多维关注点识别异常场景，构建可追溯异常树，并生成超时、重试、限流和状态校验等异常处理需求。',
+    },
+    informationSecurityRequirementsCompletionAgent: {
+      title: '信息安全需求补全智能体',
+      description:
+        '从用例和 E-R 图中识别系统资产及敏感数据，利用 STRIDE 枚举潜在威胁，将威胁映射为身份认证、访问控制、加密传输和审计日志等可执行安全需求。',
+    },
+    businessRuleRequirementsGenerationAgent: {
+      title: '基于业务规则的软件需求生成智能体',
+      description:
+        '对业务规则进行分类过滤、语义简化、需求要素抽取和上下文约束补全，识别需求之间的隐式依赖关系，最终生成完整、具体且可执行的软件需求规约。',
+    },
+    fdirRequirementsGenerationAgent: {
+      title: '基于前馈—反馈控制的 FDIR 需求自动生成智能体',
+      description:
+        '基于系统—环境偏差分析、统一功能故障元模型和恢复策略库，识别故障传播路径，自动生成故障检测、故障隔离和故障恢复需求，并建立完整追溯链路。',
+    },
+    constraintSolvingConflictDetectionAgent: {
+      title: '基于约束求解的细粒度需求冲突检测智能体',
+      description:
+        '自动抽取模式、转换条件、变量依赖和时间约束，构建模式转换图与需求依赖图，将需求场景编码为约束方程，并通过求解器发现不可满足的冲突场景。',
+    },
+    sceneOpt: {
+      title: 'SceneOpt：功能场景覆盖完整性检查与补全工具',
+      description:
+        'SceneOpt 将用例分解为业务场景并构建场景—步骤—数据流模型，识别步骤遗漏、数据流中断和功能需求未覆盖等问题，通过定向补全和复核迭代提升场景覆盖率。',
+    },
+    terminologyConsistencyCheckingAgent: {
+      title: '术语一致性检查智能体',
+      description:
+        '自动提取需求文档中的专业术语和缩写，构建项目术语词典，检测同义异词、同词异义及缩写使用不规范问题，并给出统一修正建议。',
+    },
+    requirementsInformationExtractionFusionAgent: {
+      title: '基于多维需求元模型的需求信息提取与融合智能体',
+      description:
+        '以多维需求元模型为统一语义骨架，从非结构化研制文档中提取任务、系统和软件设计信息，通过完整性、正确性与跨维度一致性校验，形成结构化需求模型。',
     },
   },
 }
