@@ -26,7 +26,7 @@ export default {
       leaderName: 'Prof. Zhi Jin',
       leaderAffiliation: 'Specialized Demonstration School of Software, Wuhan University',
       leaderBio:
-        'Prof. Zhi Jin is Dean of the Specialized Demonstration School of Software at Wuhan University, an IEEE, CCF and AAIA Fellow, a former Chief Scientist of a national 973 project, and Chair of the CCF Board of Supervisors. She has published more than 300 papers at leading venues including ASE, FSE, ICSE, ACL, NIPS and TOSEM, authored five books and holds over 30 invention patents. Her work has supported major aerospace programs and human-cyber-physical systems, and she has received honors including the IEEE TCSVC Distinguished Leadership Award and the CCF Xia-Peisu Award.',
+        'Prof. Zhi Jin is Dean of the Specialized Demonstration School of Software at Wuhan University, an IEEE, CCF and AAIA Fellow, a recipient of the National Science Fund for Distinguished Young Scholars of China, a former Chief Scientist of a national 973 project, and Chair of the CCF Board of Supervisors. She has published more than 300 papers at leading venues including ASE, FSE, ICSE, ACL, NIPS and TOSEM, authored five books and holds over 30 invention patents. Her work has supported major aerospace programs and human-cyber-physical systems, and she has received honors including the IEEE TCSVC Distinguished Leadership Award and the CCF Xia-Peisu Award.',
       directions: {
         ai4se: 'Code LLMs / Software Development Agents / AI4SE',
         intelligentRe: 'Intelligent Requirements Engineering',

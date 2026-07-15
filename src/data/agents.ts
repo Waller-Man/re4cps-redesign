@@ -72,7 +72,7 @@ const reqCompleter: AgentDefinition = {
     {
       destination: 'external',
       kind: 'github',
-      href: 'https://github.com/Waller-Man/re-requirements-plugin',
+      href: 'https://github.com/ecnu-wzj/ICSE_Submission',
     },
   ],
 }

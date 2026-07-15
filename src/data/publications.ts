@@ -70,6 +70,12 @@ export const publications: readonly Publication[] = [
     venue: 'AAAI 2026',
     types: ['conference'],
     rankTags: ['ccfa'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1609/aaai.v40i36.40324',
+      },
+    ],
   },
   {
     id: 'huang-2026-onion-modeling',
@@ -110,6 +116,12 @@ export const publications: readonly Publication[] = [
     venue: 'ACM Transactions on Computer-Human Interaction, 32(2): 16:1-16:38',
     types: ['journal'],
     rankTags: ['ccfa', 'sciQ1'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1145/3715114',
+      },
+    ],
   },
   {
     id: 'chen-2025-prototype-generation',
@@ -121,6 +133,12 @@ export const publications: readonly Publication[] = [
     venue: 'IEEE Transactions on Software Engineering, 51(7): 1996-2014',
     types: ['journal'],
     rankTags: ['ccfa', 'sciQ1'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1109/TSE.2025.3571585',
+      },
+    ],
   },
   {
     id: 'huang-2025-airborne-modeling',
@@ -131,6 +149,12 @@ export const publications: readonly Publication[] = [
     venue: '计算机研究与发展, 62(9): 2362-2381',
     types: ['chineseJournal'],
     rankTags: ['ccfT1'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.7544/issn1000-1239.202440003',
+      },
+    ],
   },
   {
     id: 'li-2025-securities-rules',
@@ -141,6 +165,12 @@ export const publications: readonly Publication[] = [
     venue: '软件学报, 36(10): 4671-4694',
     types: ['chineseJournal'],
     rankTags: ['ccfT1'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.13328/j.cnki.jos.007294',
+      },
+    ],
   },
   {
     id: 'chen-2025-embedded-requirements-survey',
@@ -151,6 +181,12 @@ export const publications: readonly Publication[] = [
     venue: '软件学报, 36(1): 27-46',
     types: ['chineseJournal'],
     rankTags: ['ccfT1'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.13328/j.cnki.jos.007157',
+      },
+    ],
   },
   {
     id: 'yang-2025-compositional-verification',
@@ -161,6 +197,12 @@ export const publications: readonly Publication[] = [
     venue: '软件学报, 36(4): 1413-1434',
     types: ['chineseJournal'],
     rankTags: ['ccfT1'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.13328/j.cnki.jos.007223',
+      },
+    ],
   },
   {
     id: 'xu-2025-test-case-generation',
@@ -173,6 +215,12 @@ export const publications: readonly Publication[] = [
     venue: 'RE 2025: 400-404',
     types: ['conference'],
     rankTags: ['ccfb'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1109/RE63999.2025.00046',
+      },
+    ],
   },
   {
     id: 'lin-2025-structured-requirements',
@@ -185,6 +233,12 @@ export const publications: readonly Publication[] = [
       '2025 IEEE 33rd International Requirements Engineering Conference Workshops, REW 2025: 181-188',
     types: ['workshop'],
     rankTags: ['reWorkshop', 'ccfb'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1109/REW66121.2025.00028',
+      },
+    ],
   },
   {
     id: 'fang-2025-stl-transformation',
@@ -197,6 +251,12 @@ export const publications: readonly Publication[] = [
     venue: 'ACL Findings 2025: 10446-10458',
     types: ['conference'],
     rankTags: ['aclFindings', 'ccfa'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.18653/v1/2025.findings-acl.544',
+      },
+    ],
   },
   {
     id: 'xue-2024-llm4fin',
@@ -209,6 +269,12 @@ export const publications: readonly Publication[] = [
     venue: 'ISSTA 2024: 1643-1655',
     types: ['conference'],
     rankTags: ['ccfa'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1145/3650212.3680388',
+      },
+    ],
   },
   {
     id: 'chen-2024-railway-inconsistencies',
@@ -222,6 +288,12 @@ export const publications: readonly Publication[] = [
       'IEEE Transactions on Intelligent Transportation Systems, 25(8): 8375-8386',
     types: ['journal'],
     rankTags: ['sciQ1', 'ccfb'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1109/TITS.2024.3418864',
+      },
+    ],
   },
   {
     id: 'chen-2024-tapchecker',
@@ -234,6 +306,12 @@ export const publications: readonly Publication[] = [
     venue: 'IEEE Internet of Things Journal, 11(12): 21411-21426',
     types: ['journal'],
     rankTags: ['sciQ1', 'ccfc'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1109/JIOT.2024.3374556',
+      },
+    ],
   },
   {
     id: 'xue-2024-domain-knowledge',
@@ -246,6 +324,12 @@ export const publications: readonly Publication[] = [
     venue: 'ICSE Companion 2024: 314-315',
     types: ['conference'],
     rankTags: ['icseCompanion', 'ccfa'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1145/3639478.3643087',
+      },
+    ],
   },
   {
     id: 'chen-2024-device-models',
@@ -257,6 +341,12 @@ export const publications: readonly Publication[] = [
     venue: 'REW 2024: 176-183',
     types: ['workshop'],
     rankTags: ['reWorkshop', 'ccfb'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1109/REW61692.2024.00029',
+      },
+    ],
   },
   {
     id: 'huang-2024-realtime-inconsistency',
@@ -268,6 +358,12 @@ export const publications: readonly Publication[] = [
     venue: 'REW 2024: 222-229',
     types: ['workshop'],
     rankTags: ['reWorkshop', 'ccfb'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1109/REW61692.2024.00035',
+      },
+    ],
   },
   {
     id: 'wang-2024-requirements-documents',
@@ -279,6 +375,12 @@ export const publications: readonly Publication[] = [
     venue: 'REW 2024: 200-205',
     types: ['workshop'],
     rankTags: ['reWorkshop', 'ccfb'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1109/REW61692.2024.00032',
+      },
+    ],
   },
   {
     id: 'wang-2024-projection-analysis',
@@ -289,6 +391,12 @@ export const publications: readonly Publication[] = [
     venue: '软件学报, 35(12): 5397-5418',
     types: ['chineseJournal'],
     rankTags: ['ccfT1'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.13328/j.cnki.jos.007081',
+      },
+    ],
   },
   {
     id: 'jin-2024-chatmodeler',
@@ -299,6 +407,12 @@ export const publications: readonly Publication[] = [
     venue: '计算机研究与发展, 61(2): 338-350',
     types: ['chineseJournal'],
     rankTags: ['ccfT1'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.7544/issn1000-1239.202330746',
+      },
+    ],
   },
   {
     id: 'jin-2023-software-requirements-textbook',

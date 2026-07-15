@@ -25,7 +25,7 @@ export default {
       leaderName: '金芝教授',
       leaderAffiliation: '武汉大学特色化示范性软件学院',
       leaderBio:
-        '金芝教授现任武汉大学特色化示范性软件学院院长，是国家级高层次人才、IEEE / CCF / AAIA Fellow、973 项目首席科学家及 CCF 监事长。她长期深耕需求工程与智能化软件工程，在 ASE、FSE、ICSE、ACL、NIPS、TOSEM 等发表论文 300 余篇，出版著作 5 部并获授权发明专利 30 余项，科研成果服务于航天重大工程和人机物融合系统，曾获 IEEE TCSVC 杰出领导力奖、CCF 夏培肃奖及首届中国 I 科研女性奖等。',
+        '金芝教授现任武汉大学特色化示范性软件学院院长，是国家级高层次人才，国家杰出青年科学基金获得者、IEEE / CCF / AAIA Fellow、973 项目首席科学家及 CCF 监事长。她长期深耕需求工程与智能化软件工程，在 ASE、FSE、ICSE、ACL、NIPS、TOSEM 等发表论文 300 余篇，出版著作 5 部并获授权发明专利 30 余项，科研成果服务于航天重大工程和人机物融合系统，曾获 IEEE TCSVC 杰出领导力奖、CCF 夏培肃奖及首届中国 I 科研女性奖等。',
       directions: {
         ai4se: '代码大模型 / 软件开发智能体 / AI4SE',
         intelligentRe: '智能化需求工程',
