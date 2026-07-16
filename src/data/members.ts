@@ -176,6 +176,7 @@ export const members: readonly MemberProfile[] = [
     order: 6,
     hasBio: true,
     email: '51285902115@stu.ecnu.edu.cn',
+    homepage: 'https://wzj1027.github.io/ecnu-wzj.github.io/',
   },
   {
     id: 'haoran-zhang',
