@@ -10,6 +10,7 @@ import haotianLiPhoto from '../assets/members/master-students/LiHaotian.jpg'
 import bowenLuoPhoto from '../assets/members/master-students/LuoBowen.jpg'
 import kailiangYangPhoto from '../assets/members/master-students/YangKailiang.jpg'
 import haoxiangYanPhoto from '../assets/members/master-students/YanHaoxiang.jpg'
+import shichangZhangPhoto from '../assets/members/master-students/ZhangShichang.jpg'
 import boyiYePhoto from '../assets/members/master-students/YeBoyi.jpg'
 import zhujunWuPhoto from '../assets/members/master-students/WuZhujun.jpg'
 import abcLogo from '../assets/organizations/agricultural-bank-of-china.svg'
@@ -229,12 +230,23 @@ export const members: readonly MemberProfile[] = [
     homepage: 'https://github.com/TiGh0147c',
   },
   {
+    id: 'shichang-zhang',
+    group: 'master',
+    localeKey: 'shichangZhang',
+    photo: shichangZhangPhoto,
+    admissionYear: 2026,
+    order: 12,
+    hasBio: true,
+    email: '2214654805@qq.com',
+    homepage: 'https://github.com/nullK2Z6B',
+  },
+  {
     id: 'boyi-ye',
     group: 'master',
     localeKey: 'boyiYe',
     photo: boyiYePhoto,
     admissionYear: 2026,
-    order: 12,
+    order: 13,
     hasBio: true,
     email: '51295902144@stu.ecnu.edu.cn',
     homepage: 'https://github.com/Waller-Man',

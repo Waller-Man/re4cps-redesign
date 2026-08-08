@@ -135,6 +135,12 @@ export default {
       school: 'East China Normal University, China',
       bio: 'Master of Software Engineering, with research primarily focused on Requirements Engineering and LLM-driven Knowledge Graph Construction. Currently engaged in research projects encompassing capability modeling of heterogeneous devices in the IoT domain and LLM-assisted generation topics.',
     },
+    shichangZhang: {
+      name: 'Shichang Zhang',
+      role: 'Master Student',
+      school: 'East China Normal University, China',
+      bio: 'Master of Software Engineering, focusing on research of end-user intent-driven programming paradigms for IoT applications.',
+    },
     boyiYe: {
       name: 'Boyi Ye',
       role: 'Master Student',
