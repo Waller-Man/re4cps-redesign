@@ -26,10 +26,6 @@ const directions = [
     tags: ['artificialIntelligence', 'requirementsEngineering', 'formalMethods'],
   },
   {
-    key: 'softwareEvolution',
-    tags: ['agent', 'requirementsEngineering', 'artificialIntelligence'],
-  },
-  {
     key: 'domainOntology',
     tags: ['ontology', 'knowledgeEngineering', 'artificialIntelligence'],
   },

@@ -1,6 +1,7 @@
 import defaultAvatar from '../assets/members/avatar-placeholder.svg'
 import xiaohongChenPhoto from '../assets/members/Faculty/ChenXiaohong.jpg'
 import zhiJinPhoto from '../assets/members/Faculty/JinZhi.jpg'
+import jiaLiPhoto from '../assets/members/postdocs/LiJia.jpg'
 import shiChenPhoto from '../assets/members/alumni/ChenShi.jpg'
 import gaoYuanPhoto from '../assets/members/alumni/GaoYuan.jpg'
 import liuJiachengPhoto from '../assets/members/alumni/LiuJiacheng.jpg'
@@ -13,6 +14,7 @@ import haoxiangYanPhoto from '../assets/members/master-students/YanHaoxiang.jpg'
 import shichangZhangPhoto from '../assets/members/master-students/ZhangShichang.jpg'
 import boyiYePhoto from '../assets/members/master-students/YeBoyi.jpg'
 import zhujunWuPhoto from '../assets/members/master-students/WuZhujun.jpg'
+import weihaoXiaPhoto from '../assets/members/master-students/XiaWeihao.jpg'
 import abcLogo from '../assets/organizations/agricultural-bank-of-china.svg'
 import axeraLogo from '../assets/organizations/AXERA-semiconductor.svg'
 import bytedanceLogo from '../assets/organizations/bytedance.svg'
@@ -27,7 +29,7 @@ import poizonLogo from '../assets/organizations/poizon.svg'
 import tencentLogo from '../assets/organizations/tencent.svg'
 import hithinkLogo from '../assets/organizations/tonghuashun.svg'
 
-export type MemberGroup = 'faculty' | 'phd' | 'master' | 'alumni'
+export type MemberGroup = 'faculty' | 'postdoc' | 'phd' | 'master' | 'alumni'
 
 export interface MemberOrganization {
   nameLocaleKey: string
@@ -47,6 +49,7 @@ export interface MemberProfile {
   localeKey: string
   photo: string
   admissionYear?: number
+  joinedYear?: number
   graduationYear?: number
   order?: number
   email?: string
@@ -58,6 +61,7 @@ export interface MemberProfile {
 
 export const memberGroupOrder: readonly MemberGroup[] = [
   'faculty',
+  'postdoc',
   'phd',
   'master',
   'alumni',
@@ -79,6 +83,15 @@ export const members: readonly MemberProfile[] = [
     photo: xiaohongChenPhoto,
     email: 'xhchen@sei.ecnu.edu.cn',
     homepage: 'https://faculty.ecnu.edu.cn/_s43/cxh2/main.psp',
+  },
+  {
+    id: 'jia-li',
+    group: 'postdoc',
+    localeKey: 'jiaLi',
+    photo: jiaLiPhoto,
+    joinedYear: 2021,
+    hasBio: true,
+    email: 'jia.li@whu.edu.cn',
   },
   {
     id: 'dongming-jin',
@@ -212,7 +225,7 @@ export const members: readonly MemberProfile[] = [
     id: 'weihao-xia',
     group: 'master',
     localeKey: 'weihaoXia',
-    photo: defaultAvatar,
+    photo: weihaoXiaPhoto,
     admissionYear: 2026,
     order: 10,
     hasBio: true,

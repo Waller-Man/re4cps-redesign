@@ -27,11 +27,6 @@ export default {
       description:
         '利用大语言模型及其他人工智能技术，实现从需求规约到设计模型、代码实现和测试用例的端到端自动生成，面向项目级代码生成。',
     },
-    softwareEvolution: {
-      title: '需求变更驱动的软件演化智能体',
-      description:
-        '研究需求协商、需求澄清与补全、需求变更分析，以及由需求变更驱动的设计演化、代码变更生成和测试用例演化智能体。',
-    },
     domainOntology: {
       title: '领域知识本体自动构建',
       description:

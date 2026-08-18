@@ -1,15 +1,17 @@
 export default {
   title: '成员',
-  subtitle: '教师、学生与已毕业成员',
+  subtitle: '教师、博士后、学生与已毕业成员',
   email: '邮箱',
   homepage: '个人主页',
   enrollmentYear: '{year}年入学',
+  joinedYear: '{year}年加入',
   graduationClass: '{year}届',
   careerDestination: '毕业去向',
   careerPath: '职业经历',
   current: '现',
   groups: {
     faculty: '教师',
+    postdoc: '博士后',
     phd: '博士生',
     master: '硕士生',
     alumni: '已毕业学生',
@@ -45,6 +47,12 @@ export default {
       role: '教授',
       school: '华东师范大学，中国',
       bio: '主要从事需求工程、形式化方法及其在信息物理系统中的应用研究。',
+    },
+    jiaLi: {
+      name: '李佳',
+      role: '博士后',
+      school: '武汉大学，中国',
+      bio: '武汉大学弘毅博士后，博士毕业于北京大学高可信软件技术教育部重点实验室。研究方向为智能化软件工程，聚焦需求分析、代码生成与软件开发智能体；在 FSE、ASE、ACL 等发表论文 20 余篇，获 ACM SIGSOFT 杰出论文奖，论文引用 1000 余次。',
     },
     dongmingJin: {
       name: '靳东明',

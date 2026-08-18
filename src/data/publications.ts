@@ -41,10 +41,10 @@ export interface Publication {
 }
 
 export const publicationGroupOrder: readonly PublicationGroup[] = [
+  'book',
   '2026',
   '2025',
   '2024',
-  'book',
 ]
 
 export const publications: readonly Publication[] = [

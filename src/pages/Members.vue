@@ -96,7 +96,17 @@ const memberGroups = memberGroupOrder.map((key: MemberGroup) => {
                       }}
                     </a-tag>
                     <a-tag
-                      v-else-if="member.group !== 'alumni' && member.admissionYear"
+                      v-else-if="member.group === 'postdoc' && member.joinedYear"
+                      color="green"
+                      size="small"
+                    >
+                      {{ t('members.joinedYear', { year: member.joinedYear }) }}
+                    </a-tag>
+                    <a-tag
+                      v-else-if="
+                        (member.group === 'phd' || member.group === 'master') &&
+                        member.admissionYear
+                      "
                       color="green"
                       size="small"
                     >

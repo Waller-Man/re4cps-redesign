@@ -17,7 +17,7 @@ export default {
         '围绕 Problem Frames、Problem Diagram 和 iStar，支持文本建模、图形建模与协同编辑。',
     },
     problemDecompositionProgression: {
-      title: '问题分解与需求推进',
+      title: '问题分解与需求进化',
       description: '面向复杂问题分解，以及从利益相关者需求逐步推导软件规格说明。',
     },
     timingConsistencyVerification: {

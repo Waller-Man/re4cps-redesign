@@ -1,15 +1,17 @@
 export default {
   title: 'Members',
-  subtitle: 'Faculty, Students and Alumni',
+  subtitle: 'Faculty, Postdoctoral Researchers, Students and Alumni',
   email: 'Email',
   homepage: 'Homepage',
   enrollmentYear: 'Enrolled in {year}',
+  joinedYear: 'Joined in {year}',
   graduationClass: 'Class of {year}',
   careerDestination: 'Career Destination',
   careerPath: 'Career Path',
   current: 'Current',
   groups: {
     faculty: 'Faculty',
+    postdoc: 'Postdoctoral Researchers',
     phd: 'PhD Students',
     master: 'Master Students',
     alumni: 'Alumni',
@@ -45,6 +47,12 @@ export default {
       role: 'Professor',
       school: 'East China Normal University, China',
       bio: 'Her research focuses on requirements engineering, formal methods, and their applications in cyber-physical systems.',
+    },
+    jiaLi: {
+      name: 'Jia Li',
+      role: 'Postdoctoral Researcher',
+      school: 'Wuhan University, China',
+      bio: 'Hongyi Postdoctoral Fellow at Wuhan University, with a Ph.D. from the Key Laboratory of High Confidence Software Technologies (Ministry of Education), Peking University. His research focuses on intelligent software engineering, including requirements analysis, code generation, and software development agents. He has published over 20 papers at venues including FSE, ASE, and ACL, received an ACM SIGSOFT Distinguished Paper Award, and accumulated over 1,000 citations.',
     },
     dongmingJin: {
       name: 'Dongming Jin',

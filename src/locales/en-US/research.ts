@@ -28,11 +28,6 @@ export default {
       description:
         'Using large language models and AI techniques to generate design models, executable code and test cases from requirements specifications, targeting project-level code generation.',
     },
-    softwareEvolution: {
-      title: 'Requirement-change-driven Software Evolution Agents',
-      description:
-        'Studying agents for requirement negotiation, clarification, completion and change analysis, as well as design evolution, code change generation and test case evolution driven by requirement changes.',
-    },
     domainOntology: {
       title: 'Automatic Construction of Domain Knowledge Ontologies',
       description:
