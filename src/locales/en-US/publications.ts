@@ -2,7 +2,7 @@ export default {
   title: 'Publications',
   subtitle: 'Recent Publications',
   description:
-    'This page presents recent representative publications, including conference papers, journal articles and books. PDF, DOI, BibTeX, code and tool links can be added later.',
+    'This page presents recent representative publications, including conference papers, journal articles and books.',
   paperCount: '{count} entries',
   groups: {
     '2026': '2026',

@@ -77,7 +77,7 @@ npm run preview
 - 小卡片网格使用 equal-height-card-grid 和 equal-height-card。
 - 桌面端同一行卡片等高，移动端保持自然高度。
 - responsive.css 必须最后加载。
-- 修改样式时保留 RE Resources/Datasets、Tools/Agents 的公共卡片关系。
+- 修改样式时保留 RE Resources/Datasets 的公共卡片关系，以及 Research 主卡片与代表性 Agent 轻量卡片的视觉层级。
 
 ## 修改限制
 

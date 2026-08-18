@@ -3,7 +3,6 @@ export default {
   home: 'Home',
   research: 'Research',
   publications: 'Publications',
-  agents: 'Agents',
   tools: 'Tools',
   members: 'Members',
   joinUs: 'Join Us',

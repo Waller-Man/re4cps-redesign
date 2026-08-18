@@ -109,3 +109,76 @@
   border-color: #e0e8f5;
   border-radius: 6px;
 }
+
+.research-agents {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #e8edf5;
+}
+
+.research-agents h3 {
+  margin: 0;
+  color: #49658f;
+  font-size: 15px;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  line-height: 1.5;
+}
+
+.research-agent-grid {
+  margin-top: 16px;
+}
+
+.research-agent-card.arco-card {
+  overflow: hidden;
+  background: linear-gradient(145deg, #fbfdff, #f6f9fd);
+  border: 1px solid #e2e9f3;
+  border-radius: 12px;
+  box-shadow: 0 5px 16px rgba(45, 73, 119, 0.045);
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.research-agent-card.arco-card:hover {
+  border-color: #cbd9ec;
+  box-shadow: 0 9px 22px rgba(45, 73, 119, 0.08);
+  transform: translateY(-2px);
+}
+
+.research-agent-card .arco-card-body {
+  min-height: 0;
+  padding: 20px;
+}
+
+.research-agent-card h4 {
+  margin: 0;
+  color: #253754;
+  font-size: 16px;
+  font-weight: 650;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.research-agent-description {
+  flex: 1;
+  margin: 12px 0 0;
+  color: #6b778c;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.research-agent-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 18px;
+  gap: 6px;
+}
+
+.research-agent-tags .arco-tag {
+  color: #49658f;
+  background: #eef4fb;
+  border-color: #dce6f3;
+  border-radius: 5px;
+}

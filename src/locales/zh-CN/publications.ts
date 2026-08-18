@@ -2,7 +2,7 @@ export default {
   title: '论文与出版物',
   subtitle: 'Recent Publications',
   description:
-    '本页面展示课题组近年的代表性论文、会议论文、期刊论文和专著。后续可继续补充 PDF、DOI、BibTeX、代码仓库和在线工具链接。',
+    '本页面展示课题组近年的代表性论文、会议论文、期刊论文和专著。',
   paperCount: '{count} 项',
   groups: {
     '2026': '2026',

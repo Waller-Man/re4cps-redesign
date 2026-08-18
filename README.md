@@ -2,14 +2,13 @@
 
 > 当前正式版本：**v1.0.2**
 
-RE4CPS Portal 是 RE4CPS（Requirements Engineering for Cyber-Physical Systems）课题组的展示网站，用于集中呈现研究方向、论文与著作、需求工程智能体、工具、成员及毕业去向、招生与培养、RE 资源和数据集。**本项目使用CodeX与GPT5.6 sol辅助开发。**
+RE4CPS Portal 是 RE4CPS（Requirements Engineering for Cyber-Physical Systems）课题组的展示网站，用于集中呈现研究方向及其代表性智能体与工具、论文与著作、成员及毕业去向、招生与培养、RE 资源和数据集。**本项目使用CodeX与GPT5.6 sol辅助开发。**
 
 网站当前包含以下页面：
 
 - 首页
 - 研究方向
 - 论文与著作
-- 智能体
 - 工具
 - 成员及毕业去向
 - 招生与培养
@@ -20,16 +19,16 @@ RE4CPS Portal 是 RE4CPS（Requirements Engineering for Cyber-Physical Systems�
 
 ## v1.0.1 更新内容
 
-- 新增了 agent、RE资源和dataset页面，删去了文档页面。
+- 新增了 RE资源和dataset页面，删去了文档页面。
 - 修改了部分页面排版问题。
 - 为publication的每篇文章标上了分区。
-- 修改了tools页面，现tools界面主要展示老工具，近期开发的智能体工具主要放在agent界面。
+- 修改了tools页面，现tools界面主要展示老工具，近期开发的智能体工具展示在研究方向中。
 - 补全了members页面信息，并为已毕业的同学添加了去向公司的logo。
 - 拆分了`globle.css`、`zh-CN.ts`、`en-US.ts`等大文件，修改了`README.md`，优化了项目结构。
 
 ## v1.0.2 更新内容
 
-- 补充多项已实现的需求工程 Agent，并将 Agent 页面升级为递归多级分类和多级折叠展示。
+- 补充多项已实现的需求工程 Agent，并将其作为代表性成果整合到对应研究方向。
 - Agent Tag 支持中英文切换，每个 Agent 控制为 3–5 个核心 Tag。
 - 为已发表论文补充经过确认的 DOI 链接。
 - 新增“招生与培养”页面。
@@ -120,9 +119,6 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 │   │   │   ├── alumni/
 │   │   │   └── avatar-placeholder.svg
 │   │   └── organizations/
-│   ├── components/
-│   │   └── agents/
-│   │       └── AgentTreeNode.vue
 │   ├── data/
 │   │   ├── agents.ts
 │   │   ├── datasets.ts
@@ -135,18 +131,15 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 │   │   └── MainLayout.vue
 │   ├── locales/
 │   │   ├── zh-CN/
-│   │   │   ├── agents.ts
 │   │   │   ├── joinUs.ts
 │   │   │   └── index.ts
 │   │   ├── en-US/
-│   │   │   ├── agents.ts
 │   │   │   ├── joinUs.ts
 │   │   │   └── index.ts
 │   ├── pages/
 │   │   ├── Home.vue
 │   │   ├── Research.vue
 │   │   ├── Publications.vue
-│   │   ├── Agents.vue
 │   │   ├── Tools.vue
 │   │   ├── Members.vue
 │   │   ├── JoinUs.vue
@@ -160,7 +153,6 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 │   │   │   ├── resource-card.css
 │   │   │   └── tool-card.css
 │   │   ├── pages/
-│   │   │   ├── agents.css
 │   │   │   ├── home.css
 │   │   │   ├── join-us.css
 │   │   │   ├── members.css
@@ -172,8 +164,6 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 │   │   ├── global.css
 │   │   ├── layout.css
 │   │   └── responsive.css
-│   ├── utils/
-│   │   └── agentTree.ts
 │   ├── App.vue
 │   └── main.ts
 ├── package.json
@@ -184,7 +174,6 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 目录职责：
 
 - src/assets/：成员照片、默认头像和企业 Logo。
-- src/components/：可复用页面组件，包括 Agent 递归树节点。
 - src/data/：论文、智能体、工具、成员、招生分组、RE 资源和数据集的结构化数据。
 - src/locales/：按语言和页面模块拆分的中英文文案。
 - src/pages/：路由页面组件，只负责根据数据和 i18n 文案渲染。
@@ -270,17 +259,17 @@ links: [
 src/data/agents.ts
 ~~~
 
-当前结构为：
+当前结构为扁平的 Agent 定义和研究方向映射：
 
 ~~~text
-category
-└── nodes
-    ├── children
-    │   └── children...
-    └── agents
+researchAgents
+├── ai4re
+├── re4ai
+├── softwareGeneration
+└── domainOntology
 ~~~
 
-`AgentNode` 是递归节点：中间分类使用 `children`，最末级叶节点使用 `agents`。同一个 `AgentDefinition` 可以复用到多个叶节点，不要复制标题、简介、Tag 或链接数据。
+每个方向通过稳定 key 关联一组 `AgentDefinition`，Research 页面统一渲染轻量成果卡片，不要在页面模板中复制卡片结构。
 
 每个智能体使用 AgentDefinition：
 
@@ -295,23 +284,12 @@ const exampleAgent: AgentDefinition = {
 
 添加步骤：
 
-1. 在递归树中选择正确的叶节点，并将智能体放入该节点的 `agents` 数组。
-2. 如果没有合适节点，使用稳定的 `id`、`localeKey` 和 `children` 扩展分类树。
-3. 中间节点只使用 `children`，叶节点只使用 `agents`。
-4. 在 src/locales/zh-CN/agents.ts 增加中文标题、简介、Tag 或分类文案。
-5. 在 src/locales/en-US/agents.ts 增加结构完全一致的英文文案。
-6. Tag 仅在数据中保存 `tagKeys`，具体文案由中英文 locale 管理；每个 Agent 保留 3–5 个核心 Tag。
-7. 只有确认真实地址后才增加链接，并保持 `destination`、`kind` 和 `href` 与 `AgentLink` 类型一致。
-
-暂未上线或尚无真实智能体的子方向，应保持：
-
-~~~ts
-agents: []
-~~~
-
-页面会自动显示“规划中 / Planned”占位卡片。不要为未上线内容编造仓库或 Demo 链接。
-
-递归页面会将当前节点或后代存在 Agent 的节点优先排列，同类节点之间保持数据顺序。页面初始化时只展开按实际渲染顺序找到的第一个已有 Agent 所在的祖先路径，其余分支保持收起。
+1. 在 src/data/agents.ts 新增稳定的 `AgentDefinition`。
+2. 将该定义加入 `researchAgents` 中对应的研究方向数组，并按期望展示顺序排列。
+3. 在 src/locales/zh-CN/research.ts 增加中文标题、简介和所需 Tag 文案。
+4. 在 src/locales/en-US/research.ts 增加结构完全一致的英文文案。
+5. Tag 仅在数据中保存 `tagKeys`，具体文案由中英文 locale 管理；每个 Agent 保留 2–3 个核心 Tag。
+6. 只有确认真实地址后才增加链接，并保持 `destination`、`kind` 和 `href` 与 `AgentLink` 类型一致。
 
 没有真实链接的 Agent 应使用空链接数组：
 
@@ -319,7 +297,7 @@ agents: []
 links: []
 ~~~
 
-不要编造 GitHub、Demo、详情页或其他在线地址。
+这只表示当前没有公开链接，页面会正常显示成果卡片并省略链接按钮。不要编造 GitHub、Demo、详情页或其他在线地址。
 
 ### 新增工具
 
@@ -638,7 +616,6 @@ src/locales/zh-CN/
 ├── home.ts
 ├── research.ts
 ├── publications.ts
-├── agents.ts
 ├── tools.ts
 ├── members.ts
 ├── joinUs.ts
@@ -681,7 +658,6 @@ src/styles/
     ├── home.css
     ├── research.css
     ├── tools.css
-    ├── agents.css
     ├── join-us.css
     ├── publications.css
     ├── members.css
@@ -693,7 +669,7 @@ src/styles/
 - base.css：全局基础规则。
 - layout.css：页面外壳、顶部导航和语言切换。
 - pages/：对应页面布局与页面专属样式。
-- components/tool-card.css：Tools 与 Agents 共用的工具式卡片。
+- components/tool-card.css：Tools 页面共用的工具卡片。
 - components/resource-card.css：RE Resources 与 Datasets 共用的资源卡片。
 - components/equal-height-grid.css：小卡片网格同行等高。
 - responsive.css：1040px 和 680px 响应式覆盖。

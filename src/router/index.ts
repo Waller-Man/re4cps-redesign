@@ -1,6 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import MainLayout from '../layouts/MainLayout.vue'
-import Agents from '../pages/Agents.vue'
 import Datasets from '../pages/Datasets.vue'
 import Home from '../pages/Home.vue'
 import JoinUs from '../pages/JoinUs.vue'
@@ -31,11 +30,6 @@ const router = createRouter({
           path: 'publications',
           name: 'publications',
           component: Publications,
-        },
-        {
-          path: 'agents',
-          name: 'agents',
-          component: Agents,
         },
         {
           path: 'tools',

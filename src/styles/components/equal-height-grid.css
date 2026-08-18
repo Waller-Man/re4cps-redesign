@@ -28,22 +28,11 @@
   flex-direction: column;
 }
 
-.equal-height-card-grid .agent-card-stack {
-  display: flex;
-  flex-direction: column;
-}
-
-.equal-height-card-grid .agent-card-stack > .equal-height-card,
-.equal-height-card-grid .agent-subcategory > .equal-height-card {
-  flex: 1 1 auto;
-}
-
 .equal-height-card.member-card .member-bio {
   flex: 1;
 }
 
 .equal-height-card.member-card .member-contact:last-child,
-.equal-height-card.member-card .alumni-career,
-.equal-height-card.agent-placeholder-card .agent-placeholder-footer {
+.equal-height-card.member-card .alumni-career {
   margin-top: auto;
 }
