@@ -2,6 +2,7 @@ export default {
   primary: 'Primary navigation',
   home: 'Home',
   research: 'Research',
+  projects: 'Projects',
   publications: 'Publications',
   tools: 'Tools',
   members: 'Members',

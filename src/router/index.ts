@@ -4,6 +4,7 @@ import Datasets from '../pages/Datasets.vue'
 import Home from '../pages/Home.vue'
 import JoinUs from '../pages/JoinUs.vue'
 import Members from '../pages/Members.vue'
+import Projects from '../pages/Projects.vue'
 import Publications from '../pages/Publications.vue'
 import ReResources from '../pages/ReResources.vue'
 import Research from '../pages/Research.vue'
@@ -25,6 +26,11 @@ const router = createRouter({
           path: 'research',
           name: 'research',
           component: Research,
+        },
+        {
+          path: 'projects',
+          name: 'projects',
+          component: Projects,
         },
         {
           path: 'publications',

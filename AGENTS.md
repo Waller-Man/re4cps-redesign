@@ -17,7 +17,7 @@ npm run preview
 
 ## 主要目录
 
-- src/data/：论文、智能体、工具、成员、RE 资源和数据集。
+- src/data/：论文、科研项目、智能体、工具、成员、RE 资源和数据集。
 - src/pages/：页面渲染，不应存放大量业务数据。
 - src/locales/zh-CN/、src/locales/en-US/：按模块拆分的双语文案。
 - src/assets/members/：成员照片和默认头像。
@@ -29,6 +29,7 @@ npm run preview
 ## 数据驱动原则
 
 - 论文优先修改 src/data/publications.ts。
+- 科研项目优先修改 src/data/projects.ts。
 - 智能体优先修改 src/data/agents.ts。
 - 工具优先修改 src/data/tools.ts。
 - 成员优先修改 src/data/members.ts。

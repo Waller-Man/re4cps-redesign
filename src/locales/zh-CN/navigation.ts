@@ -2,6 +2,7 @@ export default {
   primary: '主导航',
   home: '首页',
   research: '研究方向',
+  projects: '项目',
   publications: '论文与著作',
   tools: '工具',
   members: '成员',

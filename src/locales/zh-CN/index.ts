@@ -4,6 +4,7 @@ import home from './home'
 import joinUs from './joinUs'
 import members from './members'
 import navigation from './navigation'
+import projects from './projects'
 import publications from './publications'
 import reResources from './reResources'
 import research from './research'
@@ -14,6 +15,7 @@ export default {
   language: common,
   home,
   research,
+  projects,
   tools,
   publications,
   members,
