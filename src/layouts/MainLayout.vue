@@ -18,6 +18,7 @@ const navigation = computed<NavigationItem[]>(() => [
   { key: 'research', label: t('nav.research'), to: '/research' },
   { key: 'projects', label: t('nav.projects'), to: '/projects' },
   { key: 'publications', label: t('nav.publications'), to: '/publications' },
+  { key: 'agents', label: t('nav.agents'), to: '/agents' },
   { key: 'tools', label: t('nav.tools'), to: '/tools' },
   { key: 'members', label: t('nav.members'), to: '/members' },
   { key: 'joinUs', label: t('nav.joinUs'), to: '/join-us' },

@@ -1,3 +1,4 @@
+import agents from './agents'
 import common from './common'
 import datasets from './datasets'
 import home from './home'
@@ -21,5 +22,6 @@ export default {
   members,
   joinUs,
   reResources,
+  agents,
   datasets,
 }
