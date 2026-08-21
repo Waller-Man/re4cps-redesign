@@ -24,76 +24,72 @@
   line-height: 1.8;
 }
 
-.project-researchers {
+.project-groups {
   display: flex;
   flex-direction: column;
-  margin-top: 56px;
-  gap: 64px;
+  margin-top: 58px;
+  gap: 78px;
 }
 
-.project-researcher + .project-researcher {
-  padding-top: 60px;
-  border-top: 1px solid #e3e9f2;
+.project-group-heading {
+  padding-bottom: 18px;
+  border-bottom: 1px solid #dfe6f0;
 }
 
-.project-researcher-heading {
-  max-width: 940px;
-}
-
-.project-researcher-heading h2 {
-  margin: 0;
-  color: #143d8f;
-  font-size: clamp(27px, 3.4vw, 36px);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.25;
-}
-
-.project-researcher-heading p {
-  margin: 16px 0 0;
-  color: #647188;
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.project-sections {
-  display: flex;
-  flex-direction: column;
-  margin-top: 36px;
-  gap: 42px;
-}
-
-.project-section-heading {
-  margin-bottom: 20px;
-}
-
-.project-section-heading h3 {
+.project-group-heading h2 {
   display: flex;
   align-items: center;
   margin: 0;
-  color: #294f8d;
-  font-size: 21px;
-  font-weight: 680;
-  letter-spacing: -0.015em;
-  line-height: 1.4;
-  gap: 10px;
+  color: #143d8f;
+  font-size: clamp(27px, 3.3vw, 35px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+  gap: 11px;
 }
 
-.project-section-heading h3::before {
+.project-group-heading h2::before {
   width: 4px;
-  height: 18px;
+  height: 22px;
   flex-shrink: 0;
   content: '';
   background: #6f9bda;
   border-radius: 999px;
 }
 
+.project-group-heading p {
+  max-width: 840px;
+  margin: 10px 0 0 15px;
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.project-research-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: stretch;
+  margin-top: 28px;
+  gap: 22px;
+}
+
+.project-grid-item {
+  display: flex;
+  min-width: 0;
+  grid-column: span 3;
+}
+
+.project-grid-item-compact {
+  grid-column: span 2;
+}
+
 .project-card.arco-card {
+  width: 100%;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.96);
-  border: 1px solid #e3e9f2;
+  background: #fff;
+  border: 1px solid #e0e7f1;
   border-radius: 15px;
-  box-shadow: 0 9px 28px rgba(37, 52, 79, 0.055);
+  box-shadow: 0 7px 22px rgba(37, 52, 79, 0.055);
   transition:
     transform 180ms ease,
     box-shadow 180ms ease,
@@ -101,131 +97,244 @@
 }
 
 .project-card.arco-card:hover {
-  border-color: #cddaf0;
-  box-shadow: 0 15px 38px rgba(37, 67, 122, 0.1);
-  transform: translateY(-3px);
+  border-color: #c4d4eb;
+  box-shadow: 0 13px 32px rgba(37, 67, 122, 0.09);
+  transform: translateY(-2px);
 }
 
 .project-card .arco-card-body {
-  min-height: 282px;
-  padding: 26px;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 27px;
 }
 
-.project-card-program .arco-card-body {
-  min-height: 226px;
+.project-card-header {
+  display: flex;
+  min-height: 68px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
 }
 
-.project-card-industry.arco-card {
-  background: linear-gradient(135deg, #fbfdff 0%, #f4f8fe 100%);
-  border-color: #d9e4f3;
-  box-shadow: 0 11px 30px rgba(41, 79, 141, 0.07);
+.project-card-header .arco-tag {
+  height: auto;
+  max-width: calc(100% - 106px);
+  padding: 3px 9px;
+  white-space: normal;
+  line-height: 1.45;
+  border-radius: 6px;
 }
 
-.project-card-industry .arco-card-body {
-  min-height: 238px;
-  padding: 28px 30px;
+.project-card-header .arco-tag:only-child {
+  max-width: 100%;
+}
+
+.project-organization-logo {
+  width: 90px;
+  height: 68px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.project-card h3 {
+  margin: 18px 0 0;
+  color: #1c2a42;
+  font-size: 19px;
+  font-weight: 680;
+  letter-spacing: -0.012em;
+  line-height: 1.48;
+  overflow-wrap: anywhere;
+}
+
+.project-summary {
+  flex: 1;
+  margin: 15px 0 0;
+  color: #657289;
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.project-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 20px 0 0;
+  padding: 16px 0;
+  border-top: 1px solid #e9eef5;
+  border-bottom: 1px solid #e9eef5;
+  gap: 13px 18px;
+}
+
+.project-meta div {
+  min-width: 0;
+}
+
+.project-meta dt,
+.project-meta dd {
+  margin: 0;
+}
+
+.project-meta dt {
+  color: #929cad;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+}
+
+.project-meta dd {
+  margin-top: 4px;
+  color: #35558a;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
 .project-card-tags {
   display: flex;
   flex-wrap: wrap;
-  min-height: 24px;
+  margin-top: 18px;
   gap: 7px;
 }
 
-.project-card-tags .arco-tag,
-.project-role-tag.arco-tag {
-  border-radius: 6px;
-}
-
-.project-card-tags .arco-tag:not(.arco-tag-green):not(.arco-tag-arcoblue) {
+.project-card-tags .arco-tag {
+  height: auto;
+  padding: 2px 8px;
   color: #49658f;
-  background: #f0f5fb;
-  border-color: #dce6f3;
+  white-space: normal;
+  background: #f1f5fb;
+  border-color: #dfe7f2;
+  border-radius: 6px;
+  line-height: 1.4;
 }
 
-.project-card h4 {
-  margin: 18px 0 0;
-  color: #1c2a42;
-  font-size: 18px;
-  font-weight: 650;
-  letter-spacing: -0.01em;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
+.project-card-compact .arco-card-body {
+  padding: 22px;
 }
 
-.project-card-program h4 {
-  font-size: 19px;
+.project-card-compact .project-card-header {
+  min-height: 58px;
 }
 
-.project-funding-type {
-  margin: 15px 0 0;
-  color: #526784;
-  font-size: 14px;
-  font-weight: 560;
+.project-card-compact .project-organization-logo {
+  width: 78px;
+  height: 58px;
+}
+
+.project-card-compact h3 {
+  margin-top: 15px;
+  font-size: 17px;
+}
+
+.project-card-compact .project-summary {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.68;
+}
+
+.project-card-compact .project-meta {
+  grid-template-columns: 1fr;
+  margin-top: 17px;
+  padding: 14px 0;
+  gap: 10px;
+}
+
+.project-card-compact .project-card-tags {
+  margin-top: 15px;
+}
+
+.project-grid-item-placeholder {
+  align-self: start;
+}
+
+.project-card-placeholder.arco-card {
+  background: #fbfdff;
+  border-style: dashed;
+  box-shadow: 0 5px 16px rgba(37, 52, 79, 0.045);
+}
+
+.project-card-placeholder .arco-card-body {
+  height: auto;
+  padding: 22px;
+}
+
+.project-placeholder-content .project-organization-logo {
+  display: block;
+  width: 84px;
+  height: 62px;
+}
+
+.project-placeholder-content h3 {
+  margin-top: 15px;
+  font-size: 17px;
+}
+
+.project-placeholder-content p {
+  margin: 10px 0 0;
+  color: #8290a5;
+  font-size: 13px;
   line-height: 1.6;
 }
 
-.project-number {
-  margin: 12px 0 0;
-  color: #8792a6;
-  font-size: 13px;
-  line-height: 1.5;
+.project-group-industry {
+  padding-top: 4px;
 }
 
-.project-card-spacer {
-  flex: 1;
+.project-industry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  margin-top: 28px;
+  gap: 22px;
 }
 
-.project-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 22px;
-  padding-top: 17px;
-  border-top: 1px solid #e8edf5;
-  gap: 12px;
-}
-
-.project-period {
-  color: #35558a;
-  font-size: 13px;
-  font-weight: 650;
-  letter-spacing: 0.015em;
-}
-
-.project-role-tag.arco-tag {
-  color: #35558a;
-  background: #edf4ff;
-  border-color: #d9e6f8;
+.project-card-industry .arco-card-body {
+  padding: 28px 30px;
 }
 
 .project-industry-brand {
-  display: flex;
-  min-height: 62px;
+  display: grid;
+  min-height: 54px;
+  grid-template-columns: 104px minmax(0, 1fr) auto;
   align-items: center;
-  margin-top: 22px;
-  gap: 18px;
+  gap: 16px;
 }
 
-.project-industry-brand img {
-  width: 68px;
-  height: 56px;
-  flex-shrink: 0;
+.project-industry-logo {
+  display: flex;
+  width: 104px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-industry-logo img {
+  width: 96px;
+  height: 42px;
   object-fit: contain;
 }
 
-.project-industry-brand strong {
+.project-industry-brand span {
+  min-width: 0;
   color: #143d8f;
-  font-size: clamp(23px, 2.5vw, 30px);
+  font-size: 20px;
   font-weight: 720;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
-.project-card-industry h4 {
-  margin-top: 20px;
-  color: #62718a;
-  font-size: 15px;
-  font-weight: 560;
+.project-industry-brand .arco-tag {
+  height: auto;
+  justify-self: end;
+  padding: 3px 9px;
+  white-space: normal;
+  color: #526b91;
+  background: #f2f6fc;
+  border-color: #dce6f3;
+  border-radius: 6px;
+}
+
+.project-card-industry h3 {
+  margin-top: 22px;
+  font-size: 19px;
 }

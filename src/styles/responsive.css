@@ -98,52 +98,67 @@
     font-size: 16px;
   }
 
-  .project-researchers {
+  .project-groups {
     margin-top: 42px;
-    gap: 48px;
+    gap: 58px;
   }
 
-  .project-researcher + .project-researcher {
-    padding-top: 46px;
+  .project-group-heading {
+    padding-bottom: 15px;
   }
 
-  .project-researcher-heading h2 {
+  .project-group-heading h2 {
     font-size: 26px;
   }
 
-  .project-sections {
-    margin-top: 30px;
-    gap: 36px;
+  .project-group-heading p {
+    margin-left: 0;
   }
 
-  .project-section-heading {
-    margin-bottom: 17px;
+  .project-research-grid,
+  .project-industry-grid {
+    grid-template-columns: 1fr;
+    margin-top: 22px;
+    gap: 18px;
   }
 
-  .project-section-heading h3 {
-    font-size: 20px;
+  .project-grid-item,
+  .project-grid-item-compact {
+    grid-column: auto;
   }
 
   .project-card .arco-card-body,
-  .project-card-program .arco-card-body,
+  .project-card-compact .arco-card-body,
   .project-card-industry .arco-card-body {
     min-height: 0;
     padding: 22px;
   }
 
-  .project-card-footer {
-    align-items: flex-start;
-    flex-wrap: wrap;
+  .project-meta,
+  .project-card-compact .project-meta {
+    grid-template-columns: 1fr;
   }
 
   .project-industry-brand {
+    grid-template-columns: 82px minmax(0, 1fr);
     gap: 15px;
   }
 
-  .project-industry-brand img {
-    width: 60px;
-    height: 50px;
+  .project-industry-logo {
+    width: 82px;
+    height: 40px;
   }
+
+  .project-industry-brand img {
+    width: 82px;
+    height: 40px;
+  }
+
+  .project-industry-brand .arco-tag {
+    grid-column: 2;
+    justify-self: start;
+  }
+
   .tools-page {
     width: min(100% - 36px, 1180px);
     padding: 52px 0 72px;
