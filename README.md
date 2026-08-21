@@ -1,17 +1,18 @@
 # RE4CPS Portal
 
-> 当前正式版本：**v1.0.2**
+> 当前正式版本：**v1.1.0**
 
-RE4CPS Portal 是 RE4CPS（Requirements Engineering for Cyber-Physical Systems）课题组的展示网站，用于集中呈现研究方向、论文与著作、需求工程智能体、工具、成员及毕业去向、招生与培养、RE 资源和数据集。**本项目使用CodeX与GPT5.6 sol辅助开发。**
+RE4CPS Portal 是 RE4CPS（Requirements Engineering for Cyber-Physical Systems）课题组的展示网站，用于集中呈现研究方向、科研与企业合作项目、论文与著作、需求工程智能体、工具、成员及毕业去向、招生与培养、RE 资源和数据集。**本项目使用CodeX与GPT5.6 sol辅助开发。**
 
 网站当前包含以下页面：
 
-- 首页
-- 研究方向
+- 首页（包含会议动态与研究方向）
+- 研究方向（已整合至首页）
+- 科研与企业合作项目
 - 论文与著作
-- 智能体
+- 需求工程智能体及四个方向子页面
 - 工具
-- 成员及毕业去向
+- 成员及毕业去向（含教师、博士后、博士生、硕士生和 Alumni）
 - 招生与培养
 - RE 资源
 - 数据集
@@ -35,6 +36,16 @@ RE4CPS Portal 是 RE4CPS（Requirements Engineering for Cyber-Physical Systems�
 - 新增“招生与培养”页面。
 - 补充多位已毕业成员及其毕业年份、毕业去向和企业 Logo。
 - 修改了tools中切换中文tag仍然显示为英文的bug。
+
+## v1.1.0 更新内容 / Changelog
+
+- 重新设计 Home 页面，增加 Hero、Conference Highlights、Research Directions 和页脚。
+- 将四个 Research Directions 整合至首页；原 `/research` 地址重定向到首页研究方向区域。
+- 重构 Requirements Engineering Agents 首页及四个方向子页面，以能力分区和 Agent/Tool 卡片展示能力体系。
+- 重新整合 Projects 页面，统一展示团队科研项目与企业合作项目。
+- 优化中英文内容、卡片布局、响应式展示及页面间的视觉一致性。
+
+当前 `/agents` 展示四个一级方向入口，分别进入软件需求开发、需求变更与演化、历史需求文档处理、需求驱动的测试用例生成子页面。方向子页采用“方向介绍 + 页内能力导航 + 能力 Section + Agent/Tool 卡片”的扁平结构，不再使用折叠抽屉或 Planned 占位卡。
 
 ## 技术栈
 
@@ -113,8 +124,10 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 │   └── favicon.svg
 ├── src/
 │   ├── assets/
+│   │   ├── home-assets/
 │   │   ├── members/
 │   │   │   ├── Faculty/
+│   │   │   ├── postdocs/
 │   │   │   ├── phd-students/
 │   │   │   ├── master-students/
 │   │   │   ├── alumni/
@@ -122,14 +135,17 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 │   │   └── organizations/
 │   ├── components/
 │   │   └── agents/
-│   │       └── AgentTreeNode.vue
+│   │       └── AgentCapabilitySection.vue
 │   ├── data/
 │   │   ├── agents.ts
 │   │   ├── datasets.ts
+│   │   ├── home.ts
 │   │   ├── joinUs.ts
 │   │   ├── members.ts
+│   │   ├── projects.ts
 │   │   ├── publications.ts
 │   │   ├── reResources.ts
+│   │   ├── research.ts
 │   │   └── tools.ts
 │   ├── layouts/
 │   │   └── MainLayout.vue
@@ -147,6 +163,8 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 │   │   ├── Research.vue
 │   │   ├── Publications.vue
 │   │   ├── Agents.vue
+│   │   ├── AgentDirection.vue
+│   │   ├── Projects.vue
 │   │   ├── Tools.vue
 │   │   ├── Members.vue
 │   │   ├── JoinUs.vue
@@ -165,6 +183,7 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 │   │   │   ├── join-us.css
 │   │   │   ├── members.css
 │   │   │   ├── publications.css
+│   │   │   ├── projects.css
 │   │   │   ├── research.css
 │   │   │   ├── resource-pages.css
 │   │   │   └── tools.css
@@ -172,8 +191,6 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 │   │   ├── global.css
 │   │   ├── layout.css
 │   │   └── responsive.css
-│   ├── utils/
-│   │   └── agentTree.ts
 │   ├── App.vue
 │   └── main.ts
 ├── package.json
@@ -183,9 +200,9 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 
 目录职责：
 
-- src/assets/：成员照片、默认头像和企业 Logo。
-- src/components/：可复用页面组件，包括 Agent 递归树节点。
-- src/data/：论文、智能体、工具、成员、招生分组、RE 资源和数据集的结构化数据。
+- src/assets/：首页图片、成员照片、默认头像以及机构和企业 Logo。
+- src/components/：可复用页面组件，包括 Agent 能力 Section 的递归渲染组件。
+- src/data/：首页、研究方向、科研项目、论文、智能体、工具、成员、招生分组、RE 资源和数据集的结构化数据。
 - src/locales/：按语言和页面模块拆分的中英文文案。
 - src/pages/：路由页面组件，只负责根据数据和 i18n 文案渲染。
 - src/styles/：基础样式、页面样式、公共卡片样式和响应式样式。
@@ -195,6 +212,24 @@ Vite 默认预览地址通常为 http://localhost:4173/。该命令用于检查 
 ## 后续内容更新指南
 
 项目采用数据驱动方式。新增内容时应优先修改 src/data/ 和对应语言模块，不要把大量业务数据直接写入 Vue 页面。
+
+### 更新 Home 与 Research Directions
+
+- 首页会议图片、顺序和 localeKey 位于 `src/data/home.ts`，图片文件位于 `src/assets/home-assets/`。
+- 四个研究方向的顺序与 Tag 位于 `src/data/research.ts`，标题、简介和关键词位于中英文 `research.ts`。
+- `Home.vue` 与保留的 `Research.vue` 共用同一份研究方向数据，不要维护两套重复配置。
+- 当前 Research Directions 只包含 AI4RE、RE4AI、AI-based Software Generation 和 Automatic Construction of Domain Knowledge Ontologies，不要恢复已经删除的第五个方向。
+- `/research` 仅用于兼容旧地址，并重定向至首页 `#research`；顶部导航不再提供独立 Research 入口。
+
+### 新增或修改项目
+
+科研项目与企业合作项目统一维护在：
+
+~~~text
+src/data/projects.ts
+~~~
+
+`researchProjects` 和 `industryProjects` 使用 `ProjectDefinition`，双语标题、摘要、类别、机构名称和 Tag 位于中英文 `projects.ts`。项目名称、编号、年份、摘要和 Logo 只有在信息经过确认后才能填写；不要根据占位卡推测或补全项目详情。
 
 ### 新增论文或著作
 
@@ -303,15 +338,7 @@ const exampleAgent: AgentDefinition = {
 6. Tag 仅在数据中保存 `tagKeys`，具体文案由中英文 locale 管理；每个 Agent 保留 3–5 个核心 Tag。
 7. 只有确认真实地址后才增加链接，并保持 `destination`、`kind` 和 `href` 与 `AgentLink` 类型一致。
 
-暂未上线或尚无真实智能体的子方向，应保持：
-
-~~~ts
-agents: []
-~~~
-
-页面会自动显示“规划中 / Planned”占位卡片。不要为未上线内容编造仓库或 Demo 链接。
-
-递归页面会将当前节点或后代存在 Agent 的节点优先排列，同类节点之间保持数据顺序。页面初始化时只展开按实际渲染顺序找到的第一个已有 Agent 所在的祖先路径，其余分支保持收起。
+自 v1.1.0 起，每个最终叶子能力都必须至少配置一个 Agent。页面不再渲染“规划中 / Planned / Coming Soon”占位内容，也不再使用多级折叠树。`Agents.vue` 展示四个一级方向入口，`AgentDirection.vue` 负责方向说明和页内导航，`AgentCapabilitySection.vue` 将递归能力数据渲染为扁平的能力 Section 与 Agent/Tool 卡片。
 
 没有真实链接的 Agent 应使用空链接数组：
 
@@ -319,7 +346,7 @@ agents: []
 links: []
 ~~~
 
-不要编造 GitHub、Demo、详情页或其他在线地址。
+空链接数组只表示当前没有公开 GitHub、Demo 或详情地址，不表示 Agent 处于 Planned 状态。页面不会显示空按钮。不要编造 GitHub、Demo、详情页、论文或其他在线地址。
 
 ### 新增工具
 
@@ -404,6 +431,7 @@ src/data/members.ts
 成员分为：
 
 - faculty：教师
+- postdoc：博士后
 - phd：博士生
 - master：硕士生
 - alumni：已毕业成员
@@ -418,6 +446,21 @@ src/locales/en-US/members.ts
 #### 教师
 
 教师不需要入学或毕业年份。需要提供照片、localeKey，以及可选邮箱和主页。当前教师卡片默认显示简介，因此新增教师时应在中英文 members.ts 中完整填写 name、role、school 和 bio。
+
+#### 博士后
+
+博士后使用 `joinedYear` 表示加入课题组年份，不要误用 `admissionYear`。卡片显示“xxxx年加入 / Joined in xxxx”，并复用现有成员卡片、年份 Tag 和双语成员文案。
+
+~~~ts
+{
+  id: 'example-postdoc',
+  group: 'postdoc',
+  localeKey: 'examplePostdoc',
+  photo: examplePostdocPhoto,
+  joinedYear: 2026,
+  email: '经过确认的邮箱',
+}
+~~~
 
 #### 博士生
 
@@ -571,6 +614,7 @@ src/locales/en-US/joinUs.ts
 ~~~text
 src/assets/members/
 ├── Faculty/
+├── postdocs/
 ├── phd-students/
 ├── master-students/
 ├── alumni/
@@ -637,6 +681,7 @@ src/locales/zh-CN/
 ├── navigation.ts
 ├── home.ts
 ├── research.ts
+├── projects.ts
 ├── publications.ts
 ├── agents.ts
 ├── tools.ts
@@ -680,6 +725,7 @@ src/styles/
 └── pages/
     ├── home.css
     ├── research.css
+    ├── projects.css
     ├── tools.css
     ├── agents.css
     ├── join-us.css
@@ -693,7 +739,8 @@ src/styles/
 - base.css：全局基础规则。
 - layout.css：页面外壳、顶部导航和语言切换。
 - pages/：对应页面布局与页面专属样式。
-- components/tool-card.css：Tools 与 Agents 共用的工具式卡片。
+- components/tool-card.css：Tools 使用的公共工具卡片样式。
+- pages/agents.css：Agents 首页、方向子页、能力 Section 和 Agent/Tool 卡片样式。
 - components/resource-card.css：RE Resources 与 Datasets 共用的资源卡片。
 - components/equal-height-grid.css：小卡片网格同行等高。
 - responsive.css：1040px 和 680px 响应式覆盖。

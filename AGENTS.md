@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-本项目是 RE4CPS 课题组展示网站，正式版本为 v1.0.2。技术栈为 Vue 3、Vite、TypeScript、Vue Router、vue-i18n 和 Arco Design Vue；使用 GitHub Actions 部署到 GitHub Pages。项目为纯前端，不包含后端、数据库、登录或在线 API。
+本项目是 RE4CPS 课题组展示网站，正式版本为 v1.1.0。技术栈为 Vue 3、Vite、TypeScript、Vue Router、vue-i18n 和 Arco Design Vue；使用 GitHub Actions 部署到 GitHub Pages。项目为纯前端，不包含后端、数据库、登录或在线 API。
 
 ## 常用命令
 
@@ -20,24 +20,46 @@ npm run preview
 - src/data/：论文、科研项目、智能体、工具、成员、RE 资源和数据集。
 - src/pages/：页面渲染，不应存放大量业务数据。
 - src/locales/zh-CN/、src/locales/en-US/：按模块拆分的双语文案。
+- src/assets/home-assets/：首页背景与会议图片。
 - src/assets/members/：成员照片和默认头像。
 - src/assets/organizations/：企业 Logo。
+- src/components/agents/AgentCapabilitySection.vue：Agent 方向子页的能力 Section 递归渲染组件。
 - src/styles/：基础、布局、页面、公共卡片和响应式样式。
 - src/router/：Hash Router 配置。
 - .github/workflows/deploy.yml：GitHub Pages 部署。
+
+## 当前页面与路由
+
+- `/`：Home，包含 Hero、Conference Highlights、四个 Research Directions 和页脚。
+- `/research`：兼容旧地址，重定向到首页 `#research`，不再是顶部导航入口。
+- `/projects`：科研项目与企业合作项目。
+- `/publications`：论文、会议/期刊成果、专著与教材。
+- `/agents`：Requirements Engineering Agents 四个一级方向入口。
+- `/agents/software-requirements-development`：软件需求开发。
+- `/agents/requirements-change-evolution`：需求变更与演化。
+- `/agents/historical-requirements-document-processing`：历史需求文档处理。
+- `/agents/test-case-generation`：需求驱动的测试用例生成。
+- `/tools`、`/members`、`/join-us`、`/re-resources`、`/datasets`：工具、成员、招生、RE 资源和数据集。
+
+Agents 方向子页采用“方向说明 + 页内能力导航 + 能力 Section + Agent/Tool 卡片”的扁平结构，不要恢复折叠抽屉、卡片套卡片或 Planned 占位展示。
 
 ## 数据驱动原则
 
 - 论文优先修改 src/data/publications.ts。
 - 科研项目优先修改 src/data/projects.ts。
+- 首页会议优先修改 src/data/home.ts。
+- 首页研究方向优先修改 src/data/research.ts；当前仅保留四个方向。
 - 智能体优先修改 src/data/agents.ts。
 - 工具优先修改 src/data/tools.ts。
 - 成员优先修改 src/data/members.ts。
 - 数据集优先修改 src/data/datasets.ts。
 - RE 资源优先修改 src/data/reResources.ts。
+- 招生分组优先修改 src/data/joinUs.ts。
 - 标题、简介、姓名等双语内容放入对应 locale 模块。
 - 不在 Vue 页面中硬编码大量数据或大段双语文本。
 - 使用稳定 id 和 localeKey，不使用数组索引关联数据。
+
+Agent 数据继续使用 `agentCategories` 保存“方向 → 能力节点 → 子能力 → Agent”的逻辑层级，由 `AgentCapabilitySection.vue` 渲染为页面分区。每个最终叶子能力必须至少有一个 `AgentDefinition`。`links: []` 只表示没有公开 GitHub、Demo 或详情地址，不代表 Planned；不要虚构链接、论文或部署状态。
 
 ## 国际化规则
 
@@ -62,6 +84,7 @@ npm run preview
 ## 成员年份和排序
 
 - 在读博士生、硕士生使用 admissionYear。
+- 博士后使用 joinedYear，显示加入年份，不得表示成入学年份。
 - 已毕业成员直接填写真实 graduationYear。
 - 禁止使用“入学年份 + 3”或任何固定学制动态推算毕业年份。
 - 硕士生按 admissionYear、order 排序。
@@ -78,7 +101,7 @@ npm run preview
 - 小卡片网格使用 equal-height-card-grid 和 equal-height-card。
 - 桌面端同一行卡片等高，移动端保持自然高度。
 - responsive.css 必须最后加载。
-- 修改样式时保留 RE Resources/Datasets、Tools/Agents 的公共卡片关系。
+- 修改样式时保留 RE Resources/Datasets 的公共资源卡片关系，以及 Home、Projects、Agents 当前的页面视觉层级。
 
 ## 修改限制
 
