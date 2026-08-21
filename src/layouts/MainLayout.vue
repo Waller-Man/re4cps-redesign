@@ -15,7 +15,6 @@ const { locale, t } = useI18n()
 
 const navigation = computed<NavigationItem[]>(() => [
   { key: 'home', label: t('nav.home'), to: '/' },
-  { key: 'research', label: t('nav.research'), to: '/research' },
   { key: 'projects', label: t('nav.projects'), to: '/projects' },
   { key: 'publications', label: t('nav.publications'), to: '/publications' },
   { key: 'agents', label: t('nav.agents'), to: '/agents' },

@@ -9,7 +9,6 @@ import Members from '../pages/Members.vue'
 import Projects from '../pages/Projects.vue'
 import Publications from '../pages/Publications.vue'
 import ReResources from '../pages/ReResources.vue'
-import Research from '../pages/Research.vue'
 import Tools from '../pages/Tools.vue'
 
 const router = createRouter({
@@ -27,7 +26,7 @@ const router = createRouter({
         {
           path: 'research',
           name: 'research',
-          component: Research,
+          redirect: { path: '/', hash: '#research' },
         },
         {
           path: 'projects',
@@ -96,7 +95,8 @@ const router = createRouter({
       ],
     },
   ],
-  scrollBehavior: () => ({ top: 0 }),
+  scrollBehavior: (to) =>
+    to.hash ? { el: to.hash, behavior: 'smooth' } : { top: 0 },
 })
 
 export default router

@@ -1,35 +1,8 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { researchDirections, researchKeywordKeys } from '../data/research'
 
 const { t } = useI18n()
-
-const keywordKeys = [
-  'requirementsEngineering',
-  'knowledgeEngineering',
-  'formalMethods',
-  'artificialIntelligence',
-  'ontology',
-  'agent',
-] as const
-
-const directions = [
-  {
-    key: 'ai4re',
-    tags: ['artificialIntelligence', 'requirementsEngineering', 'knowledgeEngineering'],
-  },
-  {
-    key: 're4ai',
-    tags: ['requirementsEngineering', 'agent', 'formalMethods'],
-  },
-  {
-    key: 'softwareGeneration',
-    tags: ['artificialIntelligence', 'requirementsEngineering', 'formalMethods'],
-  },
-  {
-    key: 'domainOntology',
-    tags: ['ontology', 'knowledgeEngineering', 'artificialIntelligence'],
-  },
-] as const
 </script>
 
 <template>
@@ -42,7 +15,7 @@ const directions = [
     <section class="research-keywords" :aria-label="t('research.keywordsLabel')">
       <a-space wrap :size="[10, 10]">
         <a-tag
-          v-for="keywordKey in keywordKeys"
+          v-for="keywordKey in researchKeywordKeys"
           :key="keywordKey"
           class="research-keyword"
           color="arcoblue"
@@ -56,7 +29,7 @@ const directions = [
     <section :aria-label="t('research.directionsLabel')">
       <a-row class="equal-height-card-grid" :gutter="[24, 24]">
         <a-col
-          v-for="direction in directions"
+          v-for="direction in researchDirections"
           :key="direction.key"
           :xs="24"
           :sm="24"
