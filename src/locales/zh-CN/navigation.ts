@@ -4,7 +4,7 @@ export default {
   research: '研究方向',
   projects: '项目',
   publications: '论文与著作',
-  agents: '智能体',
+  agents: '需求工程智能体',
   tools: '工具',
   members: '成员',
   joinUs: '招生',

@@ -1,6 +1,6 @@
 export default {
-  title: '智能体',
-  description: '面向需求开发、需求演化、历史文档处理和测试生成的需求工程智能体。',
+  title: '需求工程智能体',
+  description: '面向需求开发、需求演化、历史需求文档处理与需求驱动测试的智能体与工具。',
   planned: '规划中',
   placeholderDescription: '该子方向的智能体能力正在规划与整理中。',
   categoryPlaceholderDescription: '该类别的智能体能力正在规划与整理中。',
@@ -19,7 +19,7 @@ export default {
       description: '面向历史需求文档的解析、抽取、检索、复用和一致性分析。',
     },
     testCaseGeneration: {
-      title: '测试用例生成',
+      title: '需求驱动的测试用例生成',
       description: '从需求及相关工程知识出发生成和演化测试用例。',
     },
   },

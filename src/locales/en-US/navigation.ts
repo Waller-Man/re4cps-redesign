@@ -4,7 +4,7 @@ export default {
   research: 'Research',
   projects: 'Projects',
   publications: 'Publications',
-  agents: 'Agents',
+  agents: 'RE Agents',
   tools: 'Tools',
   members: 'Members',
   joinUs: 'Join Us',

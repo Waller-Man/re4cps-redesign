@@ -1,7 +1,7 @@
 export default {
-  title: 'Agents',
+  title: 'Requirements Engineering Agents',
   description:
-    'Requirements engineering agents for requirements development, evolution, historical document processing and test generation.',
+    'Agents and tools for requirements development, requirements evolution, historical requirements document processing, and requirements-driven testing.',
   planned: 'Planned',
   placeholderDescription:
     'Agent capabilities for this direction are being planned and organized.',
@@ -25,7 +25,7 @@ export default {
         'Parsing, extraction, retrieval, reuse and consistency analysis for historical requirements documents.',
     },
     testCaseGeneration: {
-      title: 'Test Case Generation',
+      title: 'Requirements-Driven Test Case Generation',
       description:
         'Generating and evolving test cases from requirements and related engineering knowledge.',
     },

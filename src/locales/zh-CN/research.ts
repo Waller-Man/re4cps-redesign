@@ -13,7 +13,7 @@ export default {
   },
   directions: {
     ai4re: {
-      title: 'AI4RE：面向需求工程的人工智能',
+      title: 'AI4RE：AI赋能需求工程',
       description:
         '利用大模型、知识图谱和需求工程方法论赋能需求工程，实现需求获取、需求分析、需求建模和需求文档生成的自动化与智能化。',
     },
