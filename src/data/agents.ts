@@ -26,6 +26,17 @@ export interface AgentNode {
   agents?: readonly AgentDefinition[]
 }
 
+const capabilityAgent = (
+  id: string,
+  localeKey: string,
+  tagKeys: readonly string[],
+): AgentDefinition => ({
+  id,
+  localeKey,
+  tagKeys,
+  links: [],
+})
+
 const iReDev: AgentDefinition = {
   id: 'iredev',
   localeKey: 'iredev',
@@ -175,12 +186,24 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'human-safety-requirements-completion-recommendation',
             localeKey: 'humanSafetyRequirementsCompletionRecommendation',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'human-safety-requirements-completion-agent',
+                'humanSafetyRequirementsCompletionAgent',
+                ['humanSafety', 'hazardAnalysis', 'requirementsCompletion'],
+              ),
+            ],
           },
           {
             id: 'reliability-requirements-completion-recommendation',
             localeKey: 'reliabilityRequirementsCompletionRecommendation',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'reliability-requirements-completion-agent',
+                'reliabilityRequirementsCompletionAgent',
+                ['reliability', 'faultAnalysis', 'requirementsCompletion'],
+              ),
+            ],
           },
           {
             id: 'information-security-requirements-completion-recommendation',
@@ -211,7 +234,13 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'software-requirements-generation-based-on-system-requirements',
             localeKey: 'softwareRequirementsGenerationBasedOnSystemRequirements',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'system-requirements-refinement-agent',
+                'systemRequirementsRefinementAgent',
+                ['systemRequirements', 'requirementsRefinement', 'requirementsGeneration'],
+              ),
+            ],
           },
         ],
       },
@@ -222,22 +251,46 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'requirements-document-structure-planning',
             localeKey: 'requirementsDocumentStructurePlanning',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'requirements-document-structure-planning-agent',
+                'requirementsDocumentStructurePlanningAgent',
+                ['documentStructure', 'documentGeneration'],
+              ),
+            ],
           },
           {
             id: 'requirements-document-content-generation',
             localeKey: 'requirementsDocumentContentGeneration',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'requirements-document-content-generation-agent',
+                'requirementsDocumentContentGenerationAgent',
+                ['documentGeneration', 'requirementsGeneration'],
+              ),
+            ],
           },
           {
             id: 'requirements-document-structure-completion',
             localeKey: 'requirementsDocumentStructureCompletion',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'requirements-document-structure-completion-agent',
+                'requirementsDocumentStructureCompletionAgent',
+                ['documentStructure', 'requirementsCompletion'],
+              ),
+            ],
           },
           {
             id: 'requirements-document-formatting-enhancement',
             localeKey: 'requirementsDocumentFormattingEnhancement',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'requirements-document-formatting-agent',
+                'requirementsDocumentFormattingAgent',
+                ['documentFormatting', 'documentGeneration'],
+              ),
+            ],
           },
         ],
       },
@@ -252,7 +305,13 @@ export const agentCategories: readonly AgentNode[] = [
               {
                 id: 'requirements-document-semantic-conflict-detection',
                 localeKey: 'requirementsDocumentSemanticConflictDetection',
-                agents: [],
+                agents: [
+                  capabilityAgent(
+                    'semantic-conflict-detection-agent',
+                    'semanticConflictDetectionAgent',
+                    ['semanticAnalysis', 'conflictDetection'],
+                  ),
+                ],
               },
               {
                 id: 'requirements-document-logical-conflict-detection',
@@ -273,34 +332,70 @@ export const agentCategories: readonly AgentNode[] = [
               {
                 id: 'requirements-document-functional-safety-coverage-completeness-check',
                 localeKey: 'requirementsDocumentFunctionalSafetyCoverageCompletenessCheck',
-                agents: [],
+                agents: [
+                  capabilityAgent(
+                    'functional-safety-coverage-agent',
+                    'functionalSafetyCoverageAgent',
+                    ['humanSafety', 'coverageAnalysis'],
+                  ),
+                ],
               },
               {
                 id: 'requirements-document-information-security-coverage-completeness-check',
                 localeKey: 'requirementsDocumentInformationSecurityCoverageCompletenessCheck',
-                agents: [],
+                agents: [
+                  capabilityAgent(
+                    'information-security-coverage-agent',
+                    'informationSecurityCoverageAgent',
+                    ['informationSecurity', 'coverageAnalysis'],
+                  ),
+                ],
               },
               {
                 id: 'requirements-document-reliability-coverage-completeness-check',
                 localeKey: 'requirementsDocumentReliabilityCoverageCompletenessCheck',
-                agents: [],
+                agents: [
+                  capabilityAgent(
+                    'reliability-coverage-agent',
+                    'reliabilityCoverageAgent',
+                    ['reliability', 'coverageAnalysis'],
+                  ),
+                ],
               },
               {
                 id: 'requirements-document-performance-coverage-completeness-check',
                 localeKey: 'requirementsDocumentPerformanceCoverageCompletenessCheck',
-                agents: [],
+                agents: [
+                  capabilityAgent(
+                    'performance-coverage-agent',
+                    'performanceCoverageAgent',
+                    ['performanceRequirements', 'coverageAnalysis'],
+                  ),
+                ],
               },
             ],
           },
           {
             id: 'review-assistant-agent',
             localeKey: 'reviewAssistantAgent',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'requirements-review-assistant',
+                'requirementsReviewAssistant',
+                ['qualityInspection', 'requirementsAnalysis'],
+              ),
+            ],
           },
           {
             id: 'compliance-review-agent',
             localeKey: 'complianceReviewAgent',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'requirements-compliance-review-agent',
+                'requirementsComplianceReviewAgent',
+                ['complianceReview', 'qualityInspection'],
+              ),
+            ],
           },
         ],
       },
@@ -313,12 +408,24 @@ export const agentCategories: readonly AgentNode[] = [
       {
         id: 'difference-comparison',
         localeKey: 'differenceComparison',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'requirements-difference-analysis-agent',
+            'requirementsDifferenceAnalysisAgent',
+            ['differenceAnalysis', 'changeIdentification'],
+          ),
+        ],
       },
       {
         id: 'potential-change-source-identification-based-on-requirements-documents',
         localeKey: 'potentialChangeSourceIdentificationBasedOnRequirementsDocuments',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'potential-change-source-identification-agent',
+            'potentialChangeSourceIdentificationAgent',
+            ['changeSource', 'requirementsAnalysis'],
+          ),
+        ],
       },
       {
         id: 'real-world-change-source-and-change-identification',
@@ -327,17 +434,35 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'user-requirements-change-identification',
             localeKey: 'userRequirementsChangeIdentification',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'user-requirements-change-identification-agent',
+                'userRequirementsChangeIdentificationAgent',
+                ['changeIdentification', 'requirementsAnalysis'],
+              ),
+            ],
           },
           {
             id: 'business-rule-change-identification',
             localeKey: 'businessRuleChangeIdentification',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'business-rule-change-identification-agent',
+                'businessRuleChangeIdentificationAgent',
+                ['businessRules', 'changeIdentification'],
+              ),
+            ],
           },
           {
             id: 'external-environment-change-identification',
             localeKey: 'externalEnvironmentChangeIdentification',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'external-environment-change-identification-agent',
+                'externalEnvironmentChangeIdentificationAgent',
+                ['environmentAnalysis', 'changeIdentification'],
+              ),
+            ],
           },
         ],
       },
@@ -348,39 +473,81 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'specification-evolution-based-on-business-rule-changes',
             localeKey: 'specificationEvolutionBasedOnBusinessRuleChanges',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'business-rule-specification-evolution-agent',
+                'businessRuleSpecificationEvolutionAgent',
+                ['businessRules', 'specificationEvolution'],
+              ),
+            ],
           },
           {
             id: 'specification-evolution-based-on-user-requirements-changes',
             localeKey: 'specificationEvolutionBasedOnUserRequirementsChanges',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'user-requirements-specification-evolution-agent',
+                'userRequirementsSpecificationEvolutionAgent',
+                ['changeIdentification', 'specificationEvolution'],
+              ),
+            ],
           },
           {
             id: 'specification-evolution-based-on-external-environment-changes',
             localeKey: 'specificationEvolutionBasedOnExternalEnvironmentChanges',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'environment-specification-evolution-agent',
+                'environmentSpecificationEvolutionAgent',
+                ['environmentAnalysis', 'specificationEvolution'],
+              ),
+            ],
           },
         ],
       },
       {
         id: 'change-impact-analysis',
         localeKey: 'changeImpactAnalysis',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'requirements-change-impact-analysis-agent',
+            'requirementsChangeImpactAnalysisAgent',
+            ['changeImpact', 'changeTraceability'],
+          ),
+        ],
       },
       {
         id: 'multi-source-requirements-specification-change-fusion',
         localeKey: 'multiSourceRequirementsSpecificationChangeFusion',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'multi-source-change-fusion-agent',
+            'multiSourceChangeFusionAgent',
+            ['changeFusion', 'specificationEvolution'],
+          ),
+        ],
       },
       {
         id: 'baseline-management',
         localeKey: 'baselineManagement',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'requirements-baseline-management-agent',
+            'requirementsBaselineManagementAgent',
+            ['baselineManagement', 'versionManagement'],
+          ),
+        ],
       },
       {
         id: 'change-traceability',
         localeKey: 'changeTraceability',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'requirements-change-traceability-agent',
+            'requirementsChangeTraceabilityAgent',
+            ['changeTraceability', 'traceabilityNetwork'],
+          ),
+        ],
       },
     ],
   },
@@ -391,12 +558,24 @@ export const agentCategories: readonly AgentNode[] = [
       {
         id: 'document-segmentation',
         localeKey: 'documentSegmentation',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'requirements-document-segmentation-agent',
+            'requirementsDocumentSegmentationAgent',
+            ['documentSegmentation', 'documentParsing'],
+          ),
+        ],
       },
       {
         id: 'document-parsing',
         localeKey: 'documentParsing',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'historical-requirements-document-parsing-agent',
+            'historicalRequirementsDocumentParsingAgent',
+            ['documentParsing', 'requirementsExtraction'],
+          ),
+        ],
       },
       {
         id: 'terminology-unification',
@@ -406,7 +585,13 @@ export const agentCategories: readonly AgentNode[] = [
       {
         id: 'invalid-content-filtering',
         localeKey: 'invalidContentFiltering',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'requirements-content-filtering-agent',
+            'requirementsContentFilteringAgent',
+            ['contentFiltering', 'documentParsing'],
+          ),
+        ],
       },
       {
         id: 'requirements-information-extraction-and-fusion',
@@ -424,12 +609,24 @@ export const agentCategories: readonly AgentNode[] = [
               {
                 id: 'functional-modeling-based-on-use-case-models',
                 localeKey: 'functionalModelingBasedOnUseCaseModels',
-                agents: [],
+                agents: [
+                  capabilityAgent(
+                    'use-case-modeling-agent',
+                    'useCaseModelingAgent',
+                    ['useCaseModeling', 'requirementsModeling'],
+                  ),
+                ],
               },
               {
                 id: 'functional-modeling-based-on-data-flow-diagrams',
                 localeKey: 'functionalModelingBasedOnDataFlowDiagrams',
-                agents: [],
+                agents: [
+                  capabilityAgent(
+                    'data-flow-modeling-agent',
+                    'dataFlowModelingAgent',
+                    ['dataFlowModeling', 'requirementsModeling'],
+                  ),
+                ],
               },
             ],
           },
@@ -455,7 +652,13 @@ export const agentCategories: readonly AgentNode[] = [
               {
                 id: 'flowchart-generation',
                 localeKey: 'flowchartGeneration',
-                agents: [],
+                agents: [
+                  capabilityAgent(
+                    'requirements-flowchart-generation-agent',
+                    'requirementsFlowchartGenerationAgent',
+                    ['flowchart', 'behaviorModeling'],
+                  ),
+                ],
               },
             ],
           },
@@ -466,7 +669,13 @@ export const agentCategories: readonly AgentNode[] = [
               {
                 id: 'data-modeling-based-on-er-diagrams',
                 localeKey: 'dataModelingBasedOnErDiagrams',
-                agents: [],
+                agents: [
+                  capabilityAgent(
+                    'er-data-modeling-agent',
+                    'erDataModelingAgent',
+                    ['dataModeling', 'erDiagram'],
+                  ),
+                ],
               },
             ],
           },
@@ -475,12 +684,24 @@ export const agentCategories: readonly AgentNode[] = [
       {
         id: 'requirements-relationship-identification',
         localeKey: 'requirementsRelationshipIdentification',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'requirements-relationship-identification-agent',
+            'requirementsRelationshipIdentificationAgent',
+            ['relationshipExtraction', 'requirementsAnalysis'],
+          ),
+        ],
       },
       {
         id: 'high-level-to-software-requirements-traceability-network-construction',
         localeKey: 'highLevelToSoftwareRequirementsTraceabilityNetworkConstruction',
-        agents: [],
+        agents: [
+          capabilityAgent(
+            'requirements-traceability-network-agent',
+            'requirementsTraceabilityNetworkAgent',
+            ['traceabilityNetwork', 'relationshipExtraction'],
+          ),
+        ],
       },
     ],
   },
@@ -495,17 +716,35 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'test-condition-derivation',
             localeKey: 'testConditionDerivation',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'test-condition-derivation-agent',
+                'testConditionDerivationAgent',
+                ['testCondition', 'requirementsAnalysis'],
+              ),
+            ],
           },
           {
             id: 'normal-exceptional-scenario-generation',
             localeKey: 'normalExceptionalScenarioGeneration',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'normal-exceptional-scenario-generation-agent',
+                'normalExceptionalScenarioGenerationAgent',
+                ['scenarioGeneration', 'exceptionalScenarios'],
+              ),
+            ],
           },
           {
             id: 'boundary-combinatorial-scenario-generation',
             localeKey: 'boundaryCombinatorialScenarioGeneration',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'boundary-combinatorial-scenario-agent',
+                'boundaryCombinatorialScenarioAgent',
+                ['boundaryAnalysis', 'combinatorialTesting'],
+              ),
+            ],
           },
         ],
       },
@@ -516,22 +755,46 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'functional-test-case-generation',
             localeKey: 'functionalTestCaseGeneration',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'functional-test-generation-agent',
+                'functionalTestGenerationAgent',
+                ['testGeneration', 'requirementsDevelopment'],
+              ),
+            ],
           },
           {
             id: 'api-test-case-generation',
             localeKey: 'apiTestCaseGeneration',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'api-test-generation-agent',
+                'apiTestGenerationAgent',
+                ['apiTesting', 'testGeneration'],
+              ),
+            ],
           },
           {
             id: 'integration-test-case-generation',
             localeKey: 'integrationTestCaseGeneration',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'integration-test-generation-agent',
+                'integrationTestGenerationAgent',
+                ['integrationTesting', 'testGeneration'],
+              ),
+            ],
           },
           {
             id: 'non-functional-test-case-generation',
             localeKey: 'nonFunctionalTestCaseGeneration',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'non-functional-test-generation-agent',
+                'nonFunctionalTestGenerationAgent',
+                ['nonFunctionalTesting', 'testGeneration'],
+              ),
+            ],
           },
         ],
       },
@@ -542,27 +805,57 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'test-case-completeness-checking',
             localeKey: 'testCaseCompletenessChecking',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'test-completeness-checking-agent',
+                'testCompletenessCheckingAgent',
+                ['completenessChecking', 'coverageAnalysis'],
+              ),
+            ],
           },
           {
             id: 'test-case-executability-checking',
             localeKey: 'testCaseExecutabilityChecking',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'test-executability-checking-agent',
+                'testExecutabilityCheckingAgent',
+                ['executabilityChecking', 'qualityInspection'],
+              ),
+            ],
           },
           {
             id: 'test-case-redundancy-obsolescence-detection',
             localeKey: 'testCaseRedundancyObsolescenceDetection',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'test-redundancy-obsolescence-agent',
+                'testRedundancyObsolescenceAgent',
+                ['redundancyDetection', 'versionManagement'],
+              ),
+            ],
           },
           {
             id: 'requirements-scenario-coverage-analysis',
             localeKey: 'requirementsScenarioCoverageAnalysis',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'requirements-scenario-coverage-agent',
+                'requirementsScenarioCoverageAgent',
+                ['coverageAnalysis', 'testTraceability'],
+              ),
+            ],
           },
           {
             id: 'test-blind-spot-risk-identification',
             localeKey: 'testBlindSpotRiskIdentification',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'test-blind-spot-risk-agent',
+                'testBlindSpotRiskAgent',
+                ['riskIdentification', 'coverageAnalysis'],
+              ),
+            ],
           },
         ],
       },
@@ -573,17 +866,35 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'test-impact-scope-analysis',
             localeKey: 'testImpactScopeAnalysis',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'test-impact-analysis-agent',
+                'testImpactAnalysisAgent',
+                ['testImpact', 'changeImpact'],
+              ),
+            ],
           },
           {
             id: 'test-case-reuse-modification',
             localeKey: 'testCaseReuseModification',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'test-case-reuse-adaptation-agent',
+                'testCaseReuseAdaptationAgent',
+                ['testReuse', 'testEvolution'],
+              ),
+            ],
           },
           {
             id: 'incremental-test-case-generation',
             localeKey: 'incrementalTestCaseGeneration',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'incremental-test-generation-agent',
+                'incrementalTestGenerationAgent',
+                ['testGeneration', 'testEvolution'],
+              ),
+            ],
           },
         ],
       },
@@ -594,12 +905,24 @@ export const agentCategories: readonly AgentNode[] = [
           {
             id: 'requirements-test-case-traceability-establishment',
             localeKey: 'requirementsTestCaseTraceabilityEstablishment',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'requirements-test-traceability-agent',
+                'requirementsTestTraceabilityAgent',
+                ['testTraceability', 'traceabilityNetwork'],
+              ),
+            ],
           },
           {
             id: 'test-case-version-management-delivery',
             localeKey: 'testCaseVersionManagementDelivery',
-            agents: [],
+            agents: [
+              capabilityAgent(
+                'test-version-delivery-agent',
+                'testVersionDeliveryAgent',
+                ['versionManagement', 'testAssetManagement'],
+              ),
+            ],
           },
         ],
       },

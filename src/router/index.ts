@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import MainLayout from '../layouts/MainLayout.vue'
+import AgentDirection from '../pages/AgentDirection.vue'
 import Agents from '../pages/Agents.vue'
 import Datasets from '../pages/Datasets.vue'
 import Home from '../pages/Home.vue'
@@ -42,6 +43,30 @@ const router = createRouter({
           path: 'agents',
           name: 'agents',
           component: Agents,
+        },
+        {
+          path: 'agents/software-requirements-development',
+          name: 'agents-software-requirements-development',
+          component: AgentDirection,
+          props: { directionId: 'software-requirements-development' },
+        },
+        {
+          path: 'agents/requirements-change-evolution',
+          name: 'agents-requirements-change-evolution',
+          component: AgentDirection,
+          props: { directionId: 'requirements-change-evolution' },
+        },
+        {
+          path: 'agents/historical-requirements-document-processing',
+          name: 'agents-historical-requirements-document-processing',
+          component: AgentDirection,
+          props: { directionId: 'historical-requirements-document-processing' },
+        },
+        {
+          path: 'agents/test-case-generation',
+          name: 'agents-test-case-generation',
+          component: AgentDirection,
+          props: { directionId: 'test-case-generation' },
         },
         {
           path: 'tools',
