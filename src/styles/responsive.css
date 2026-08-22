@@ -207,10 +207,6 @@
     height: 40px;
   }
 
-  .project-industry-brand .arco-tag {
-    grid-column: 2;
-    justify-self: start;
-  }
 
   .tools-page {
     width: min(100% - 36px, 1180px);

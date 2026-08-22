@@ -295,10 +295,14 @@
 
 .project-industry-brand {
   display: grid;
-  min-height: 54px;
-  grid-template-columns: 104px minmax(0, 1fr) auto;
+  min-height: 64px;
+  grid-template-columns: 104px minmax(0, 1fr);
+  grid-template-areas:
+    'logo brand'
+    'logo category';
   align-items: center;
-  gap: 16px;
+  column-gap: 16px;
+  row-gap: 6px;
 }
 
 .project-industry-logo {
@@ -307,6 +311,7 @@
   height: 48px;
   align-items: center;
   justify-content: center;
+  grid-area: logo;
 }
 
 .project-industry-logo img {
@@ -321,17 +326,23 @@
   font-size: 20px;
   font-weight: 720;
   letter-spacing: -0.02em;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  grid-area: brand;
 }
 
 .project-industry-brand .arco-tag {
   height: auto;
-  justify-self: end;
+  max-width: 100%;
+  justify-self: start;
   padding: 3px 9px;
   white-space: normal;
   color: #526b91;
   background: #f2f6fc;
   border-color: #dce6f3;
   border-radius: 6px;
+  line-height: 1.35;
+  grid-area: category;
 }
 
 .project-card-industry h3 {
