@@ -418,7 +418,7 @@ export const publications: readonly Publication[] = [
     id: 'jin-2023-software-requirements-textbook',
     group: 'book',
     year: 2023,
-    title: '软件需求工程与实践',
+    title: '软件需求工程方法与实践',
     titleLocaleKey: 'softwareRequirementsEngineeringPractice',
     authors: '金芝, 刘璘, 陈小红, 李童',
     venue: '清华大学出版社',

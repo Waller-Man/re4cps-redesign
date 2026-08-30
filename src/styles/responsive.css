@@ -22,6 +22,10 @@
   .home-research-grid {
     grid-template-columns: 1fr;
   }
+
+  .publication-book-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 680px) {
@@ -361,26 +365,35 @@
 
   .publication-groups {
     margin-top: 36px;
-    gap: 22px;
+    gap: 30px;
   }
 
   .publication-group-heading {
-    padding: 21px 22px 18px;
+    align-items: center;
+    margin-bottom: 14px;
   }
 
   .publication-group-heading h2 {
     font-size: 23px;
   }
 
-  .publication-entry {
-    padding: 22px;
+  .publication-media-entry {
+    flex-direction: column;
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .publication-image-frame {
+    width: 100%;
+    height: 210px;
+    flex-basis: auto;
   }
 
   .publication-entry-heading {
     display: block;
   }
 
-  .publication-entry h3 {
+  .publication-entry-heading h3 {
     font-size: 17px;
   }
 
@@ -401,6 +414,20 @@
 
   .publication-venue::before {
     display: none;
+  }
+
+  .publication-book-card {
+    display: block;
+    padding: 20px;
+  }
+
+  .publication-book-cover {
+    height: 260px;
+    margin-bottom: 18px;
+  }
+
+  .publication-book-content h3 {
+    font-size: 18px;
   }
 
   .members-page {

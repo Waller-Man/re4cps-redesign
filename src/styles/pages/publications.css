@@ -34,31 +34,20 @@
 }
 
 .publication-groups {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   margin-top: 48px;
-  gap: 28px;
+  gap: 40px;
 }
 
-.publication-group-card.arco-card {
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.94);
-  border: 1px solid #e6ebf3;
-  border-radius: 16px;
-  box-shadow: 0 12px 36px rgba(37, 52, 79, 0.06);
-}
-
-.publication-group-card .arco-card-body {
-  padding: 0;
+.publication-group {
+  min-width: 0;
 }
 
 .publication-group-heading {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  padding: 25px 30px 21px;
-  background: linear-gradient(100deg, #f7faff 0%, #ffffff 72%);
-  border-bottom: 1px solid #e8edf5;
+  margin-bottom: 16px;
   gap: 24px;
 }
 
@@ -76,22 +65,57 @@
   white-space: nowrap;
 }
 
-.publication-list.arco-list {
-  border-radius: 0;
+.publication-media-list {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e0e8f3;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(37, 52, 79, 0.05);
 }
 
-.publication-list .arco-list-item {
-  padding: 0;
+.publication-media-entry {
+  display: flex;
+  min-width: 0;
+  padding: 24px 26px;
+  border-bottom: 1px solid #e8edf5;
+  gap: 24px;
   transition: background-color 160ms ease;
 }
 
-.publication-list .arco-list-item:hover {
+.publication-media-entry:last-child {
+  border-bottom: 0;
+}
+
+.publication-media-entry:hover {
   background: #fbfcff;
 }
 
-.publication-entry {
-  width: 100%;
-  padding: 26px 30px 28px;
+.publication-image-frame {
+  display: flex;
+  width: 164px;
+  height: 184px;
+  flex: 0 0 164px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: #f8fbff;
+  border: 1px solid #e4ecf6;
+  border-radius: 12px;
+}
+
+.publication-image-frame img,
+.publication-book-cover img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.publication-entry-content {
+  min-width: 0;
+  flex: 1;
 }
 
 .publication-entry-heading {
@@ -101,7 +125,7 @@
   gap: 24px;
 }
 
-.publication-entry h3 {
+.publication-entry-heading h3 {
   min-width: 0;
   max-width: 860px;
   margin: 0;
@@ -158,4 +182,65 @@
   flex-wrap: wrap;
   margin-top: 18px;
   gap: 8px;
+}
+
+.publication-book-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.publication-book-card {
+  display: grid;
+  grid-template-columns: minmax(140px, 180px) minmax(0, 1fr);
+  min-width: 0;
+  height: 100%;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #e0e8f3;
+  border-radius: 16px;
+  gap: 22px;
+  box-shadow: 0 12px 32px rgba(37, 52, 79, 0.055);
+}
+
+.publication-book-cover {
+  display: flex;
+  width: 100%;
+  height: 230px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: #f8fbff;
+  border: 1px solid #e4ecf6;
+  border-radius: 12px;
+}
+
+.publication-book-content {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.publication-book-content h3 {
+  margin: 2px 0 0;
+  color: #1c2a42;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.publication-book-content .publication-authors {
+  margin-top: 14px;
+}
+
+.publication-book-types {
+  justify-content: flex-start;
+  margin-top: 16px;
+}
+
+.publication-book-content .publication-links {
+  margin-top: auto;
+  padding-top: 16px;
 }
