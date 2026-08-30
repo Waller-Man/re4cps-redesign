@@ -12,7 +12,7 @@ export default {
   },
   titles: {
     softwareRequirementsEngineeringPractice:
-      '教材：软件需求工程与实践',
+      '教材：软件需求工程方法与实践',
   },
   rankTags: {
     ccfa: 'CCFA',

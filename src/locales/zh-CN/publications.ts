@@ -11,7 +11,7 @@ export default {
     book: '专著与教材',
   },
   titles: {
-    softwareRequirementsEngineeringPractice: '教材：软件需求工程与实践',
+    softwareRequirementsEngineeringPractice: '教材：软件需求工程方法与实践',
   },
   rankTags: {
     ccfa: 'CCFA',
