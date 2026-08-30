@@ -1,7 +1,7 @@
 import chinaSoft2024Image from '../assets/home-assets/2024CCF-ChinaSoft.png'
-import cncc2024Image from '../assets/home-assets/2024CNCC.png'
+import chinaSoft2025Image from '../assets/home-assets/2025CCF-ChinaSoft.png'
 import cncc2025Image from '../assets/home-assets/2025CNCC.png'
-import xiuhu30Image from '../assets/home-assets/30thXiuhu.png'
+import envire2025Image from '../assets/home-assets/2025EnviRE.png'
 
 export interface ConferenceHighlight {
   id: string
@@ -16,18 +16,18 @@ export const conferenceHighlights: readonly ConferenceHighlight[] = [
     image: cncc2025Image,
   },
   {
-    id: 'cncc-2024',
-    localeKey: 'cncc2024',
-    image: cncc2024Image,
+    id: 'china-soft-2025',
+    localeKey: 'chinaSoft2025',
+    image: chinaSoft2025Image,
+  },
+  {
+    id: 'envire-2025',
+    localeKey: 'envire2025',
+    image: envire2025Image,
   },
   {
     id: 'china-software-conference',
     localeKey: 'chinaSoftwareConference',
     image: chinaSoft2024Image,
-  },
-  {
-    id: 'ccf-xiuhu-30',
-    localeKey: 'ccfXiuhu30',
-    image: xiuhu30Image,
   },
 ]

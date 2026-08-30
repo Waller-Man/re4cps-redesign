@@ -15,20 +15,20 @@ export default {
         description:
           '金芝教授作“基于AI多智能体的复杂软件系统开发和演化模式”主题分享，探讨多智能体协同推理与智能化软件开发新范式。',
       },
-      cncc2024: {
-        title: 'CNCC 2024',
+      chinaSoft2025: {
+        title: 'ChinaSoft 2025',
         description:
-          '金芝教授担任论坛主席，围绕大模型使能软件工程及下一代智能化软件工程的发展与挑战展开交流。',
+          '陈小红教授受邀参加 ChinaSoft 2025，并围绕需求工程与大语言模型等相关研究方向作学术报告。',
+      },
+      envire2025: {
+        title: 'EnviRE 2025',
+        description:
+          '陈小红教授受邀参加 EnviRE 2025，并围绕需求工程相关研究作学术报告与交流。',
       },
       chinaSoftwareConference: {
         title: '中国软件大会',
         description:
           '金芝教授共同主持 NASAC 青年软件创新奖论坛，围绕软件创新、质量保障与软件工程前沿开展交流。',
-      },
-      ccfXiuhu30: {
-        title: '第30期 CCF 秀湖会议',
-        description:
-          '围绕“安全可信编程语言：理论、技术与生态”开展研讨，覆盖关键技术、生态建设与大模型开发工具链等议题。',
       },
     },
   },
