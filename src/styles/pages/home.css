@@ -154,10 +154,86 @@
 }
 
 .home-research {
-  padding-top: 72px;
+  position: relative;
+  width: min(1280px, calc(100% - 24px));
+  margin-top: 72px;
+  padding: 58px 48px 68px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 4% 95%, rgba(111, 164, 237, 0.18), transparent 25%),
+    radial-gradient(circle at 72% 7%, rgba(87, 146, 229, 0.12), transparent 24%),
+    linear-gradient(135deg, #f7fbff 0%, #edf5ff 54%, #f8fbff 100%);
+  border: 1px solid #e0ebf8;
+  border-radius: 28px;
+  isolation: isolate;
+}
+
+.home-research::before {
+  position: absolute;
+  z-index: -1;
+  width: 210px;
+  height: 160px;
+  right: 24px;
+  bottom: 20px;
+  content: '';
+  opacity: 0.34;
+  background-image: radial-gradient(circle, #8eb8ee 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  mask-image: linear-gradient(to left, #000, transparent);
+}
+
+.home-research::after {
+  position: absolute;
+  z-index: -1;
+  width: 330px;
+  height: 330px;
+  left: -190px;
+  bottom: -215px;
+  content: '';
+  border: 1px solid rgba(100, 154, 225, 0.22);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 42px rgba(130, 177, 235, 0.055),
+    0 0 0 86px rgba(130, 177, 235, 0.035);
+}
+
+.home-research-campus {
+  position: absolute;
+  z-index: -1;
+  width: min(470px, 43%);
+  height: auto;
+  top: 10px;
+  right: -24px;
+  opacity: 0.32;
+  pointer-events: none;
+  user-select: none;
+}
+
+.home-research .home-section-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 690px;
+}
+
+.home-research .home-section-heading > span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.home-research .home-section-heading > span::before {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  content: '';
+  background: #3278db;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(50, 120, 219, 0.09);
 }
 
 .home-research-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
@@ -167,10 +243,10 @@
 
 .home-research-card.arco-card {
   overflow: hidden;
-  background: #fff;
-  border: 1px solid #e1e8f2;
-  border-radius: 16px;
-  box-shadow: 0 8px 26px rgba(37, 52, 79, 0.055);
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #d6e5f7;
+  border-radius: 18px;
+  box-shadow: 0 7px 22px rgba(40, 76, 132, 0.065);
   transition:
     transform 180ms ease,
     border-color 180ms ease,
@@ -178,29 +254,73 @@
 }
 
 .home-research-card.arco-card:hover {
-  border-color: #c6d6ed;
-  box-shadow: 0 14px 34px rgba(37, 67, 122, 0.09);
-  transform: translateY(-2px);
+  border-color: #b9d1ef;
+  box-shadow: 0 13px 30px rgba(37, 82, 150, 0.1);
+  transform: translateY(-3px);
 }
 
 .home-research-card .arco-card-body {
-  display: flex;
-  min-height: 286px;
-  flex-direction: column;
-  padding: 27px;
+  position: relative;
+  height: 100%;
+  min-height: 310px;
+  padding: 26px 25px 24px;
 }
 
 .home-research-number {
-  color: #7895bd;
-  font-size: 13px;
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  width: 43px;
+  height: 43px;
+  top: 18px;
+  left: 18px;
+  color: #2874d5;
+  font-size: 16px;
   font-weight: 750;
-  letter-spacing: 0.13em;
+  letter-spacing: 0.04em;
+  background: #f0f6ff;
+  border: 1px solid #dfebfa;
+  border-radius: 13px;
+  place-items: center;
+}
+
+.home-research-card-layout {
+  display: grid;
+  height: 100%;
+  min-width: 0;
+  grid-template-columns: minmax(150px, 0.72fr) minmax(0, 1.28fr);
+  align-items: center;
+  gap: 22px;
+}
+
+.home-research-visual {
+  display: grid;
+  min-width: 0;
+  height: 100%;
+  min-height: 238px;
+  padding-top: 31px;
+  place-items: center;
+}
+
+.home-research-visual img {
+  display: block;
+  width: 100%;
+  height: 205px;
+  object-fit: contain;
+}
+
+.home-research-card-content {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .home-research-card h3 {
-  margin: 15px 0 0;
+  margin: 0;
   color: #1d355d;
-  font-size: clamp(20px, 2.3vw, 25px);
+  font-size: clamp(19px, 1.8vw, 23px);
   font-weight: 690;
   letter-spacing: -0.018em;
   line-height: 1.4;
@@ -208,7 +328,7 @@
 
 .home-research-card p {
   flex: 1;
-  margin: 14px 0 0;
+  margin: 13px 0 0;
   color: #667289;
   font-size: 14px;
   line-height: 1.72;
@@ -217,7 +337,7 @@
 .home-research-tags {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 22px;
+  margin-top: 18px;
   gap: 8px;
 }
 

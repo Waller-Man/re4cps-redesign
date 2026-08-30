@@ -18,6 +18,10 @@
   .conference-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .home-research-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 680px) {
@@ -108,12 +112,42 @@
   }
 
   .home-research {
-    padding-top: 56px;
+    width: min(100% - 20px, 1280px);
+    margin-top: 56px;
+    padding: 44px 16px 48px;
+    border-radius: 22px;
+  }
+
+  .home-research-campus {
+    display: none;
   }
 
   .home-research-card .arco-card-body {
     min-height: 0;
-    padding: 23px;
+    padding: 20px;
+  }
+
+  .home-research-number {
+    width: 39px;
+    height: 39px;
+    top: 16px;
+    left: 16px;
+    font-size: 15px;
+    border-radius: 12px;
+  }
+
+  .home-research-card-layout {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .home-research-visual {
+    min-height: 190px;
+    padding: 24px 24px 0;
+  }
+
+  .home-research-visual img {
+    height: 190px;
   }
 
   .home-footer {

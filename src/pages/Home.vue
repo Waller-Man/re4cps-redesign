@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import campusImage from '../assets/home-assets/campus.png'
 import { conferenceHighlights } from '../data/home'
 import { researchDirections } from '../data/research'
 
@@ -62,6 +63,13 @@ const scrollToResearch = () => {
       class="home-section home-research"
       aria-labelledby="home-research-heading"
     >
+      <img
+        class="home-research-campus"
+        :src="campusImage"
+        alt=""
+        aria-hidden="true"
+      />
+
       <header class="home-section-heading">
         <span>{{ t('home.research.eyebrow') }}</span>
         <h2 id="home-research-heading">{{ t('research.title') }}</h2>
@@ -79,12 +87,28 @@ const scrollToResearch = () => {
           <span class="home-research-number">
             {{ String(index + 1).padStart(2, '0') }}
           </span>
-          <h3>{{ t(`research.directions.${direction.key}.title`) }}</h3>
-          <p>{{ t(`research.directions.${direction.key}.description`) }}</p>
-          <div class="home-research-tags">
-            <a-tag v-for="tagKey in direction.tags.slice(0, 3)" :key="tagKey" size="small">
-              {{ t(`research.keywords.${tagKey}`) }}
-            </a-tag>
+
+          <div class="home-research-card-layout">
+            <div class="home-research-visual">
+              <img
+                :src="direction.image"
+                :alt="t(`research.directions.${direction.key}.title`)"
+              />
+            </div>
+
+            <div class="home-research-card-content">
+              <h3>{{ t(`research.directions.${direction.key}.title`) }}</h3>
+              <p>{{ t(`research.directions.${direction.key}.description`) }}</p>
+              <div class="home-research-tags">
+                <a-tag
+                  v-for="tagKey in direction.tags.slice(0, 3)"
+                  :key="tagKey"
+                  size="small"
+                >
+                  {{ t(`research.keywords.${tagKey}`) }}
+                </a-tag>
+              </div>
+            </div>
           </div>
         </a-card>
       </div>
