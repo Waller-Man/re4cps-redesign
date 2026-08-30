@@ -45,7 +45,7 @@ RE4CPS Portal 是 RE4CPS（Requirements Engineering for Cyber-Physical Systems�
 - 重新整合 Projects 页面，统一展示团队科研项目与企业合作项目。
 - 优化中英文内容、卡片布局、响应式展示及页面间的视觉一致性。
 
-## v1.1.0 更新内容 / Changelog
+## v1.1.1 更新内容 / Changelog
 
 - 修改了project英文页面企业卡片的排版问题。
 

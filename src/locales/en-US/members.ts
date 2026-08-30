@@ -54,6 +54,18 @@ export default {
       school: 'Wuhan University, China',
       bio: 'Hongyi Postdoctoral Fellow at Wuhan University, with a Ph.D. from the Key Laboratory of High Confidence Software Technologies (Ministry of Education), Peking University. His research focuses on intelligent software engineering, including requirements analysis, code generation, and software development agents. He has published over 20 papers at venues including FSE, ASE, and ACL, received an ACM SIGSOFT Distinguished Paper Award, and accumulated over 1,000 citations.',
     },
+    tianhuiZhang: {
+      name: 'Tianhui Zhang',
+      role: 'Postdoctoral Researcher',
+      school: 'East China Normal University, China',
+      bio: 'Tianhui Zhang is a Computer Science PhD researcher at the University of Liverpool, specialising in LLMs, RAG, commonsense reasoning, and agentic AI.',
+    },
+    ruiyinLi: {
+      name: 'Ruiyin Li',
+      role: 'Postdoctoral Researcher',
+      school: 'Wuhan University, China',
+      bio: 'Ruiyin Li is a Hongyi Postdoctoral Fellow at Wuhan University and received PhD degrees in Software Engineering from Wuhan University and the University of Groningen.  His research focuses on requirements engineering, software architecture, AI for Software Engineering, and the application of large language models to software engineering.',
+    },
     dongmingJin: {
       name: 'Dongming Jin',
       role: 'PhD Student',
