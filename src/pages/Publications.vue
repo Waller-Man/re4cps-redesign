@@ -36,15 +36,26 @@ const getPublicationImage = (publication: Publication) => {
     .find((imageUrl): imageUrl is string => Boolean(imageUrl))
 }
 
-const publicationGroups = publicationGroupOrder.map((key: PublicationGroup) => ({
-  key,
-  items: publications
+const containsChineseCharacters = (title: string) => /[\u3400-\u9fff]/u.test(title)
+
+const publicationGroups = publicationGroupOrder.map((key: PublicationGroup) => {
+  const items = publications
     .filter((publication) => publication.group === key)
     .map((publication) => ({
       ...publication,
       image: getPublicationImage(publication),
-    })),
-}))
+    }))
+
+  if (key === 'book') {
+    items.sort(
+      (first, second) =>
+        Number(containsChineseCharacters(first.title)) -
+        Number(containsChineseCharacters(second.title)),
+    )
+  }
+
+  return { key, items }
+})
 
 const getPublicationTitle = (publication: Publication) =>
   publication.titleLocaleKey
