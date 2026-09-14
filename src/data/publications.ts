@@ -58,6 +58,12 @@ export const publications: readonly Publication[] = [
     venue: 'ICSE',
     types: ['conference', 'accepted'],
     rankTags: ['ccfa'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1145/3744916.3773109',
+      },
+    ],
   },
   {
     id: 'fang-2026-restl',
