@@ -93,6 +93,12 @@ export const publications: readonly Publication[] = [
     venue: 'ICSE',
     types: ['conference', 'accepted'],
     rankTags: ['ccfa'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://dl.acm.org/doi/10.1145/3744916.3787806',
+      },
+    ],
   },
   {
     id: 'liu-2026-agencytree',
