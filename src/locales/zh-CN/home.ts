@@ -20,10 +20,10 @@ export default {
         description:
           '陈小红教授受邀参加 ChinaSoft 2025，并围绕需求工程与大语言模型等相关研究方向作学术报告。',
       },
-      envire2025: {
-        title: 'EnviRE 2025',
+      cncc2024: {
+        title: 'CNCC 2024',
         description:
-          '陈小红教授受邀参加 EnviRE 2025，并围绕需求工程相关研究作学术报告与交流。',
+          '金芝教授担任论坛主席，围绕大模型使能软件工程及下一代智能化软件工程的发展与挑战展开交流。',
       },
       chinaSoftwareConference: {
         title: '中国软件大会',

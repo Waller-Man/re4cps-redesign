@@ -21,10 +21,10 @@ export default {
         description:
           'Prof. Xiaohong Chen was invited to ChinaSoft 2025 and delivered an academic talk on requirements engineering, large language models, and related research topics.',
       },
-      envire2025: {
-        title: 'EnviRE 2025',
+      cncc2024: {
+        title: 'CNCC 2024',
         description:
-          'Prof. Xiaohong Chen was invited to EnviRE 2025, where she presented and discussed research related to requirements engineering.',
+          'Professor Zhi Jin chaired a forum on LLM-enabled software engineering, discussing the development and challenges of next-generation intelligent software engineering.',
       },
       chinaSoftwareConference: {
         title: 'China Software Conference',
