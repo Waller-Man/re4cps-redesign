@@ -6,6 +6,7 @@ import {
   type Publication,
   type PublicationGroup,
   type PublicationRankTag,
+  type PublicationType,
 } from '../data/publications'
 
 const { t } = useI18n()
@@ -38,12 +39,19 @@ const getPublicationImage = (publication: Publication) => {
 
 const containsChineseCharacters = (title: string) => /[\u3400-\u9fff]/u.test(title)
 
+const publicationTrackTypes: readonly PublicationType[] = [
+  'technicalTrack',
+  'toolsAndDatasets',
+  'toolDemo',
+]
+
 const publicationGroups = publicationGroupOrder.map((key: PublicationGroup) => {
   const items = publications
     .filter((publication) => publication.group === key)
     .map((publication) => ({
       ...publication,
       image: getPublicationImage(publication),
+      trackTypes: publication.types.filter((type) => publicationTrackTypes.includes(type)),
     }))
 
   if (key === 'book') {
@@ -175,6 +183,14 @@ const publicationRankTagColors: Record<PublicationRankTag, string> = {
                     :color="publicationRankTagColors[rankTag]"
                   >
                     {{ t(`publications.rankTags.${rankTag}`) }}
+                  </a-tag>
+                  <a-tag
+                    v-for="trackType in publication.trackTypes"
+                    :key="trackType"
+                    size="small"
+                    color="cyan"
+                  >
+                    {{ t(`publications.types.${trackType}`) }}
                   </a-tag>
                 </div>
               </div>

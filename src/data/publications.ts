@@ -3,6 +3,10 @@ export type PublicationGroup = '2026' | '2025' | '2024' | 'book'
 export type PublicationType =
   | 'conference'
   | 'journal'
+  | 'researchPaper'
+  | 'technicalTrack'
+  | 'toolsAndDatasets'
+  | 'toolDemo'
   | 'workshop'
   | 'chineseJournal'
   | 'book'
@@ -48,6 +52,109 @@ export const publicationGroupOrder: readonly PublicationGroup[] = [
 ]
 
 export const publications: readonly Publication[] = [
+  {
+    id: 'fang-2026-clarifystl',
+    group: '2026',
+    year: 2026,
+    title:
+      'ClarifySTL: An Interactive LLM Agent Framework for STL Transformation through Requirements Clarification',
+    authors: 'Yue Fang, Zhi Jin, Jie An, Jia Li, Hongshen Chen, Xiaohong Chen, Naijun Zhan',
+    venue: 'ACM Transactions on Software Engineering and Methodology (TOSEM)',
+    types: ['journal'],
+    rankTags: ['ccfa', 'sciQ1'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1145/3842391',
+      },
+    ],
+  },
+  {
+    id: 'xue-2026-care',
+    group: '2026',
+    year: 2026,
+    title:
+      'CARE: Cascading Impact-Aware Compliance Test Suite Evolution under Regulatory Changes',
+    authors: 'Zhiyi Xue, Xiaohong Chen, Min Zhang',
+    venue: 'ISSTA 2026',
+    types: ['conference', 'researchPaper'],
+    rankTags: ['ccfa'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1145/3832295',
+      },
+    ],
+  },
+  {
+    id: 'jin-2026-from-chat-to-interview',
+    group: '2026',
+    year: 2026,
+    title: 'From Chat to Interview: Agentic Requirements Elicitation with an Experience Ontology',
+    authors:
+      'Dongming Jin, Zhi Jin, Yaotian Yang, Linyu Li, Zheng Fang, Yuanpeng He, Wenchun Jing, Xiaohong Chen',
+    venue: 'RE 2026',
+    types: ['conference', 'researchPaper'],
+    rankTags: ['ccfb'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1109/RE68928.2026.00019',
+      },
+    ],
+  },
+  {
+    id: 'hou-2026-field2vc',
+    group: '2026',
+    year: 2026,
+    title: 'Field2VC: From Field Failures to Forgotten Verification Criteria for Automotive Systems',
+    authors: 'Wei Hou, Xiaohong Chen',
+    venue: 'APSEC 2026',
+    types: ['conference', 'technicalTrack'],
+    rankTags: ['ccfc'],
+  },
+  {
+    id: 'yang-2026-fallibleuser',
+    group: '2026',
+    year: 2026,
+    title: 'FallibleUser: An Imperfect User Agent for Realistic Evaluation of Interactive AI Systems',
+    authors: 'Yaotian Yang, Zhi Jin, Dongming Jin, Xiaohong Chen',
+    venue: 'ASE 2026',
+    types: ['conference', 'toolsAndDatasets'],
+    rankTags: ['ccfa'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1145/3832783.3834622',
+      },
+    ],
+  },
+  {
+    id: 'zhao-2026-iotsgt',
+    group: '2026',
+    year: 2026,
+    title: 'IoTSGT: An Interactive Specifications Generation Tool for Personalized IoT Software Requirements',
+    authors: 'Jiaqi Zhao, Chunhui Wang, Xiaohong Chen, Zhi Jin',
+    venue: 'RE 2026',
+    types: ['conference', 'toolDemo'],
+    rankTags: ['ccfb'],
+    links: [
+      {
+        kind: 'doi',
+        href: 'https://doi.org/10.1109/RE68928.2026.00069',
+      },
+    ],
+  },
+  {
+    id: 'jin-2026-iredev',
+    group: '2026',
+    year: 2026,
+    title: 'iReDev: An Interactive Human-Agent Collaborative Platform for Requirements Development',
+    authors: 'Dongming Jin, Zhi Jin, Yaotian Yang, Jia Li, Xiaohong Chen',
+    venue: 'Internetware 2026',
+    types: ['conference', 'toolDemo'],
+    rankTags: ['ccfc'],
+  },
   {
     id: 'wu-2026-silent-needs',
     group: '2026',
